@@ -1,0 +1,44 @@
+﻿<Window x:Class="Ceremony.View.Tela_Servicos_Cerimonia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ceremony.View"
+        mc:Ignorable="d"
+        Title="Tela de Cadastro de Serviços para Cerimônia" Height="250" Width="300" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="Stack" TargetType="StackPanel">
+            <Setter Property="Margin" Value="10 10 10 10" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Style="{StaticResource Stack}">
+            <Label Content="Cadastro de Serviços de Cerimônia" FontWeight="DemiBold" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" >
+            <Label Content="Serviços: " FontWeight="DemiBold"/>
+            <TextBox x:Name="txt_nome" Width="220" Height="20"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Style="{StaticResource Stack}" Margin="0 10 0 0" HorizontalAlignment="Center">
+            <Label Content="Valor: " FontWeight="DemiBold"/>
+            <TextBox x:Name="txt_valor" Width="70" Height="20"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Label Content="Pacote: " FontWeight="DemiBold"/>
+            <ComboBox Name="cb_pacote" SelectedValuePath="pacote_id" Width="150">
+                <ComboBox.ItemTemplate >
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontWeight="Bold" Text="{Binding pacote_id}" />
+                            <TextBlock Text=" -" Width="20"/>
+                            <TextBlock Text="{Binding pacote_nome}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+            <Button x:Name="bt_Salvar" Content="Salvar" Width="100" Height="30" Click="bt_Salvar_Servicos"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

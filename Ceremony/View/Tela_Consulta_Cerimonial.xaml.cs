@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Ceremony.View
 {
     /// <summary>
-    /// Interaction logic for Tela_Servicos.xaml
+    /// Interaction logic for Tela_Consulta_Cerimonial.xaml
     /// </summary>
-    public partial class Tela_Servicos : Window
+    public partial class Tela_Consulta_Cerimonial : Window
     {
-        public Tela_Servicos()
+        public Tela_Consulta_Cerimonial()
         {
             InitializeComponent();
-        }
-
-        private void bt_Salvar_Servicos(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

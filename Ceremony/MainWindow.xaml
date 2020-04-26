@@ -5,21 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony"
         mc:Ignorable="d"
-        Title="Albertassi Cerimônia" Height="450" Width="800">
+        Title="Albertazzi Cerimônia" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Cadastro">
-                <MenuItem Header="Clientes" Click="Abre_Menu_Clientes">
+            <MenuItem Header="Clientes" FontSize="18" FontWeight="Bold">
+                <MenuItem Header="Cadastrar" Click="Abre_Menu_Clientes" FontSize="14" FontWeight="DemiBold">
                 </MenuItem>
-                <MenuItem Header="Tipos de Serviços" Click="Abre_Menu_Tipos_Servicos"/>
-                <MenuItem Header="Serviços" Click="Abre_Menu_Servicos"/>
+                <MenuItem Header="Consultar" Click="Abre_Menu_Consulta_Cliente" FontSize="14" FontWeight="DemiBold"/>
             </MenuItem>
-            <MenuItem Header="Lançamento">
-                <MenuItem Header="Cerimônia"/>
-                <MenuItem Header="Buffet"/>
+            <MenuItem Header="Buffet" FontSize="18" FontWeight="Bold">
+                <MenuItem Header="Lançar Buffet" Click="Abre_Menu_Buffet" FontSize="14" FontWeight="DemiBold"/>
+                <MenuItem Header="Consultar" Click="Abre_Menu_Consulta_Buffet" FontSize="14" FontWeight="DemiBold"/>
+                <MenuItem Header="Cadastrar Produtos" FontSize="14" FontWeight="DemiBold"/>
+            </MenuItem>
+            <MenuItem Header="Cerimônia" FontSize="18" FontWeight="Bold">
+                <MenuItem Header="Lançar Cerimônia" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Cerimonial"/>
+                <MenuItem Header="Consultar" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consulta_Cerimonial"/>
+                <MenuItem Header="Cadastrar Pacotes" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Pacotes"/>
+                <MenuItem Header="Cadastrar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Servicos_Cerimonia"/>
+                <MenuItem Header="Cadastrar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Tipos_Eventos"/>
             </MenuItem>
             <Separator/>
-            <MenuItem Header="Sair" />
+            <MenuItem Header="Sair" FontSize="18" FontWeight="Bold"/>
         </Menu>
+        <!--<TextBox Name="MyText" AcceptsReturn="True" AcceptsTab="True" TextWrapping="NoWrap" />-->
+        <Image Source="logo_albertazzi.jpg" Width="880" Height="440" />
     </DockPanel>
 </Window>

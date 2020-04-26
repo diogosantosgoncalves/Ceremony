@@ -1,0 +1,82 @@
+﻿<Window x:Class="Ceremony.View.Tela_Buffet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ceremony.View"
+        mc:Ignorable="d"
+        Title="Buffet" Height="580" Width="700" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="HeaderStyle" TargetType="StackPanel">
+            <Setter Property="Margin" Value="5 0 0 5"/>
+        </Style>
+        <Style x:Key="Textos" TargetType="TextBox">
+            <Setter Property="Width" Value="450" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Style="{StaticResource HeaderStyle}">
+        <StackPanel >
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 15" HorizontalAlignment="Center">
+                <Label Content="Lançamento da Prestação de Serviço - Buffet" FontSize="20" FontWeight="ExtraBold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Cliente: " />
+                <TextBox x:Name="bt_Cliente" Width="500"/>
+                <Button x:Name="bt_pesquisar_cliente" Content="Pesquisar" Width="100" Margin="15 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Data: " />
+                <TextBox x:Name="txt_data" Style="{StaticResource Textos}" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Tipo Evento: " />
+                <ComboBox x:Name="txt_evento" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Cidade/Local: " />
+                <TextBox x:Name="txt_cidade_local" Style="{StaticResource Textos}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Total de Convidados: " />
+                <TextBox x:Name="txt_convidados" Style="{StaticResource Textos}" Width="50"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Horário de Início Cerimônia: " />
+                <TextBox x:Name="txt_horario_cerimonia" Style="{StaticResource Textos}" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel >
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 15" HorizontalAlignment="Center">
+                <Label Content="Lançamento dos Valores Prestação de Serviço - Buffet" FontSize="20" FontWeight="ExtraBold" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Horário de Início Festa: " />
+                <TextBox x:Name="txt_horario_festa" Style="{StaticResource Textos}" Width="100"/>
+                <Label Content="Valor da Prestação do Serviço: " />
+                <TextBox x:Name="txt_valor_prestacao_do_servico" Style="{StaticResource Textos}" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Número de Parcelas: " />
+                <TextBox x:Name="txt_parcelas" Style="{StaticResource Textos}" Width="60"/>
+                <Label Content="Valor das Parcelas: " />
+                <TextBox x:Name="txt_valor_das_parcelas" Style="{StaticResource Textos}" Width="100"/>
+                <Label Content="Data Primeiro Vencimento: " />
+                <TextBox x:Name="txt_data_primeiro_vencimento" Style="{StaticResource Textos}" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Observações: " />
+                <ListView x:Name="txt_observacoes" Width="500" Height="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
+                <Label Content="Valor Final: " FontSize="20" FontWeight="Heavy"/>
+                <Label x:Name="txt_valor_final" Content="R$" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
+                <Button x:Name="bt_salvar" Content="Salvar" Width="100" Height="28" FontWeight="Bold"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

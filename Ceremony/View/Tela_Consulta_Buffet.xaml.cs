@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Ceremony.View
 {
     /// <summary>
-    /// Interaction logic for Tela_Tipos_Servicos.xaml
+    /// Interaction logic for Tela_Consulta_Buffet.xaml
     /// </summary>
-    public partial class Tela_Tipos_Servicos : Window
+    public partial class Tela_Consulta_Buffet : Window
     {
-        public Tela_Tipos_Servicos()
+        public Tela_Consulta_Buffet()
         {
             InitializeComponent();
-        }
-
-        private void bt_Salvar_Tipo(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

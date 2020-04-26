@@ -49,12 +49,42 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.8.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dal\Conexao.cs" />
+    <Compile Include="Dal\ServicesDBBuffet.cs" />
+    <Compile Include="Dal\ServicesDBBuffet_Servicos.cs" />
+    <Compile Include="Dal\ServicesDBCerimonia.cs" />
+    <Compile Include="Dal\ServicesDBCliente.cs" />
+    <Compile Include="Dal\ServicesDBPacote.cs" />
+    <Compile Include="Dal\ServicesDBPacote_Servico.cs" />
+    <Compile Include="Dal\ServicesDBTipo_Evento.cs" />
+    <Compile Include="Model\Buffet.cs" />
+    <Compile Include="Model\Buffet_Servicos.cs" />
+    <Compile Include="Model\Cerimonia.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Pacote.cs" />
+    <Compile Include="Model\Pacote_Servicos.cs" />
+    <Compile Include="Model\Tipo_Evento.cs" />
     <Compile Include="View\Cadastro_Cliente.xaml.cs">
       <DependentUpon>Cadastro_Cliente.xaml</DependentUpon>
     </Compile>
@@ -64,11 +94,29 @@
     <Compile Include="View\Prestacao_Servico.xaml.cs">
       <DependentUpon>Prestacao_Servico.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Tela_Servicos.xaml.cs">
-      <DependentUpon>Tela_Servicos.xaml</DependentUpon>
+    <Compile Include="View\Tela_Buffet.xaml.cs">
+      <DependentUpon>Tela_Buffet.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Tela_Tipos_Servicos.xaml.cs">
-      <DependentUpon>Tela_Tipos_Servicos.xaml</DependentUpon>
+    <Compile Include="View\Tela_Cerimonial.xaml.cs">
+      <DependentUpon>Tela_Cerimonial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Buffet.xaml.cs">
+      <DependentUpon>Tela_Consulta_Buffet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Cerimonial.xaml.cs">
+      <DependentUpon>Tela_Consulta_Cerimonial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Cliente.xaml.cs">
+      <DependentUpon>Tela_Consulta_Cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Pacotes.xaml.cs">
+      <DependentUpon>Tela_Pacotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Servicos_Cerimonia.xaml.cs">
+      <DependentUpon>Tela_Servicos_Cerimonia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Tipo_Evento.xaml.cs">
+      <DependentUpon>Tela_Tipo_Evento.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -94,11 +142,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Tela_Servicos.xaml">
+    <Page Include="View\Tela_Buffet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Tela_Tipos_Servicos.xaml">
+    <Page Include="View\Tela_Cerimonial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Consulta_Buffet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Consulta_Cerimonial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Consulta_Cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Pacotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Servicos_Cerimonia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Tipo_Evento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,6 +193,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +201,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="albertazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_albertazzi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\editar.jpg" />
+    <Resource Include="View\excluir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

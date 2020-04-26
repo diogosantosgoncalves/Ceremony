@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Prestacao_Servico" Height="450" Width="800">
+        Title="Prestacao_Servico" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         
     </Grid>
