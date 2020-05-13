@@ -31,8 +31,45 @@ namespace Ceremony.Dal
 
                     pacote_servicos.pacote_servico_id = int.Parse(sqldataReader["pacote_servico_id"].ToString());
                     pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_nome"].ToString();
-                    pacote_servicos.pacote_servico_valor = sqldataReader.GetDouble(2);
-                    pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_id"].ToString();
+                    pacote_servicos.pacote_servico_valor = double.Parse(sqldataReader["pacote_servico_valor"].ToString()); // sqldataReader.GetDouble(2);
+                    pacote_servicos.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
+
+                    list.Add(pacote_servicos);
+                }
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+                sqldataReader.Close();
+
+                return list;
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+            }
+
+        }
+        public List<Pacote_Servicos> Listar_Pacote_Servicos_Por_Id(int pacote)
+        {
+            try
+            {
+                List<Pacote_Servicos> list = new List<Pacote_Servicos>();
+                sqlcommand.CommandText = "select * from Pacote_Servicos where pacote_id = @pacote";
+                sqlcommand.Parameters.AddWithValue("@pacote", pacote);
+                sqlcommand.Connection = con.conectar();
+                sqldataReader = sqlcommand.ExecuteReader();
+                while (sqldataReader.Read())
+                {
+                    Pacote_Servicos pacote_servicos = new Pacote_Servicos();
+
+                    pacote_servicos.pacote_servico_id = int.Parse(sqldataReader["pacote_servico_id"].ToString());
+                    pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_nome"].ToString();
+                    pacote_servicos.pacote_servico_valor = double.Parse(sqldataReader["pacote_servico_valor"].ToString()); // sqldataReader.GetDouble(2);
+                    pacote_servicos.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
 
                     list.Add(pacote_servicos);
                 }

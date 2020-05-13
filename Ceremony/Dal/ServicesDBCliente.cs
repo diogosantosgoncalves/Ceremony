@@ -162,28 +162,6 @@ namespace Ceremony.Dal
             }
         }
 
-        public void AtivarProduto(string nome)
-        {
-            try
-            {
-                Cliente cliente = new Cliente();
-                sqlcommand.CommandText = "update Produto set prod_inativo = 0 where prod_nome =  @produto";
-                sqlcommand.Parameters.AddWithValue("@produto", nome);
-                sqlcommand.Connection = con.conectar();
-                sqldataReader = sqlcommand.ExecuteReader();
-            }
-            catch (SqlException ex)
-            {
-                Statusmessagem = ex.Message;
-            }
-            finally
-            {
-                sqlcommand.Parameters.Clear();
-                con.desconectar();
-                sqldataReader.Close();
-            }
-        }
-
         public void Deletar(int codigousuario, string setor)
         {
             try
@@ -211,13 +189,13 @@ namespace Ceremony.Dal
         {
             try
             {
-                sqlcommand.CommandText = "UPDATE Usuario SET cli_nome = '" + cliente.cli_nome + "', cli_nacionalidade = '" + cliente.cli_nacionalidade +
-                ",cli_estavo_civil = '" + cliente.cli_estado_civil + "', cli_profissao = '" + cliente.cli_profissao + " cli_rg = '" + cliente.cli_rg +
-                ",cli_cpf = '" + cliente.cli_cpf + "', cli_endereco = '" + cliente.cli_endereco + " cli_numero = '" + cliente.cli_numero +
-                ",cli_complemento = '" + cliente.cli_complemento + "', cli_bairro = '" + cliente.cli_bairro + " cli_cidade = '" + cliente.cli_cidade +
-                ",cli_uf = '" + cliente.cli_uf + "', cli_cep = '" + cliente.cli_cep + " cli_telefone_fixo = '" + cliente.cli_telefone_fixo +
-                ",cli_celular1 = '" + cliente.cli_celular1 + "', cli_celular2 = '" + cliente.cli_celular2 + " cli_telefone_trabalho = '" + cliente.cli_telefone_trabalho +
-                ",cli_email = '" + cliente.cli_email + "' WHERE cli_id = '" + cliente.cli_id;
+                sqlcommand.CommandText = "UPDATE Cliente SET cli_nome = '" + cliente.cli_nome + "', cli_nacionalidade = '" + cliente.cli_nacionalidade +
+                "' ,cli_estado_civil = '" + cliente.cli_estado_civil + "', cli_profissao = '" + cliente.cli_profissao + "' ,cli_rg = '" + cliente.cli_rg +
+                "', cli_cpf = '" + cliente.cli_cpf + "', cli_endereco = '" + cliente.cli_endereco + "', cli_numero = '" + cliente.cli_numero +
+                "',cli_complemento = '" + cliente.cli_complemento + "', cli_bairro = '" + cliente.cli_bairro + "' ,cli_cidade = '" + cliente.cli_cidade +
+                "',cli_uf = '" + cliente.cli_uf + "', cli_cep = '" + cliente.cli_cep + "', cli_telefone_fixo = '" + cliente.cli_telefone_fixo +
+                "',cli_celular1 = '" + cliente.cli_celular1 + "', cli_celular2 = '" + cliente.cli_celular2 + "' ,cli_telefone_trabalho = '" + cliente.cli_telefone_trabalho +
+                "',cli_email = '" + cliente.cli_email + "' WHERE cli_id = '" + cliente.cli_id + "'";
                 sqlcommand.Parameters.AddWithValue("@cli_id", cliente.cli_id);
                 sqlcommand.Parameters.AddWithValue("@cli_nome", cliente.cli_nome);
                 sqlcommand.Parameters.AddWithValue("@cli_nacionalidade", cliente.cli_nacionalidade);
@@ -265,6 +243,23 @@ namespace Ceremony.Dal
             {
                 cliente.cli_id = int.Parse(sqldataReader["cli_id"].ToString());
                 cliente.cli_nome = sqldataReader["cli_nome"].ToString();
+                cliente.cli_nacionalidade = sqldataReader["cli_nacionalidade"].ToString();
+                cliente.cli_estado_civil = sqldataReader["cli_estado_civil"].ToString();
+                cliente.cli_profissao = sqldataReader["cli_profissao"].ToString();
+                cliente.cli_rg = sqldataReader["cli_rg"].ToString();
+                cliente.cli_cpf = sqldataReader["cli_cpf"].ToString();
+                cliente.cli_endereco = sqldataReader["cli_endereco"].ToString();
+                cliente.cli_numero = sqldataReader["cli_numero"].ToString();
+                cliente.cli_complemento = sqldataReader["cli_complemento"].ToString();
+                cliente.cli_bairro = sqldataReader["cli_bairro"].ToString();
+                cliente.cli_cidade = sqldataReader["cli_cidade"].ToString();
+                cliente.cli_uf = sqldataReader["cli_uf"].ToString();
+                cliente.cli_cep = sqldataReader["cli_cep"].ToString();
+                cliente.cli_telefone_fixo = sqldataReader["cli_telefone_fixo"].ToString();
+                cliente.cli_celular1 = sqldataReader["cli_celular1"].ToString();
+                cliente.cli_celular2 = sqldataReader["cli_celular2"].ToString();
+                cliente.cli_telefone_trabalho = sqldataReader["cli_telefone_trabalho"].ToString();
+                cliente.cli_email = sqldataReader["cli_email"].ToString();
             }
             sqlcommand.Parameters.Clear();
             con.desconectar();

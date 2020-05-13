@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Ceremony.View"
       mc:Ignorable="d" 
-      d:DesignHeight="440" d:DesignWidth="850"
+      d:DesignHeight="500" d:DesignWidth="850"
       Title="Cadastro_Cliente" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="HeaderStyle" TargetType="StackPanel">
@@ -20,10 +20,15 @@
             <Label Content="Cadastro de Cliente" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 10"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+            <Label Content="Código: " />
+            <TextBox x:Name="txt_id" Width="50" Style="{StaticResource Textos}" IsEnabled="False"/>
             <Label Content="Nome: " />
             <TextBox x:Name="txt_nome" Width="300" Style="{StaticResource Textos}"/>
             <Label Content="Nacionalidade: " />
-            <TextBox x:Name="txt_nacionalidade" Width="300" Style="{StaticResource Textos}"/>
+            <TextBox x:Name="txt_nacionalidade" Width="200" Style="{StaticResource Textos}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
             <Label Content="Estado Civil: " />
@@ -40,7 +45,7 @@
         <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
             <Label Content="Endereço: " />
             <TextBox x:Name="txt_endereco" Width="300" Style="{StaticResource Textos}"/>
-            <Label Content="Nº:: " />
+            <Label Content="Nº: " />
             <TextBox x:Name="txt_numero" Width="50" Style="{StaticResource Textos}"/>
             <Label Content="Complemento: " />
             <TextBox x:Name="txt_complemento" Width="250" Style="{StaticResource Textos}"/>
@@ -70,7 +75,7 @@
             <TextBox x:Name="txt_email" Width="450" Style="{StaticResource Textos}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="txt_Salvar" Width="100" Height="25" Content="Salvar" Click="Cadastrar_Cliente" />
+            <Button x:Name="bt_Salvar" Width="100" Height="25" Content="Salvar" Click="Cadastrar_Cliente" />
         </StackPanel>
 
     </StackPanel>

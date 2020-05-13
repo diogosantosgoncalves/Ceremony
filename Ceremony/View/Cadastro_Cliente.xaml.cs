@@ -28,7 +28,31 @@ namespace Ceremony.View
             InitializeComponent();
             txt_nome.Focus();
         }
-     
+        public Cadastro_Cliente(Cliente cliente)
+        {
+            InitializeComponent();
+            txt_id.Text = cliente.cli_id.ToString();
+            txt_nome.Text = cliente.cli_nome;
+            txt_nacionalidade.Text = cliente.cli_nacionalidade;
+            txt_estado_civil.Text = cliente.cli_estado_civil;
+            txt_profissao.Text = cliente.cli_profissao;
+            txt_rg.Text = cliente.cli_rg;
+            txt_cpf.Text = cliente.cli_cpf;
+            txt_endereco.Text = cliente.cli_endereco;
+            txt_numero.Text = cliente.cli_numero;
+            txt_complemento.Text = cliente.cli_complemento;
+            txt_bairro.Text = cliente.cli_bairro;
+            txt_cidade.Text = cliente.cli_cidade;
+            txt_uf.Text = cliente.cli_uf;
+            txt_cep.Text = cliente.cli_cep;
+            txt_fixo.Text = cliente.cli_telefone_fixo;
+            txt_celular1.Text = cliente.cli_celular1;
+            txt_celular2.Text = cliente.cli_celular2;
+            txt_trabalho.Text = cliente.cli_telefone_trabalho;
+            txt_email.Text = cliente.cli_email;
+            bt_Salvar.Content = "Alterar";
+
+        }
 
         private void Cadastrar_Cliente(object sender, RoutedEventArgs e)
         {
@@ -54,9 +78,20 @@ namespace Ceremony.View
                 cliente.cli_telefone_trabalho = txt_trabalho.Text;
                 cliente.cli_email = txt_email.Text;
 
-                servicesDBCliente.Salvar(cliente);
+                if(bt_Salvar.Content.ToString() == "Salvar")
+                {
+                    servicesDBCliente.Salvar(cliente);
+                    Limpar();
+                }
+
+                else
+                {
+                    cliente.cli_id =  int.Parse(txt_id.Text);
+                    servicesDBCliente.AlterarCliente(cliente);
+                }
+
                 MessageBox.Show(servicesDBCliente.Statusmessagem);
-                Limpar();
+
             }
             catch (Exception ex)
             {

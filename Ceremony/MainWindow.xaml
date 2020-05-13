@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony"
         mc:Ignorable="d"
-        Title="Albertazzi Cerimônia" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Albertazzi Cerimônia"  Height="550" Width="800" WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" WindowState="Maximized">
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
+        <Menu DockPanel.Dock="Top" Background="AliceBlue">
             <MenuItem Header="Clientes" FontSize="18" FontWeight="Bold">
                 <MenuItem Header="Cadastrar" Click="Abre_Menu_Clientes" FontSize="14" FontWeight="DemiBold">
                 </MenuItem>
@@ -25,10 +25,10 @@
                 <MenuItem Header="Cadastrar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Servicos_Cerimonia"/>
                 <MenuItem Header="Cadastrar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Tipos_Eventos"/>
             </MenuItem>
-            <Separator/>
-            <MenuItem Header="Sair" FontSize="18" FontWeight="Bold"/>
+            <Separator Width="800" Background="AliceBlue"/>
+            <MenuItem Header="Sair" HorizontalAlignment="Right" HorizontalContentAlignment="Right" FontSize="18" FontWeight="Bold"/>
         </Menu>
         <!--<TextBox Name="MyText" AcceptsReturn="True" AcceptsTab="True" TextWrapping="NoWrap" />-->
-        <Image Source="logo_albertazzi.jpg" Width="880" Height="440" />
+        <Image Source="logo_albertazzi.jpg" Width="1380" Height="790" />
     </DockPanel>
 </Window>

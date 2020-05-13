@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônial" Height="580" Width="700" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônial" Height="630" Width="700" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="HeaderStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="5 0 0 5"/>
@@ -27,29 +27,45 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Cliente: " />
-                <TextBox x:Name="bt_Cliente" Width="500" Style="{StaticResource Textos}"/>
+                <TextBox x:Name="txt_cliente" Width="500" Style="{StaticResource Textos}"/>
                 <Button x:Name="bt_pesquisar_cliente" Content="Pesquisar" Width="100" Margin="15 0 0 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Data: " />
                 <!--<TextBox x:Name="txt_data"  Style="{StaticResource Textos}" Width="100"/>-->
-                <DatePicker Name="txt_data" SelectedDateFormat="Long" SelectedDate="{x:Static sys:DateTime.Now}"
+                <!--<DatePicker Name="txt_data" SelectedDateFormat="Long" SelectedDate="{x:Static sys:DateTime.Now}"
                   DisplayDateStart="{x:Static sys:DateTime.Now}" 
-                  FirstDayOfWeek="Monday"/>
+                  FirstDayOfWeek="Monday"/>-->
+                <DatePicker Name="txt_data" Text="Selecione uma Data" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Tipo de Evento: " />
-                <ComboBox x:Name="cb_evento" Width="200" SelectedValuePath="{Binding tipo_evento_id}">
+                <ComboBox x:Name="cb_evento" Width="170" SelectedValue="{Binding tipo_evento_id}" SelectedValuePath="tipo_evento_id">
                     <ComboBox.ItemTemplate >
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding tipo_evento_id}" FontWeight="DemiBold"/>
-                                <TextBlock Text=" - " Width="50" />
+                                <TextBlock Text=" - " Width="20" />
                                 <TextBlock Text="{Binding tipo_evento_nome}" />
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
+                <Label Content="Pacote: " />
+                <ComboBox x:Name="cb_pacote"  Width="140"  SelectedValue="{Binding pacote_id}" SelectedValuePath="pacote_id" SelectionChanged="cb_pacote_SelectionChanged">
+                    <ComboBox.ItemTemplate >
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding pacote_id}" FontWeight="DemiBold"/>
+                                <TextBlock Text=" - " Width="20" />
+                                <TextBlock Text="{Binding pacote_nome}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Cidade/Local: " />
@@ -58,9 +74,6 @@
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Total de Convidados: " />
                 <TextBox x:Name="txt_convidados" Style="{StaticResource Textos}" Width="50"/>
-
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Horário de Início Cerimônia: " />
                 <!--<TextBox x:Name="txt_horario_cerimonia" Style="{StaticResource Textos}" Width="100"/>-->
                 <!--<xctk:MaskedTextBox x:Name="txt_horario_cerimonia"
@@ -75,9 +88,11 @@
 
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Horário de Início Festa: " />
-                <TextBox x:Name="txt_horario_festa" Style="{StaticResource Textos}" Width="100"/>
+                <TextBox x:Name="txt_horario_festa" Style="{StaticResource Textos}" Width="50"/>
                 <Label Content="Valor da Prestação do Serviço: " />
                 <TextBox x:Name="txt_valor_prestacao_do_servico" Style="{StaticResource Textos}" Width="100"/>
+                <Label Content="Desconto: " />
+                <TextBox x:Name="txt_Desconto" Style="{StaticResource Textos}" Width="50" TextChanged="txt_Desconto_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Número de Parcelas: " />
@@ -89,12 +104,33 @@
                 <!--<TextBox x:Name="txt_data_primeiro_vencimento" Style="{StaticResource Textos}" Width="100"/>-->
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
-                <Label Content="Observações: " />
-                <ListView x:Name="txt_observacoes" Width="500" Height="100"/>
+                <Label Content="Serviços: " />
+                <ListView Margin="10" Name="lv_pacote_servico" Width="360" Height="150">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id"  Width="50" DisplayMemberBinding="{Binding pacote_servico_id}" />
+                            <GridViewColumn Header="Nome" Width="150"  DisplayMemberBinding="{Binding pacote_servico_nome}" />
+                            <GridViewColumn Header="Valor" Width="150">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Text="          R$ " Foreground="Black"/>
+                                            <TextBlock Text="{Binding pacote_servico_valor}" Foreground="Red" Cursor="Hand" />
+                                            <TextBlock Text=",00" Foreground="red"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Obs:" />
+                <TextBox x:Name="txt_observacao" Width="190" TextWrapping="Wrap" Margin="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
                 <Label Content="Valor Final: " FontSize="20" FontWeight="Heavy"/>
                 <Label x:Name="txt_valor_final" Content="R$" FontSize="20"/>
+                <Label Name="lb_total" Content="0,00" FontSize="20" Foreground="Red" FontWeight="Medium"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
                 <Button x:Name="bt_salvar" Content="Salvar" Width="100" Height="28" FontWeight="Bold" Click="bt_salvar_Click"/>

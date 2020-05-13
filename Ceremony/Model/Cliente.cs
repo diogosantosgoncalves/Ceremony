@@ -27,5 +27,6 @@ namespace Ceremony.Model
         public string cli_celular2 { get; set; }
         public string cli_telefone_trabalho { get; set; }
         public string cli_email { get; set; }
+
     }
 }

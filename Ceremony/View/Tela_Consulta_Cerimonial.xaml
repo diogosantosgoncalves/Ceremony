@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônia" Height="550" Width="745" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônia" Height="590" Width="845" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <StackPanel Margin="10" HorizontalAlignment="Center">
             <Label Content="Consulta de Cerimônia" FontSize="20" FontWeight="Black"/>
@@ -13,11 +13,46 @@
         <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
             <Label Content="Cliente: " FontWeight="DemiBold" FontSize="15"/>
             <TextBox x:Name="txt_cliente" Width="400" Height="25" Margin="0 0 5 0"/>
-            <Button x:Name="bt_pesquisar"  Content="Pesquisar" Height="25"/>
+            <Button x:Name="bt_pesquisar"  Content="Pesquisar" Height="25" Click="ConsultarCerimonia"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left">
-            <ListView  x:Name="lt_consulta_clientes" Width="700" Height="350" Margin="15">
-            </ListView>
+            <DataGrid MaxWidth="850" MaxHeight="890" IsReadOnly="True" Name="dg_ConsultaCerimonia" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Foreground="Red" Width="60" Header="Código" Binding="{Binding cerimonia_id}"/>
+                    <DataGridTextColumn  Width="200" Header="Cliente" Binding="{Binding cliente.cli_nome}"/>
+                    <DataGridTextColumn  Width="70" Header="Data" Binding="{Binding cerimonia_data_evento, StringFormat=dd/MM/yyyy}"/>
+                    <DataGridTextColumn  Width="50"  Header="Horário" Binding="{Binding cerimonia_horario_cerimonia}"/>
+                    <DataGridTextColumn  Width="120" Header="Evento" Binding="{Binding tipo_evento.tipo_evento_nome}"/>
+                    <DataGridTextColumn  Width="120" Header="Pacote" Binding="{Binding pacot.pacote_nome}"/>
+                    <DataGridTextColumn  Width="60" Header="Valor" Binding="{Binding cerimonia_valor_total}"/>
+                    <DataGridTemplateColumn Width="50" Header="Editar" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DockPanel HorizontalAlignment="Center">
+                                    <TextBlock >
+                                        <Hyperlink  Click="bt_EditarCerimonia" Command="{Binding DataContext.DeleteOrganisationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                                            <Image   Height="22" Source="editar.jpg" />
+                                        </Hyperlink>
+                                    </TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="50" Header="Deletar" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DockPanel HorizontalAlignment="Center">
+                                    <TextBlock >
+                                        <Hyperlink  Click="bt_ExcluiCerimonia" Command="{Binding DataContext.DeleteOrganisationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                                            <Image   Height="22" Source="excluir.png" />
+                                        </Hyperlink>
+                                    </TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="bt_Confirmar" Content="Confirmar" Width="100" Height="30" />
