@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônial" Height="630" Width="700" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônial" Height="630" Width="730" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="HeaderStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="5 0 0 5"/>
@@ -52,7 +52,7 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
                 <Label Content="Pacote: " />
-                <ComboBox x:Name="cb_pacote"  Width="140"  SelectedValue="{Binding pacote_id}" SelectedValuePath="pacote_id" SelectionChanged="cb_pacote_SelectionChanged">
+                <ComboBox x:Name="cb_pacote"  Width="140"  SelectedValue="{Binding pacote_id}" SelectedValuePath="pacote_id" SelectionChanged="cb_pacote_SelectionChanged" >
                     <ComboBox.ItemTemplate >
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
@@ -73,7 +73,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Total de Convidados: " />
-                <TextBox x:Name="txt_convidados" Style="{StaticResource Textos}" Width="50"/>
+                <TextBox x:Name="txt_convidados" Style="{StaticResource Textos}" Width="50" />
                 <Label Content="Horário de Início Cerimônia: " />
                 <!--<TextBox x:Name="txt_horario_cerimonia" Style="{StaticResource Textos}" Width="100"/>-->
                 <!--<xctk:MaskedTextBox x:Name="txt_horario_cerimonia"

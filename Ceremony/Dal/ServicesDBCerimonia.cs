@@ -202,5 +202,46 @@ namespace Ceremony.Dal
             }
 
         }
+        public Cerimonia Editar(int codigo)
+        {
+            try
+            {
+                Cerimonia cerimonia = new Cerimonia();
+                sqlcommand.CommandText = "select * from Cerimonia where cerimonia_id =  @codigo";
+                sqlcommand.Parameters.AddWithValue("@codigo", codigo);
+                sqlcommand.Connection = con.conectar();
+                sqldataReader = sqlcommand.ExecuteReader();
+                if (sqldataReader.Read())
+                {
+                    cerimonia.cerimonia_id = int.Parse(sqldataReader["cerimonia_id"].ToString());
+                    cerimonia.cerimonia_cliente_id = int.Parse(sqldataReader["cerimonia_cliente_id"].ToString());
+                    cerimonia.cerimonia_data_evento = DateTime.Parse(sqldataReader["cerimonia_data_evento"].ToString());
+                    cerimonia.cerimonia_tipo_evento_id = int.Parse(sqldataReader["cerimonia_tipo_evento_id"].ToString());
+                    cerimonia.cerimonia_pacote_id = int.Parse(sqldataReader["cerimonia_pacote_id"].ToString());
+                    cerimonia.cerimonia_cidade_local = sqldataReader["cerimonia_cidade_local"].ToString();
+                    cerimonia.cerimonia_total_convidados = int.Parse(sqldataReader["cerimonia_total_convidados"].ToString());
+                    cerimonia.cerimonia_horario_cerimonia = sqldataReader["cerimonia_horario_cerimonia"].ToString();
+                    cerimonia.cerimonia_num_parcelas = int.Parse(sqldataReader["cerimonia_num_parcelas"].ToString());
+                    cerimonia.cerimonia_inicio_festa = sqldataReader["cerimonia_inicio_festa"].ToString();
+                    cerimonia.cerimonia_valor_total = sqldataReader.GetDecimal(9);
+                    cerimonia.cerimonia_desconto = sqldataReader.GetDecimal(14);
+                    cerimonia.cerimonia_num_parcelas = int.Parse(sqldataReader["cerimonia_num_parcelas"].ToString());
+                    cerimonia.cerimonia_valor_parcelas = sqldataReader.GetDecimal(7);
+                    cerimonia.cerimonia_data_primeiro_vencimento = DateTime.Parse(sqldataReader["cerimonia_data_primeiro_vencimento"].ToString());
+                    cerimonia.cerimonia_observacao = sqldataReader["cerimonia_observacao"].ToString();
+                }
+                return cerimonia;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+                sqldataReader.Close();
+            }
+        }
     }
 }

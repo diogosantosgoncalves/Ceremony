@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônia" Height="590" Width="845" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônia" Height="590" Width="875" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <StackPanel Margin="10" HorizontalAlignment="Center">
             <Label Content="Consulta de Cerimônia" FontSize="20" FontWeight="Black"/>
@@ -16,7 +16,7 @@
             <Button x:Name="bt_pesquisar"  Content="Pesquisar" Height="25" Click="ConsultarCerimonia"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left">
-            <DataGrid MaxWidth="850" MaxHeight="890" IsReadOnly="True" Name="dg_ConsultaCerimonia" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
+            <DataGrid MaxWidth="890" MaxHeight="890" IsReadOnly="True" Name="dg_ConsultaCerimonia" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn  Foreground="Red" Width="60" Header="Código" Binding="{Binding cerimonia_id}"/>
                     <DataGridTextColumn  Width="200" Header="Cliente" Binding="{Binding cliente.cli_nome}"/>
@@ -45,6 +45,19 @@
                                     <TextBlock >
                                         <Hyperlink  Click="bt_ExcluiCerimonia" Command="{Binding DataContext.DeleteOrganisationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
                                             <Image   Height="22" Source="excluir.png" />
+                                        </Hyperlink>
+                                    </TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="60" Header="Imprimir" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <DockPanel HorizontalAlignment="Center">
+                                    <TextBlock >
+                                        <Hyperlink  Click="bt_ImprimirCerimonia" Command="{Binding DataContext.DeleteOrganisationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                                            <Image   Height="22" Source="relatorio.png" />
                                         </Hyperlink>
                                     </TextBlock>
                                 </DockPanel>

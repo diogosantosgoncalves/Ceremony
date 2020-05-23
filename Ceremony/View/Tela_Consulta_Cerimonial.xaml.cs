@@ -38,9 +38,21 @@ namespace Ceremony.View
         }
         public void bt_EditarCerimonia(object sender, RoutedEventArgs e)
         {
-           // Cerimonia cerimonia = servicesDBCerimonia.Editar(int.Parse(PegarLinhaGrid(0)));
+            Cerimonia cerimonia = servicesDBCerimonia.Editar(int.Parse(PegarLinhaGrid(0)));
+            Tela_Cerimonial tela = new Tela_Cerimonial(cerimonia);
+            tela.ShowDialog();
+            //dg_ConsultaCliente.ItemsSource = servicesDBCerimonia.BuscarCliente(txt_nome.Text.ToString());
+
+            //TelaCadastrarUsuario tela1 = new TelaCadastrarUsuario(usu.usu_nome, usu.usu_senha, usu.usu_id, usu.usu_inativo);
+            //tela1.ShowDialog();
+        }
+        public void bt_ImprimirCerimonia(object sender, RoutedEventArgs e)
+        {
+            //Cerimonia cerimonia = servicesDBCerimonia.Editar(int.Parse(PegarLinhaGrid(0)));
             //Tela_Cerimonial tela = new Tela_Cerimonial(cerimonia);
             //tela.ShowDialog();
+            RelatorioCerimonia tela = new RelatorioCerimonia();
+            tela.ShowDialog();
             //dg_ConsultaCliente.ItemsSource = servicesDBCerimonia.BuscarCliente(txt_nome.Text.ToString());
 
             //TelaCadastrarUsuario tela1 = new TelaCadastrarUsuario(usu.usu_nome, usu.usu_senha, usu.usu_id, usu.usu_inativo);

@@ -31,6 +31,37 @@ namespace Ceremony.View
             ServicesDBPacote servicesDBPacote = new ServicesDBPacote();
             cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote();
         }
+        public Tela_Cerimonial(Cerimonia cerimonia)
+        {
+            InitializeComponent();
+            
+            ServicesDBTipo_Evento servicesDBTipo_Evento = new ServicesDBTipo_Evento();
+            cb_evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento();
+            ServicesDBPacote servicesDBPacote = new ServicesDBPacote();
+            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote();
+            
+
+            txt_cliente.Text = cerimonia.cerimonia_cliente_id.ToString();
+            txt_data.Text = cerimonia.cerimonia_data_evento.ToString();
+
+            txt_cidade_local.Text = cerimonia.cerimonia_cidade_local;
+            txt_convidados.Text = cerimonia.cerimonia_total_convidados.ToString();
+            txt_horario_cerimonia.Text = cerimonia.cerimonia_horario_cerimonia;
+            txt_horario_festa.Text = cerimonia.cerimonia_inicio_festa;
+            txt_valor_prestacao_do_servico.Text = cerimonia.cerimonia_valor_total.ToString();
+
+            txt_parcelas.Text = cerimonia.cerimonia_num_parcelas.ToString();
+            txt_valor_das_parcelas.Text = cerimonia.cerimonia_valor_parcelas.ToString();
+            txt_data_primeiro_vencimento.Text = cerimonia.cerimonia_data_primeiro_vencimento.ToString();
+            txt_horario_festa.Text = cerimonia.cerimonia_inicio_festa.ToString();
+            txt_observacao.Text = cerimonia.cerimonia_observacao;
+            cb_evento.SelectedValue = cerimonia.cerimonia_tipo_evento_id;
+            //Convert.ToInt32(cerimonia.cerimonia_pacote_id);
+            CarregarComboValor(Convert.ToInt32(cerimonia.cerimonia_pacote_id));
+            //cb_pacote.SelectedValue = cerimonia.cerimonia_pacote_id;
+            txt_Desconto.Text = cerimonia.cerimonia_desconto.ToString();
+
+        }
 
         public void bt_salvar_Click(object sender, RoutedEventArgs e)
         {
@@ -129,8 +160,13 @@ namespace Ceremony.View
 
         public void cb_pacote_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            total = 0;
             int codigo = Convert.ToInt32(cb_pacote.SelectedValue);
+            CarregarComboValor(codigo);
+        }
+        public void CarregarComboValor(int codigo)
+        {
+            total = 0;
+            //codigo = Convert.ToInt32(cb_pacote.SelectedValue);
 
             ServicesDBPacote_Servico servicesDBPacote_Servico = new ServicesDBPacote_Servico();
             lv_pacote_servico.ItemsSource = servicesDBPacote_Servico.Listar_Pacote_Servicos_Por_Id(codigo);
@@ -141,8 +177,9 @@ namespace Ceremony.View
             }
             lb_total.Content = total;
             txt_Desconto.Text = "";
+            txt_valor_prestacao_do_servico.Text = total.ToString();
         }
-
+        
         private void txt_Desconto_TextChanged(object sender, TextChangedEventArgs e)
         {
             
