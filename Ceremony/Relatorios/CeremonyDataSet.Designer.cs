@@ -26,6 +26,8 @@ namespace Ceremony.Relatorios {
         
         private CerimoniaDataTable tableCerimonia;
         
+        private DT_CerimoniaDataTable tableDT_Cerimonia;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace Ceremony.Relatorios {
                 if ((ds.Tables["Cerimonia"] != null)) {
                     base.Tables.Add(new CerimoniaDataTable(ds.Tables["Cerimonia"]));
                 }
+                if ((ds.Tables["DT_Cerimonia"] != null)) {
+                    base.Tables.Add(new DT_CerimoniaDataTable(ds.Tables["DT_Cerimonia"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace Ceremony.Relatorios {
         public CerimoniaDataTable Cerimonia {
             get {
                 return this.tableCerimonia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DT_CerimoniaDataTable DT_Cerimonia {
+            get {
+                return this.tableDT_Cerimonia;
             }
         }
         
@@ -155,6 +170,9 @@ namespace Ceremony.Relatorios {
                 if ((ds.Tables["Cerimonia"] != null)) {
                     base.Tables.Add(new CerimoniaDataTable(ds.Tables["Cerimonia"]));
                 }
+                if ((ds.Tables["DT_Cerimonia"] != null)) {
+                    base.Tables.Add(new DT_CerimoniaDataTable(ds.Tables["DT_Cerimonia"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace Ceremony.Relatorios {
                     this.tableCerimonia.InitVars();
                 }
             }
+            this.tableDT_Cerimonia = ((DT_CerimoniaDataTable)(base.Tables["DT_Cerimonia"]));
+            if ((initTable == true)) {
+                if ((this.tableDT_Cerimonia != null)) {
+                    this.tableDT_Cerimonia.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace Ceremony.Relatorios {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCerimonia = new CerimoniaDataTable();
             base.Tables.Add(this.tableCerimonia);
+            this.tableDT_Cerimonia = new DT_CerimoniaDataTable();
+            base.Tables.Add(this.tableDT_Cerimonia);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeCerimonia() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeDT_Cerimonia() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace Ceremony.Relatorios {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CerimoniaRowChangeEventHandler(object sender, CerimoniaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void DT_CerimoniaRowChangeEventHandler(object sender, DT_CerimoniaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -735,6 +770,864 @@ namespace Ceremony.Relatorios {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DT_CerimoniaDataTable : global::System.Data.TypedTableBase<DT_CerimoniaRow> {
+            
+            private global::System.Data.DataColumn columncli_id;
+            
+            private global::System.Data.DataColumn columncli_nome;
+            
+            private global::System.Data.DataColumn columncli_nacionalidade;
+            
+            private global::System.Data.DataColumn columncli_estado_civil;
+            
+            private global::System.Data.DataColumn columncli_profissao;
+            
+            private global::System.Data.DataColumn columncli_rg;
+            
+            private global::System.Data.DataColumn columncli_cpf;
+            
+            private global::System.Data.DataColumn columncli_endereco;
+            
+            private global::System.Data.DataColumn columncli_numero;
+            
+            private global::System.Data.DataColumn columncli_complemento;
+            
+            private global::System.Data.DataColumn columncli_bairro;
+            
+            private global::System.Data.DataColumn columncli_cidade;
+            
+            private global::System.Data.DataColumn columncli_uf;
+            
+            private global::System.Data.DataColumn columncli_cep;
+            
+            private global::System.Data.DataColumn columncli_telefone_fixo;
+            
+            private global::System.Data.DataColumn columncli_celular1;
+            
+            private global::System.Data.DataColumn columncli_celular2;
+            
+            private global::System.Data.DataColumn columncli_telefone_trabalho;
+            
+            private global::System.Data.DataColumn columncli_email;
+            
+            private global::System.Data.DataColumn columncerimonia_id;
+            
+            private global::System.Data.DataColumn columncerimonia_data_evento;
+            
+            private global::System.Data.DataColumn columncerimonia_cidade_local;
+            
+            private global::System.Data.DataColumn columncerimonia_total_convidados;
+            
+            private global::System.Data.DataColumn columncerimonia_horario_cerimonia;
+            
+            private global::System.Data.DataColumn columncerimonia_inicio_festa;
+            
+            private global::System.Data.DataColumn columncerimonia_num_parcelas;
+            
+            private global::System.Data.DataColumn columncerimonia_valor_parcelas;
+            
+            private global::System.Data.DataColumn columncerimonia_data_primeiro_vencimento;
+            
+            private global::System.Data.DataColumn columncerimonia_valor_total;
+            
+            private global::System.Data.DataColumn columncerimonia_observacao;
+            
+            private global::System.Data.DataColumn columncerimonia_cliente_id;
+            
+            private global::System.Data.DataColumn columncerimonia_tipo_evento_id;
+            
+            private global::System.Data.DataColumn columncerimonia_pacote_id;
+            
+            private global::System.Data.DataColumn columncerimonia_desconto;
+            
+            private global::System.Data.DataColumn columntipo_evento_id;
+            
+            private global::System.Data.DataColumn columntipo_evento_nome;
+            
+            private global::System.Data.DataColumn columnpacote_id;
+            
+            private global::System.Data.DataColumn columnpacote_nome;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaDataTable() {
+                this.TableName = "DT_Cerimonia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal DT_CerimoniaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected DT_CerimoniaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_idColumn {
+                get {
+                    return this.columncli_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_nomeColumn {
+                get {
+                    return this.columncli_nome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_nacionalidadeColumn {
+                get {
+                    return this.columncli_nacionalidade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_estado_civilColumn {
+                get {
+                    return this.columncli_estado_civil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_profissaoColumn {
+                get {
+                    return this.columncli_profissao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_rgColumn {
+                get {
+                    return this.columncli_rg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_cpfColumn {
+                get {
+                    return this.columncli_cpf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_enderecoColumn {
+                get {
+                    return this.columncli_endereco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_numeroColumn {
+                get {
+                    return this.columncli_numero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_complementoColumn {
+                get {
+                    return this.columncli_complemento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_bairroColumn {
+                get {
+                    return this.columncli_bairro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_cidadeColumn {
+                get {
+                    return this.columncli_cidade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_ufColumn {
+                get {
+                    return this.columncli_uf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_cepColumn {
+                get {
+                    return this.columncli_cep;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_telefone_fixoColumn {
+                get {
+                    return this.columncli_telefone_fixo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_celular1Column {
+                get {
+                    return this.columncli_celular1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_celular2Column {
+                get {
+                    return this.columncli_celular2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_telefone_trabalhoColumn {
+                get {
+                    return this.columncli_telefone_trabalho;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cli_emailColumn {
+                get {
+                    return this.columncli_email;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_idColumn {
+                get {
+                    return this.columncerimonia_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_data_eventoColumn {
+                get {
+                    return this.columncerimonia_data_evento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_cidade_localColumn {
+                get {
+                    return this.columncerimonia_cidade_local;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_total_convidadosColumn {
+                get {
+                    return this.columncerimonia_total_convidados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_horario_cerimoniaColumn {
+                get {
+                    return this.columncerimonia_horario_cerimonia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_inicio_festaColumn {
+                get {
+                    return this.columncerimonia_inicio_festa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_num_parcelasColumn {
+                get {
+                    return this.columncerimonia_num_parcelas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_valor_parcelasColumn {
+                get {
+                    return this.columncerimonia_valor_parcelas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_data_primeiro_vencimentoColumn {
+                get {
+                    return this.columncerimonia_data_primeiro_vencimento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_valor_totalColumn {
+                get {
+                    return this.columncerimonia_valor_total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_observacaoColumn {
+                get {
+                    return this.columncerimonia_observacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_cliente_idColumn {
+                get {
+                    return this.columncerimonia_cliente_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_tipo_evento_idColumn {
+                get {
+                    return this.columncerimonia_tipo_evento_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_pacote_idColumn {
+                get {
+                    return this.columncerimonia_pacote_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cerimonia_descontoColumn {
+                get {
+                    return this.columncerimonia_desconto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn tipo_evento_idColumn {
+                get {
+                    return this.columntipo_evento_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn tipo_evento_nomeColumn {
+                get {
+                    return this.columntipo_evento_nome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pacote_idColumn {
+                get {
+                    return this.columnpacote_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pacote_nomeColumn {
+                get {
+                    return this.columnpacote_nome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaRow this[int index] {
+                get {
+                    return ((DT_CerimoniaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event DT_CerimoniaRowChangeEventHandler DT_CerimoniaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event DT_CerimoniaRowChangeEventHandler DT_CerimoniaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event DT_CerimoniaRowChangeEventHandler DT_CerimoniaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event DT_CerimoniaRowChangeEventHandler DT_CerimoniaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddDT_CerimoniaRow(DT_CerimoniaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaRow AddDT_CerimoniaRow(
+                        string cli_nome, 
+                        string cli_nacionalidade, 
+                        string cli_estado_civil, 
+                        string cli_profissao, 
+                        string cli_rg, 
+                        string cli_cpf, 
+                        string cli_endereco, 
+                        string cli_numero, 
+                        string cli_complemento, 
+                        string cli_bairro, 
+                        string cli_cidade, 
+                        string cli_uf, 
+                        string cli_cep, 
+                        string cli_telefone_fixo, 
+                        string cli_celular1, 
+                        string cli_celular2, 
+                        string cli_telefone_trabalho, 
+                        string cli_email, 
+                        System.DateTime cerimonia_data_evento, 
+                        string cerimonia_cidade_local, 
+                        int cerimonia_total_convidados, 
+                        string cerimonia_horario_cerimonia, 
+                        string cerimonia_inicio_festa, 
+                        int cerimonia_num_parcelas, 
+                        decimal cerimonia_valor_parcelas, 
+                        System.DateTime cerimonia_data_primeiro_vencimento, 
+                        decimal cerimonia_valor_total, 
+                        string cerimonia_observacao, 
+                        int cerimonia_cliente_id, 
+                        int cerimonia_tipo_evento_id, 
+                        int cerimonia_pacote_id, 
+                        decimal cerimonia_desconto, 
+                        string tipo_evento_nome, 
+                        string pacote_nome) {
+                DT_CerimoniaRow rowDT_CerimoniaRow = ((DT_CerimoniaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        cli_nome,
+                        cli_nacionalidade,
+                        cli_estado_civil,
+                        cli_profissao,
+                        cli_rg,
+                        cli_cpf,
+                        cli_endereco,
+                        cli_numero,
+                        cli_complemento,
+                        cli_bairro,
+                        cli_cidade,
+                        cli_uf,
+                        cli_cep,
+                        cli_telefone_fixo,
+                        cli_celular1,
+                        cli_celular2,
+                        cli_telefone_trabalho,
+                        cli_email,
+                        null,
+                        cerimonia_data_evento,
+                        cerimonia_cidade_local,
+                        cerimonia_total_convidados,
+                        cerimonia_horario_cerimonia,
+                        cerimonia_inicio_festa,
+                        cerimonia_num_parcelas,
+                        cerimonia_valor_parcelas,
+                        cerimonia_data_primeiro_vencimento,
+                        cerimonia_valor_total,
+                        cerimonia_observacao,
+                        cerimonia_cliente_id,
+                        cerimonia_tipo_evento_id,
+                        cerimonia_pacote_id,
+                        cerimonia_desconto,
+                        null,
+                        tipo_evento_nome,
+                        null,
+                        pacote_nome};
+                rowDT_CerimoniaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_CerimoniaRow);
+                return rowDT_CerimoniaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaRow FindBycli_idcerimonia_idtipo_evento_idpacote_id(int cli_id, int cerimonia_id, int tipo_evento_id, int pacote_id) {
+                return ((DT_CerimoniaRow)(this.Rows.Find(new object[] {
+                            cli_id,
+                            cerimonia_id,
+                            tipo_evento_id,
+                            pacote_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DT_CerimoniaDataTable cln = ((DT_CerimoniaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DT_CerimoniaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columncli_id = base.Columns["cli_id"];
+                this.columncli_nome = base.Columns["cli_nome"];
+                this.columncli_nacionalidade = base.Columns["cli_nacionalidade"];
+                this.columncli_estado_civil = base.Columns["cli_estado_civil"];
+                this.columncli_profissao = base.Columns["cli_profissao"];
+                this.columncli_rg = base.Columns["cli_rg"];
+                this.columncli_cpf = base.Columns["cli_cpf"];
+                this.columncli_endereco = base.Columns["cli_endereco"];
+                this.columncli_numero = base.Columns["cli_numero"];
+                this.columncli_complemento = base.Columns["cli_complemento"];
+                this.columncli_bairro = base.Columns["cli_bairro"];
+                this.columncli_cidade = base.Columns["cli_cidade"];
+                this.columncli_uf = base.Columns["cli_uf"];
+                this.columncli_cep = base.Columns["cli_cep"];
+                this.columncli_telefone_fixo = base.Columns["cli_telefone_fixo"];
+                this.columncli_celular1 = base.Columns["cli_celular1"];
+                this.columncli_celular2 = base.Columns["cli_celular2"];
+                this.columncli_telefone_trabalho = base.Columns["cli_telefone_trabalho"];
+                this.columncli_email = base.Columns["cli_email"];
+                this.columncerimonia_id = base.Columns["cerimonia_id"];
+                this.columncerimonia_data_evento = base.Columns["cerimonia_data_evento"];
+                this.columncerimonia_cidade_local = base.Columns["cerimonia_cidade_local"];
+                this.columncerimonia_total_convidados = base.Columns["cerimonia_total_convidados"];
+                this.columncerimonia_horario_cerimonia = base.Columns["cerimonia_horario_cerimonia"];
+                this.columncerimonia_inicio_festa = base.Columns["cerimonia_inicio_festa"];
+                this.columncerimonia_num_parcelas = base.Columns["cerimonia_num_parcelas"];
+                this.columncerimonia_valor_parcelas = base.Columns["cerimonia_valor_parcelas"];
+                this.columncerimonia_data_primeiro_vencimento = base.Columns["cerimonia_data_primeiro_vencimento"];
+                this.columncerimonia_valor_total = base.Columns["cerimonia_valor_total"];
+                this.columncerimonia_observacao = base.Columns["cerimonia_observacao"];
+                this.columncerimonia_cliente_id = base.Columns["cerimonia_cliente_id"];
+                this.columncerimonia_tipo_evento_id = base.Columns["cerimonia_tipo_evento_id"];
+                this.columncerimonia_pacote_id = base.Columns["cerimonia_pacote_id"];
+                this.columncerimonia_desconto = base.Columns["cerimonia_desconto"];
+                this.columntipo_evento_id = base.Columns["tipo_evento_id"];
+                this.columntipo_evento_nome = base.Columns["tipo_evento_nome"];
+                this.columnpacote_id = base.Columns["pacote_id"];
+                this.columnpacote_nome = base.Columns["pacote_nome"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columncli_id = new global::System.Data.DataColumn("cli_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_id);
+                this.columncli_nome = new global::System.Data.DataColumn("cli_nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_nome);
+                this.columncli_nacionalidade = new global::System.Data.DataColumn("cli_nacionalidade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_nacionalidade);
+                this.columncli_estado_civil = new global::System.Data.DataColumn("cli_estado_civil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_estado_civil);
+                this.columncli_profissao = new global::System.Data.DataColumn("cli_profissao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_profissao);
+                this.columncli_rg = new global::System.Data.DataColumn("cli_rg", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_rg);
+                this.columncli_cpf = new global::System.Data.DataColumn("cli_cpf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_cpf);
+                this.columncli_endereco = new global::System.Data.DataColumn("cli_endereco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_endereco);
+                this.columncli_numero = new global::System.Data.DataColumn("cli_numero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_numero);
+                this.columncli_complemento = new global::System.Data.DataColumn("cli_complemento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_complemento);
+                this.columncli_bairro = new global::System.Data.DataColumn("cli_bairro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_bairro);
+                this.columncli_cidade = new global::System.Data.DataColumn("cli_cidade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_cidade);
+                this.columncli_uf = new global::System.Data.DataColumn("cli_uf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_uf);
+                this.columncli_cep = new global::System.Data.DataColumn("cli_cep", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_cep);
+                this.columncli_telefone_fixo = new global::System.Data.DataColumn("cli_telefone_fixo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_telefone_fixo);
+                this.columncli_celular1 = new global::System.Data.DataColumn("cli_celular1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_celular1);
+                this.columncli_celular2 = new global::System.Data.DataColumn("cli_celular2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_celular2);
+                this.columncli_telefone_trabalho = new global::System.Data.DataColumn("cli_telefone_trabalho", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_telefone_trabalho);
+                this.columncli_email = new global::System.Data.DataColumn("cli_email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncli_email);
+                this.columncerimonia_id = new global::System.Data.DataColumn("cerimonia_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_id);
+                this.columncerimonia_data_evento = new global::System.Data.DataColumn("cerimonia_data_evento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_data_evento);
+                this.columncerimonia_cidade_local = new global::System.Data.DataColumn("cerimonia_cidade_local", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_cidade_local);
+                this.columncerimonia_total_convidados = new global::System.Data.DataColumn("cerimonia_total_convidados", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_total_convidados);
+                this.columncerimonia_horario_cerimonia = new global::System.Data.DataColumn("cerimonia_horario_cerimonia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_horario_cerimonia);
+                this.columncerimonia_inicio_festa = new global::System.Data.DataColumn("cerimonia_inicio_festa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_inicio_festa);
+                this.columncerimonia_num_parcelas = new global::System.Data.DataColumn("cerimonia_num_parcelas", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_num_parcelas);
+                this.columncerimonia_valor_parcelas = new global::System.Data.DataColumn("cerimonia_valor_parcelas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_valor_parcelas);
+                this.columncerimonia_data_primeiro_vencimento = new global::System.Data.DataColumn("cerimonia_data_primeiro_vencimento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_data_primeiro_vencimento);
+                this.columncerimonia_valor_total = new global::System.Data.DataColumn("cerimonia_valor_total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_valor_total);
+                this.columncerimonia_observacao = new global::System.Data.DataColumn("cerimonia_observacao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_observacao);
+                this.columncerimonia_cliente_id = new global::System.Data.DataColumn("cerimonia_cliente_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_cliente_id);
+                this.columncerimonia_tipo_evento_id = new global::System.Data.DataColumn("cerimonia_tipo_evento_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_tipo_evento_id);
+                this.columncerimonia_pacote_id = new global::System.Data.DataColumn("cerimonia_pacote_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_pacote_id);
+                this.columncerimonia_desconto = new global::System.Data.DataColumn("cerimonia_desconto", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncerimonia_desconto);
+                this.columntipo_evento_id = new global::System.Data.DataColumn("tipo_evento_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_evento_id);
+                this.columntipo_evento_nome = new global::System.Data.DataColumn("tipo_evento_nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_evento_nome);
+                this.columnpacote_id = new global::System.Data.DataColumn("pacote_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpacote_id);
+                this.columnpacote_nome = new global::System.Data.DataColumn("pacote_nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpacote_nome);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columncli_id,
+                                this.columncerimonia_id,
+                                this.columntipo_evento_id,
+                                this.columnpacote_id}, true));
+                this.columncli_id.AutoIncrement = true;
+                this.columncli_id.AutoIncrementSeed = -1;
+                this.columncli_id.AutoIncrementStep = -1;
+                this.columncli_id.AllowDBNull = false;
+                this.columncli_id.ReadOnly = true;
+                this.columncli_nome.MaxLength = 100;
+                this.columncli_nacionalidade.MaxLength = 50;
+                this.columncli_estado_civil.MaxLength = 50;
+                this.columncli_profissao.MaxLength = 50;
+                this.columncli_rg.MaxLength = 50;
+                this.columncli_cpf.MaxLength = 50;
+                this.columncli_endereco.MaxLength = 100;
+                this.columncli_numero.MaxLength = 50;
+                this.columncli_complemento.MaxLength = 50;
+                this.columncli_bairro.MaxLength = 50;
+                this.columncli_cidade.MaxLength = 50;
+                this.columncli_uf.MaxLength = 50;
+                this.columncli_cep.MaxLength = 50;
+                this.columncli_telefone_fixo.MaxLength = 50;
+                this.columncli_celular1.MaxLength = 50;
+                this.columncli_celular2.MaxLength = 50;
+                this.columncli_telefone_trabalho.MaxLength = 50;
+                this.columncli_email.MaxLength = 50;
+                this.columncerimonia_id.AutoIncrement = true;
+                this.columncerimonia_id.AutoIncrementSeed = -1;
+                this.columncerimonia_id.AutoIncrementStep = -1;
+                this.columncerimonia_id.AllowDBNull = false;
+                this.columncerimonia_id.ReadOnly = true;
+                this.columncerimonia_cidade_local.MaxLength = 50;
+                this.columncerimonia_horario_cerimonia.MaxLength = 10;
+                this.columncerimonia_inicio_festa.MaxLength = 10;
+                this.columncerimonia_observacao.MaxLength = 50;
+                this.columntipo_evento_id.AutoIncrement = true;
+                this.columntipo_evento_id.AutoIncrementSeed = -1;
+                this.columntipo_evento_id.AutoIncrementStep = -1;
+                this.columntipo_evento_id.AllowDBNull = false;
+                this.columntipo_evento_id.ReadOnly = true;
+                this.columntipo_evento_nome.MaxLength = 50;
+                this.columnpacote_id.AutoIncrement = true;
+                this.columnpacote_id.AutoIncrementSeed = -1;
+                this.columnpacote_id.AutoIncrementStep = -1;
+                this.columnpacote_id.AllowDBNull = false;
+                this.columnpacote_id.ReadOnly = true;
+                this.columnpacote_nome.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaRow NewDT_CerimoniaRow() {
+                return ((DT_CerimoniaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DT_CerimoniaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DT_CerimoniaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DT_CerimoniaRowChanged != null)) {
+                    this.DT_CerimoniaRowChanged(this, new DT_CerimoniaRowChangeEvent(((DT_CerimoniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DT_CerimoniaRowChanging != null)) {
+                    this.DT_CerimoniaRowChanging(this, new DT_CerimoniaRowChangeEvent(((DT_CerimoniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DT_CerimoniaRowDeleted != null)) {
+                    this.DT_CerimoniaRowDeleted(this, new DT_CerimoniaRowChangeEvent(((DT_CerimoniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DT_CerimoniaRowDeleting != null)) {
+                    this.DT_CerimoniaRowDeleting(this, new DT_CerimoniaRowChangeEvent(((DT_CerimoniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveDT_CerimoniaRow(DT_CerimoniaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CeremonyDataSet ds = new CeremonyDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DT_CerimoniaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CerimoniaRow : global::System.Data.DataRow {
@@ -1156,6 +2049,1022 @@ namespace Ceremony.Relatorios {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DT_CerimoniaRow : global::System.Data.DataRow {
+            
+            private DT_CerimoniaDataTable tableDT_Cerimonia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal DT_CerimoniaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDT_Cerimonia = ((DT_CerimoniaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cli_id {
+                get {
+                    return ((int)(this[this.tableDT_Cerimonia.cli_idColumn]));
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_nome {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_nomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_nome\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_nacionalidade {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_nacionalidadeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_nacionalidade\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_nacionalidadeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_estado_civil {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_estado_civilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_estado_civil\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_estado_civilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_profissao {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_profissaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_profissao\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_profissaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_rg {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_rgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_rg\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_rgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_cpf {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_cpfColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_cpf\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_cpfColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_endereco {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_enderecoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_endereco\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_enderecoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_numero {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_numeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_numero\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_numeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_complemento {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_complementoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_complemento\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_complementoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_bairro {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_bairroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_bairro\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_bairroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_cidade {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_cidadeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_cidade\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_cidadeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_uf {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_ufColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_uf\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_ufColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_cep {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_cepColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_cep\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_cepColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_telefone_fixo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_telefone_fixoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_telefone_fixo\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_telefone_fixoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_celular1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_celular1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_celular1\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_celular1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_celular2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_celular2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_celular2\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_celular2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_telefone_trabalho {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_telefone_trabalhoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_telefone_trabalho\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_telefone_trabalhoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cli_email {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cli_emailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cli_email\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cli_emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cerimonia_id {
+                get {
+                    return ((int)(this[this.tableDT_Cerimonia.cerimonia_idColumn]));
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime cerimonia_data_evento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDT_Cerimonia.cerimonia_data_eventoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_data_evento\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_data_eventoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cerimonia_cidade_local {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cerimonia_cidade_localColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_cidade_local\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_cidade_localColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cerimonia_total_convidados {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Cerimonia.cerimonia_total_convidadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_total_convidados\' in table \'DT_Cerimonia\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_total_convidadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cerimonia_horario_cerimonia {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cerimonia_horario_cerimoniaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_horario_cerimonia\' in table \'DT_Cerimonia\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_horario_cerimoniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cerimonia_inicio_festa {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cerimonia_inicio_festaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_inicio_festa\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_inicio_festaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cerimonia_num_parcelas {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Cerimonia.cerimonia_num_parcelasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_num_parcelas\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_num_parcelasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cerimonia_valor_parcelas {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDT_Cerimonia.cerimonia_valor_parcelasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_valor_parcelas\' in table \'DT_Cerimonia\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_valor_parcelasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime cerimonia_data_primeiro_vencimento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDT_Cerimonia.cerimonia_data_primeiro_vencimentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_data_primeiro_vencimento\' in table \'DT_Cerimonia\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_data_primeiro_vencimentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cerimonia_valor_total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDT_Cerimonia.cerimonia_valor_totalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_valor_total\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_valor_totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cerimonia_observacao {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.cerimonia_observacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_observacao\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_observacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cerimonia_cliente_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Cerimonia.cerimonia_cliente_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_cliente_id\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_cliente_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cerimonia_tipo_evento_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Cerimonia.cerimonia_tipo_evento_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_tipo_evento_id\' in table \'DT_Cerimonia\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_tipo_evento_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cerimonia_pacote_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Cerimonia.cerimonia_pacote_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_pacote_id\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_pacote_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cerimonia_desconto {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDT_Cerimonia.cerimonia_descontoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cerimonia_desconto\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.cerimonia_descontoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int tipo_evento_id {
+                get {
+                    return ((int)(this[this.tableDT_Cerimonia.tipo_evento_idColumn]));
+                }
+                set {
+                    this[this.tableDT_Cerimonia.tipo_evento_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string tipo_evento_nome {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.tipo_evento_nomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tipo_evento_nome\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.tipo_evento_nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pacote_id {
+                get {
+                    return ((int)(this[this.tableDT_Cerimonia.pacote_idColumn]));
+                }
+                set {
+                    this[this.tableDT_Cerimonia.pacote_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pacote_nome {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Cerimonia.pacote_nomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pacote_nome\' in table \'DT_Cerimonia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Cerimonia.pacote_nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_nomeNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_nomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_nomeNull() {
+                this[this.tableDT_Cerimonia.cli_nomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_nacionalidadeNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_nacionalidadeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_nacionalidadeNull() {
+                this[this.tableDT_Cerimonia.cli_nacionalidadeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_estado_civilNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_estado_civilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_estado_civilNull() {
+                this[this.tableDT_Cerimonia.cli_estado_civilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_profissaoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_profissaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_profissaoNull() {
+                this[this.tableDT_Cerimonia.cli_profissaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_rgNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_rgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_rgNull() {
+                this[this.tableDT_Cerimonia.cli_rgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_cpfNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_cpfColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_cpfNull() {
+                this[this.tableDT_Cerimonia.cli_cpfColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_enderecoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_enderecoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_enderecoNull() {
+                this[this.tableDT_Cerimonia.cli_enderecoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_numeroNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_numeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_numeroNull() {
+                this[this.tableDT_Cerimonia.cli_numeroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_complementoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_complementoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_complementoNull() {
+                this[this.tableDT_Cerimonia.cli_complementoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_bairroNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_bairroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_bairroNull() {
+                this[this.tableDT_Cerimonia.cli_bairroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_cidadeNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_cidadeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_cidadeNull() {
+                this[this.tableDT_Cerimonia.cli_cidadeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_ufNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_ufColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_ufNull() {
+                this[this.tableDT_Cerimonia.cli_ufColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_cepNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_cepColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_cepNull() {
+                this[this.tableDT_Cerimonia.cli_cepColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_telefone_fixoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_telefone_fixoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_telefone_fixoNull() {
+                this[this.tableDT_Cerimonia.cli_telefone_fixoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_celular1Null() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_celular1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_celular1Null() {
+                this[this.tableDT_Cerimonia.cli_celular1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_celular2Null() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_celular2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_celular2Null() {
+                this[this.tableDT_Cerimonia.cli_celular2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_telefone_trabalhoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_telefone_trabalhoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_telefone_trabalhoNull() {
+                this[this.tableDT_Cerimonia.cli_telefone_trabalhoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscli_emailNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cli_emailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcli_emailNull() {
+                this[this.tableDT_Cerimonia.cli_emailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_data_eventoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_data_eventoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_data_eventoNull() {
+                this[this.tableDT_Cerimonia.cerimonia_data_eventoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_cidade_localNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_cidade_localColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_cidade_localNull() {
+                this[this.tableDT_Cerimonia.cerimonia_cidade_localColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_total_convidadosNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_total_convidadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_total_convidadosNull() {
+                this[this.tableDT_Cerimonia.cerimonia_total_convidadosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_horario_cerimoniaNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_horario_cerimoniaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_horario_cerimoniaNull() {
+                this[this.tableDT_Cerimonia.cerimonia_horario_cerimoniaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_inicio_festaNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_inicio_festaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_inicio_festaNull() {
+                this[this.tableDT_Cerimonia.cerimonia_inicio_festaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_num_parcelasNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_num_parcelasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_num_parcelasNull() {
+                this[this.tableDT_Cerimonia.cerimonia_num_parcelasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_valor_parcelasNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_valor_parcelasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_valor_parcelasNull() {
+                this[this.tableDT_Cerimonia.cerimonia_valor_parcelasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_data_primeiro_vencimentoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_data_primeiro_vencimentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_data_primeiro_vencimentoNull() {
+                this[this.tableDT_Cerimonia.cerimonia_data_primeiro_vencimentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_valor_totalNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_valor_totalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_valor_totalNull() {
+                this[this.tableDT_Cerimonia.cerimonia_valor_totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_observacaoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_observacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_observacaoNull() {
+                this[this.tableDT_Cerimonia.cerimonia_observacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_cliente_idNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_cliente_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_cliente_idNull() {
+                this[this.tableDT_Cerimonia.cerimonia_cliente_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_tipo_evento_idNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_tipo_evento_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_tipo_evento_idNull() {
+                this[this.tableDT_Cerimonia.cerimonia_tipo_evento_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_pacote_idNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_pacote_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_pacote_idNull() {
+                this[this.tableDT_Cerimonia.cerimonia_pacote_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscerimonia_descontoNull() {
+                return this.IsNull(this.tableDT_Cerimonia.cerimonia_descontoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcerimonia_descontoNull() {
+                this[this.tableDT_Cerimonia.cerimonia_descontoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istipo_evento_nomeNull() {
+                return this.IsNull(this.tableDT_Cerimonia.tipo_evento_nomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settipo_evento_nomeNull() {
+                this[this.tableDT_Cerimonia.tipo_evento_nomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispacote_nomeNull() {
+                return this.IsNull(this.tableDT_Cerimonia.pacote_nomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpacote_nomeNull() {
+                this[this.tableDT_Cerimonia.pacote_nomeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1175,6 +3084,40 @@ namespace Ceremony.Relatorios {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CerimoniaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class DT_CerimoniaRowChangeEvent : global::System.EventArgs {
+            
+            private DT_CerimoniaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaRowChangeEvent(DT_CerimoniaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DT_CerimoniaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2093,6 +4036,215 @@ SELECT cerimonia_id, cerimonia_data_evento, cerimonia_cidade_local, cerimonia_to
                     global::System.Nullable<int> Original_cerimonia_pacote_id, 
                     global::System.Nullable<decimal> Original_cerimonia_desconto) {
             return this.Update(cerimonia_data_evento, cerimonia_cidade_local, cerimonia_total_convidados, cerimonia_horario_cerimonia, cerimonia_inicio_festa, cerimonia_num_parcelas, cerimonia_valor_parcelas, cerimonia_data_primeiro_vencimento, cerimonia_valor_total, cerimonia_observacao, cerimonia_cliente_id, cerimonia_tipo_evento_id, cerimonia_pacote_id, cerimonia_desconto, Original_cerimonia_id, Original_cerimonia_data_evento, Original_cerimonia_cidade_local, Original_cerimonia_total_convidados, Original_cerimonia_horario_cerimonia, Original_cerimonia_inicio_festa, Original_cerimonia_num_parcelas, Original_cerimonia_valor_parcelas, Original_cerimonia_data_primeiro_vencimento, Original_cerimonia_valor_total, Original_cerimonia_observacao, Original_cerimonia_cliente_id, Original_cerimonia_tipo_evento_id, Original_cerimonia_pacote_id, Original_cerimonia_desconto, Original_cerimonia_id);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DT_CerimoniaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public DT_CerimoniaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "DT_Cerimonia";
+            tableMapping.ColumnMappings.Add("cli_id", "cli_id");
+            tableMapping.ColumnMappings.Add("cli_nome", "cli_nome");
+            tableMapping.ColumnMappings.Add("cli_nacionalidade", "cli_nacionalidade");
+            tableMapping.ColumnMappings.Add("cli_estado_civil", "cli_estado_civil");
+            tableMapping.ColumnMappings.Add("cli_profissao", "cli_profissao");
+            tableMapping.ColumnMappings.Add("cli_rg", "cli_rg");
+            tableMapping.ColumnMappings.Add("cli_cpf", "cli_cpf");
+            tableMapping.ColumnMappings.Add("cli_endereco", "cli_endereco");
+            tableMapping.ColumnMappings.Add("cli_numero", "cli_numero");
+            tableMapping.ColumnMappings.Add("cli_complemento", "cli_complemento");
+            tableMapping.ColumnMappings.Add("cli_bairro", "cli_bairro");
+            tableMapping.ColumnMappings.Add("cli_cidade", "cli_cidade");
+            tableMapping.ColumnMappings.Add("cli_uf", "cli_uf");
+            tableMapping.ColumnMappings.Add("cli_cep", "cli_cep");
+            tableMapping.ColumnMappings.Add("cli_telefone_fixo", "cli_telefone_fixo");
+            tableMapping.ColumnMappings.Add("cli_celular1", "cli_celular1");
+            tableMapping.ColumnMappings.Add("cli_celular2", "cli_celular2");
+            tableMapping.ColumnMappings.Add("cli_telefone_trabalho", "cli_telefone_trabalho");
+            tableMapping.ColumnMappings.Add("cli_email", "cli_email");
+            tableMapping.ColumnMappings.Add("cerimonia_id", "cerimonia_id");
+            tableMapping.ColumnMappings.Add("cerimonia_data_evento", "cerimonia_data_evento");
+            tableMapping.ColumnMappings.Add("cerimonia_cidade_local", "cerimonia_cidade_local");
+            tableMapping.ColumnMappings.Add("cerimonia_total_convidados", "cerimonia_total_convidados");
+            tableMapping.ColumnMappings.Add("cerimonia_horario_cerimonia", "cerimonia_horario_cerimonia");
+            tableMapping.ColumnMappings.Add("cerimonia_inicio_festa", "cerimonia_inicio_festa");
+            tableMapping.ColumnMappings.Add("cerimonia_num_parcelas", "cerimonia_num_parcelas");
+            tableMapping.ColumnMappings.Add("cerimonia_valor_parcelas", "cerimonia_valor_parcelas");
+            tableMapping.ColumnMappings.Add("cerimonia_data_primeiro_vencimento", "cerimonia_data_primeiro_vencimento");
+            tableMapping.ColumnMappings.Add("cerimonia_valor_total", "cerimonia_valor_total");
+            tableMapping.ColumnMappings.Add("cerimonia_observacao", "cerimonia_observacao");
+            tableMapping.ColumnMappings.Add("cerimonia_cliente_id", "cerimonia_cliente_id");
+            tableMapping.ColumnMappings.Add("cerimonia_tipo_evento_id", "cerimonia_tipo_evento_id");
+            tableMapping.ColumnMappings.Add("cerimonia_pacote_id", "cerimonia_pacote_id");
+            tableMapping.ColumnMappings.Add("cerimonia_desconto", "cerimonia_desconto");
+            tableMapping.ColumnMappings.Add("tipo_evento_id", "tipo_evento_id");
+            tableMapping.ColumnMappings.Add("tipo_evento_nome", "tipo_evento_nome");
+            tableMapping.ColumnMappings.Add("pacote_id", "pacote_id");
+            tableMapping.ColumnMappings.Add("pacote_nome", "pacote_nome");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=Localhost\\SQL2014;Initial Catalog=Ceremony;Persist Security Info=True" +
+                ";User ID=sa;Password=senha";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        Cliente.*, Cerimonia.*, Tipo_Evento.*, Pacote.*
+FROM            Cerimonia INNER JOIN
+                         Cliente ON Cerimonia.cerimonia_cliente_id = Cliente.cli_id INNER JOIN
+                         Pacote ON Cerimonia.cerimonia_pacote_id = Pacote.pacote_id INNER JOIN
+                         Tipo_Evento ON Cerimonia.cerimonia_tipo_evento_id = Tipo_Evento.tipo_evento_id";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CeremonyDataSet.DT_CerimoniaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CeremonyDataSet.DT_CerimoniaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            CeremonyDataSet.DT_CerimoniaDataTable dataTable = new CeremonyDataSet.DT_CerimoniaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

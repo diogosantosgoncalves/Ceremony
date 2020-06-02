@@ -19,11 +19,21 @@
                 <MenuItem Header="Cadastrar Produtos" FontSize="14" FontWeight="DemiBold"/>
             </MenuItem>
             <MenuItem Header="Cerimônia" FontSize="18" FontWeight="Bold">
-                <MenuItem Header="Lançar Cerimônia" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Cerimonial"/>
-                <MenuItem Header="Consultar" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consulta_Cerimonial"/>
-                <MenuItem Header="Cadastrar Pacotes" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Pacotes"/>
-                <MenuItem Header="Cadastrar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Servicos_Cerimonia"/>
-                <MenuItem Header="Cadastrar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Tipos_Eventos"/>
+                <MenuItem Header="Lançar Cerimônia" FontSize="15" FontWeight="DemiBold" Click="Abre_Menu_Cerimonial"/>
+                <MenuItem Header="Consultar" FontSize="15" FontWeight="DemiBold" Click="Abre_Menu_Consulta_Cerimonial"/>
+                <MenuItem Header="Pacote" FontSize="16" >
+                    <MenuItem Header="Cadastrar Pacotes" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Pacotes"/>
+                    <MenuItem Header="Consultar Pacotes" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consultar_Pacotes"/>
+                </MenuItem>
+                <MenuItem Header="Serviços">
+                    <MenuItem Header="Cadastrar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Servicos_Cerimonia"/>
+                    <MenuItem Header="Consultar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consultar_Servicos"/>
+                </MenuItem>
+                <MenuItem Header="Tipos de Eventos" >
+                    <MenuItem Header="Cadastrar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Tipos_Eventos"/>
+                    <MenuItem Header="Consultar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consultar_Tipos_Eventos"/>
+                </MenuItem>
+                
             </MenuItem>
             <Separator Width="800" Background="AliceBlue"/>
             <MenuItem Header="Sair" HorizontalAlignment="Right" HorizontalContentAlignment="Right" FontSize="18" FontWeight="Bold"/>

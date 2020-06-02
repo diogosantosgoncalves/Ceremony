@@ -127,15 +127,19 @@ namespace Ceremony.Dal
                     Tipo_Evento tipo_Evento = new Tipo_Evento();
                     tipo_Evento.tipo_evento_nome = sqldataReader["tipo_evento_nome"].ToString();
                     Pacote pac = new Pacote();
+                    pac.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
                     pac.pacote_nome = sqldataReader["pacote_nome"].ToString();
                     Cerimonia cerimonia = new Cerimonia();
                     cerimonia.cliente = cli;
                     cerimonia.pacot = pac;
                     cerimonia.tipo_evento = tipo_Evento;
                     cerimonia.cerimonia_id = int.Parse(sqldataReader["cerimonia_id"].ToString());
-                    //cerimonia.cliente.cli_nome = sqldataReader["cli_nome"].ToString();
+                    cerimonia.cerimonia_cliente_id = cli.cli_id;
+                    cerimonia.cerimonia_pacote_id = pac.pacote_id;
+                    cerimonia.cerimonia_tipo_evento_id = tipo_Evento.tipo_evento_id;
+                    cerimonia.cliente.cli_nome = sqldataReader["cli_nome"].ToString();
                     //sqldataReader["inv_dtfechamento"].ToString().Length > 0 ? DateTime.Parse(sqldataReader["inv_dtfechamento"].ToString()) : DateTime.MinValue;
-                    cerimonia.cerimonia_data_evento = DateTime.Parse(sqldataReader["cerimonia_data_evento"].ToString());
+                    //cerimonia.cerimonia_data_evento = DateTime.Parse(sqldataReader["cerimonia_data_evento"].ToString());
                     cerimonia.cerimonia_cidade_local = sqldataReader["cerimonia_cidade_local"].ToString();
                     cerimonia.cerimonia_total_convidados = int.Parse(sqldataReader["cerimonia_total_convidados"].ToString());
                     cerimonia.cerimonia_horario_cerimonia = sqldataReader["cerimonia_horario_cerimonia"].ToString();
@@ -161,6 +165,7 @@ namespace Ceremony.Dal
                 sqldataReader.Close();
             }
         }
+
 
 
         public void Alterar(Cerimonia buffet)

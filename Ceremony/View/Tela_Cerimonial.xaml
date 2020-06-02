@@ -28,7 +28,7 @@
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Cliente: " />
                 <TextBox x:Name="txt_cliente" Width="500" Style="{StaticResource Textos}"/>
-                <Button x:Name="bt_pesquisar_cliente" Content="Pesquisar" Width="100" Margin="15 0 0 0"/>
+                <Button x:Name="bt_pesquisar_cliente" Content="Pesquisar" Width="100" Margin="15 0 0 0" Click="bt_pesquisar_cliente_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Data: " />
@@ -40,7 +40,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Tipo de Evento: " />
-                <ComboBox x:Name="cb_evento" Width="170" SelectedValue="{Binding tipo_evento_id}" SelectedValuePath="tipo_evento_id">
+                <ComboBox x:Name="cb_evento" Width="170"  SelectedIndex="1" SelectedItem="{Binding Path=Tipo_Evento, Mode=TwoWay}"  SelectedValue="{Binding tipo_evento_id}" SelectedValuePath="tipo_evento_id">
                     <ComboBox.ItemTemplate >
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">

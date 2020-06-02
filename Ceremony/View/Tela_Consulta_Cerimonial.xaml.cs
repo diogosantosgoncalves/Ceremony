@@ -51,7 +51,7 @@ namespace Ceremony.View
             //Cerimonia cerimonia = servicesDBCerimonia.Editar(int.Parse(PegarLinhaGrid(0)));
             //Tela_Cerimonial tela = new Tela_Cerimonial(cerimonia);
             //tela.ShowDialog();
-            RelatorioCerimonia tela = new RelatorioCerimonia();
+            RelatorioCerimonia tela = new RelatorioCerimonia(int.Parse(PegarLinhaGrid(0)));
             tela.ShowDialog();
             //dg_ConsultaCliente.ItemsSource = servicesDBCerimonia.BuscarCliente(txt_nome.Text.ToString());
 

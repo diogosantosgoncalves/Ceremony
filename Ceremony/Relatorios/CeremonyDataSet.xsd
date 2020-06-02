@@ -147,6 +147,63 @@ SELECT cerimonia_id, cerimonia_data_evento, cerimonia_cidade_local, cerimonia_to
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DT_CerimoniaTableAdapter" GeneratorDataComponentClassName="DT_CerimoniaTableAdapter" Name="DT_Cerimonia" UserDataComponentName="DT_CerimoniaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="diogao\sql2014.Ceremony.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Cliente.*, Cerimonia.*, Tipo_Evento.*, Pacote.*
+FROM            Cerimonia INNER JOIN
+                         Cliente ON Cerimonia.cerimonia_cliente_id = Cliente.cli_id INNER JOIN
+                         Pacote ON Cerimonia.cerimonia_pacote_id = Pacote.pacote_id INNER JOIN
+                         Tipo_Evento ON Cerimonia.cerimonia_tipo_evento_id = Tipo_Evento.tipo_evento_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cli_id" DataSetColumn="cli_id" />
+              <Mapping SourceColumn="cli_nome" DataSetColumn="cli_nome" />
+              <Mapping SourceColumn="cli_nacionalidade" DataSetColumn="cli_nacionalidade" />
+              <Mapping SourceColumn="cli_estado_civil" DataSetColumn="cli_estado_civil" />
+              <Mapping SourceColumn="cli_profissao" DataSetColumn="cli_profissao" />
+              <Mapping SourceColumn="cli_rg" DataSetColumn="cli_rg" />
+              <Mapping SourceColumn="cli_cpf" DataSetColumn="cli_cpf" />
+              <Mapping SourceColumn="cli_endereco" DataSetColumn="cli_endereco" />
+              <Mapping SourceColumn="cli_numero" DataSetColumn="cli_numero" />
+              <Mapping SourceColumn="cli_complemento" DataSetColumn="cli_complemento" />
+              <Mapping SourceColumn="cli_bairro" DataSetColumn="cli_bairro" />
+              <Mapping SourceColumn="cli_cidade" DataSetColumn="cli_cidade" />
+              <Mapping SourceColumn="cli_uf" DataSetColumn="cli_uf" />
+              <Mapping SourceColumn="cli_cep" DataSetColumn="cli_cep" />
+              <Mapping SourceColumn="cli_telefone_fixo" DataSetColumn="cli_telefone_fixo" />
+              <Mapping SourceColumn="cli_celular1" DataSetColumn="cli_celular1" />
+              <Mapping SourceColumn="cli_celular2" DataSetColumn="cli_celular2" />
+              <Mapping SourceColumn="cli_telefone_trabalho" DataSetColumn="cli_telefone_trabalho" />
+              <Mapping SourceColumn="cli_email" DataSetColumn="cli_email" />
+              <Mapping SourceColumn="cerimonia_id" DataSetColumn="cerimonia_id" />
+              <Mapping SourceColumn="cerimonia_data_evento" DataSetColumn="cerimonia_data_evento" />
+              <Mapping SourceColumn="cerimonia_cidade_local" DataSetColumn="cerimonia_cidade_local" />
+              <Mapping SourceColumn="cerimonia_total_convidados" DataSetColumn="cerimonia_total_convidados" />
+              <Mapping SourceColumn="cerimonia_horario_cerimonia" DataSetColumn="cerimonia_horario_cerimonia" />
+              <Mapping SourceColumn="cerimonia_inicio_festa" DataSetColumn="cerimonia_inicio_festa" />
+              <Mapping SourceColumn="cerimonia_num_parcelas" DataSetColumn="cerimonia_num_parcelas" />
+              <Mapping SourceColumn="cerimonia_valor_parcelas" DataSetColumn="cerimonia_valor_parcelas" />
+              <Mapping SourceColumn="cerimonia_data_primeiro_vencimento" DataSetColumn="cerimonia_data_primeiro_vencimento" />
+              <Mapping SourceColumn="cerimonia_valor_total" DataSetColumn="cerimonia_valor_total" />
+              <Mapping SourceColumn="cerimonia_observacao" DataSetColumn="cerimonia_observacao" />
+              <Mapping SourceColumn="cerimonia_cliente_id" DataSetColumn="cerimonia_cliente_id" />
+              <Mapping SourceColumn="cerimonia_tipo_evento_id" DataSetColumn="cerimonia_tipo_evento_id" />
+              <Mapping SourceColumn="cerimonia_pacote_id" DataSetColumn="cerimonia_pacote_id" />
+              <Mapping SourceColumn="cerimonia_desconto" DataSetColumn="cerimonia_desconto" />
+              <Mapping SourceColumn="tipo_evento_id" DataSetColumn="tipo_evento_id" />
+              <Mapping SourceColumn="tipo_evento_nome" DataSetColumn="tipo_evento_nome" />
+              <Mapping SourceColumn="pacote_id" DataSetColumn="pacote_id" />
+              <Mapping SourceColumn="pacote_nome" DataSetColumn="pacote_nome" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -200,11 +257,206 @@ SELECT cerimonia_id, cerimonia_data_evento, cerimonia_cidade_local, cerimonia_to
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DT_Cerimonia" msprop:Generator_TableClassName="DT_CerimoniaDataTable" msprop:Generator_TableVarName="tableDT_Cerimonia" msprop:Generator_TablePropName="DT_Cerimonia" msprop:Generator_RowDeletingName="DT_CerimoniaRowDeleting" msprop:Generator_RowChangingName="DT_CerimoniaRowChanging" msprop:Generator_RowEvHandlerName="DT_CerimoniaRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_CerimoniaRowDeleted" msprop:Generator_UserTableName="DT_Cerimonia" msprop:Generator_RowChangedName="DT_CerimoniaRowChanged" msprop:Generator_RowEvArgName="DT_CerimoniaRowChangeEvent" msprop:Generator_RowClassName="DT_CerimoniaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cli_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncli_id" msprop:Generator_ColumnPropNameInRow="cli_id" msprop:Generator_ColumnPropNameInTable="cli_idColumn" msprop:Generator_UserColumnName="cli_id" type="xs:int" />
+              <xs:element name="cli_nome" msprop:Generator_ColumnVarNameInTable="columncli_nome" msprop:Generator_ColumnPropNameInRow="cli_nome" msprop:Generator_ColumnPropNameInTable="cli_nomeColumn" msprop:Generator_UserColumnName="cli_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_nacionalidade" msprop:Generator_ColumnVarNameInTable="columncli_nacionalidade" msprop:Generator_ColumnPropNameInRow="cli_nacionalidade" msprop:Generator_ColumnPropNameInTable="cli_nacionalidadeColumn" msprop:Generator_UserColumnName="cli_nacionalidade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_estado_civil" msprop:Generator_ColumnVarNameInTable="columncli_estado_civil" msprop:Generator_ColumnPropNameInRow="cli_estado_civil" msprop:Generator_ColumnPropNameInTable="cli_estado_civilColumn" msprop:Generator_UserColumnName="cli_estado_civil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_profissao" msprop:Generator_ColumnVarNameInTable="columncli_profissao" msprop:Generator_ColumnPropNameInRow="cli_profissao" msprop:Generator_ColumnPropNameInTable="cli_profissaoColumn" msprop:Generator_UserColumnName="cli_profissao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_rg" msprop:Generator_ColumnVarNameInTable="columncli_rg" msprop:Generator_ColumnPropNameInRow="cli_rg" msprop:Generator_ColumnPropNameInTable="cli_rgColumn" msprop:Generator_UserColumnName="cli_rg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_cpf" msprop:Generator_ColumnVarNameInTable="columncli_cpf" msprop:Generator_ColumnPropNameInRow="cli_cpf" msprop:Generator_ColumnPropNameInTable="cli_cpfColumn" msprop:Generator_UserColumnName="cli_cpf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_endereco" msprop:Generator_ColumnVarNameInTable="columncli_endereco" msprop:Generator_ColumnPropNameInRow="cli_endereco" msprop:Generator_ColumnPropNameInTable="cli_enderecoColumn" msprop:Generator_UserColumnName="cli_endereco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_numero" msprop:Generator_ColumnVarNameInTable="columncli_numero" msprop:Generator_ColumnPropNameInRow="cli_numero" msprop:Generator_ColumnPropNameInTable="cli_numeroColumn" msprop:Generator_UserColumnName="cli_numero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_complemento" msprop:Generator_ColumnVarNameInTable="columncli_complemento" msprop:Generator_ColumnPropNameInRow="cli_complemento" msprop:Generator_ColumnPropNameInTable="cli_complementoColumn" msprop:Generator_UserColumnName="cli_complemento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_bairro" msprop:Generator_ColumnVarNameInTable="columncli_bairro" msprop:Generator_ColumnPropNameInRow="cli_bairro" msprop:Generator_ColumnPropNameInTable="cli_bairroColumn" msprop:Generator_UserColumnName="cli_bairro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_cidade" msprop:Generator_ColumnVarNameInTable="columncli_cidade" msprop:Generator_ColumnPropNameInRow="cli_cidade" msprop:Generator_ColumnPropNameInTable="cli_cidadeColumn" msprop:Generator_UserColumnName="cli_cidade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_uf" msprop:Generator_ColumnVarNameInTable="columncli_uf" msprop:Generator_ColumnPropNameInRow="cli_uf" msprop:Generator_ColumnPropNameInTable="cli_ufColumn" msprop:Generator_UserColumnName="cli_uf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_cep" msprop:Generator_ColumnVarNameInTable="columncli_cep" msprop:Generator_ColumnPropNameInRow="cli_cep" msprop:Generator_ColumnPropNameInTable="cli_cepColumn" msprop:Generator_UserColumnName="cli_cep" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_telefone_fixo" msprop:Generator_ColumnVarNameInTable="columncli_telefone_fixo" msprop:Generator_ColumnPropNameInRow="cli_telefone_fixo" msprop:Generator_ColumnPropNameInTable="cli_telefone_fixoColumn" msprop:Generator_UserColumnName="cli_telefone_fixo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_celular1" msprop:Generator_ColumnVarNameInTable="columncli_celular1" msprop:Generator_ColumnPropNameInRow="cli_celular1" msprop:Generator_ColumnPropNameInTable="cli_celular1Column" msprop:Generator_UserColumnName="cli_celular1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_celular2" msprop:Generator_ColumnVarNameInTable="columncli_celular2" msprop:Generator_ColumnPropNameInRow="cli_celular2" msprop:Generator_ColumnPropNameInTable="cli_celular2Column" msprop:Generator_UserColumnName="cli_celular2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_telefone_trabalho" msprop:Generator_ColumnVarNameInTable="columncli_telefone_trabalho" msprop:Generator_ColumnPropNameInRow="cli_telefone_trabalho" msprop:Generator_ColumnPropNameInTable="cli_telefone_trabalhoColumn" msprop:Generator_UserColumnName="cli_telefone_trabalho" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cli_email" msprop:Generator_ColumnVarNameInTable="columncli_email" msprop:Generator_ColumnPropNameInRow="cli_email" msprop:Generator_ColumnPropNameInTable="cli_emailColumn" msprop:Generator_UserColumnName="cli_email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncerimonia_id" msprop:Generator_ColumnPropNameInRow="cerimonia_id" msprop:Generator_ColumnPropNameInTable="cerimonia_idColumn" msprop:Generator_UserColumnName="cerimonia_id" type="xs:int" />
+              <xs:element name="cerimonia_data_evento" msprop:Generator_ColumnVarNameInTable="columncerimonia_data_evento" msprop:Generator_ColumnPropNameInRow="cerimonia_data_evento" msprop:Generator_ColumnPropNameInTable="cerimonia_data_eventoColumn" msprop:Generator_UserColumnName="cerimonia_data_evento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cerimonia_cidade_local" msprop:Generator_ColumnVarNameInTable="columncerimonia_cidade_local" msprop:Generator_ColumnPropNameInRow="cerimonia_cidade_local" msprop:Generator_ColumnPropNameInTable="cerimonia_cidade_localColumn" msprop:Generator_UserColumnName="cerimonia_cidade_local" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_total_convidados" msprop:Generator_ColumnVarNameInTable="columncerimonia_total_convidados" msprop:Generator_ColumnPropNameInRow="cerimonia_total_convidados" msprop:Generator_ColumnPropNameInTable="cerimonia_total_convidadosColumn" msprop:Generator_UserColumnName="cerimonia_total_convidados" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_horario_cerimonia" msprop:Generator_ColumnVarNameInTable="columncerimonia_horario_cerimonia" msprop:Generator_ColumnPropNameInRow="cerimonia_horario_cerimonia" msprop:Generator_ColumnPropNameInTable="cerimonia_horario_cerimoniaColumn" msprop:Generator_UserColumnName="cerimonia_horario_cerimonia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_inicio_festa" msprop:Generator_ColumnVarNameInTable="columncerimonia_inicio_festa" msprop:Generator_ColumnPropNameInRow="cerimonia_inicio_festa" msprop:Generator_ColumnPropNameInTable="cerimonia_inicio_festaColumn" msprop:Generator_UserColumnName="cerimonia_inicio_festa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_num_parcelas" msprop:Generator_ColumnVarNameInTable="columncerimonia_num_parcelas" msprop:Generator_ColumnPropNameInRow="cerimonia_num_parcelas" msprop:Generator_ColumnPropNameInTable="cerimonia_num_parcelasColumn" msprop:Generator_UserColumnName="cerimonia_num_parcelas" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_valor_parcelas" msprop:Generator_ColumnVarNameInTable="columncerimonia_valor_parcelas" msprop:Generator_ColumnPropNameInRow="cerimonia_valor_parcelas" msprop:Generator_ColumnPropNameInTable="cerimonia_valor_parcelasColumn" msprop:Generator_UserColumnName="cerimonia_valor_parcelas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cerimonia_data_primeiro_vencimento" msprop:Generator_ColumnVarNameInTable="columncerimonia_data_primeiro_vencimento" msprop:Generator_ColumnPropNameInRow="cerimonia_data_primeiro_vencimento" msprop:Generator_ColumnPropNameInTable="cerimonia_data_primeiro_vencimentoColumn" msprop:Generator_UserColumnName="cerimonia_data_primeiro_vencimento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cerimonia_valor_total" msprop:Generator_ColumnVarNameInTable="columncerimonia_valor_total" msprop:Generator_ColumnPropNameInRow="cerimonia_valor_total" msprop:Generator_ColumnPropNameInTable="cerimonia_valor_totalColumn" msprop:Generator_UserColumnName="cerimonia_valor_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cerimonia_observacao" msprop:Generator_ColumnVarNameInTable="columncerimonia_observacao" msprop:Generator_ColumnPropNameInRow="cerimonia_observacao" msprop:Generator_ColumnPropNameInTable="cerimonia_observacaoColumn" msprop:Generator_UserColumnName="cerimonia_observacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_cliente_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_cliente_id" msprop:Generator_ColumnPropNameInRow="cerimonia_cliente_id" msprop:Generator_ColumnPropNameInTable="cerimonia_cliente_idColumn" msprop:Generator_UserColumnName="cerimonia_cliente_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_tipo_evento_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_tipo_evento_id" msprop:Generator_ColumnPropNameInRow="cerimonia_tipo_evento_id" msprop:Generator_ColumnPropNameInTable="cerimonia_tipo_evento_idColumn" msprop:Generator_UserColumnName="cerimonia_tipo_evento_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_pacote_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_pacote_id" msprop:Generator_ColumnPropNameInRow="cerimonia_pacote_id" msprop:Generator_ColumnPropNameInTable="cerimonia_pacote_idColumn" msprop:Generator_UserColumnName="cerimonia_pacote_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_desconto" msprop:Generator_ColumnVarNameInTable="columncerimonia_desconto" msprop:Generator_ColumnPropNameInRow="cerimonia_desconto" msprop:Generator_ColumnPropNameInTable="cerimonia_descontoColumn" msprop:Generator_UserColumnName="cerimonia_desconto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tipo_evento_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columntipo_evento_id" msprop:Generator_ColumnPropNameInRow="tipo_evento_id" msprop:Generator_ColumnPropNameInTable="tipo_evento_idColumn" msprop:Generator_UserColumnName="tipo_evento_id" type="xs:int" />
+              <xs:element name="tipo_evento_nome" msprop:Generator_ColumnVarNameInTable="columntipo_evento_nome" msprop:Generator_ColumnPropNameInRow="tipo_evento_nome" msprop:Generator_ColumnPropNameInTable="tipo_evento_nomeColumn" msprop:Generator_UserColumnName="tipo_evento_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pacote_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnpacote_id" msprop:Generator_ColumnPropNameInRow="pacote_id" msprop:Generator_ColumnPropNameInTable="pacote_idColumn" msprop:Generator_UserColumnName="pacote_id" type="xs:int" />
+              <xs:element name="pacote_nome" msprop:Generator_ColumnVarNameInTable="columnpacote_nome" msprop:Generator_ColumnPropNameInRow="pacote_nome" msprop:Generator_ColumnPropNameInTable="pacote_nomeColumn" msprop:Generator_UserColumnName="pacote_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Cerimonia" />
       <xs:field xpath="mstns:cerimonia_id" />
+    </xs:unique>
+    <xs:unique name="DT_Cerimonia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_Cerimonia" />
+      <xs:field xpath="mstns:cli_id" />
+      <xs:field xpath="mstns:cerimonia_id" />
+      <xs:field xpath="mstns:tipo_evento_id" />
+      <xs:field xpath="mstns:pacote_id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

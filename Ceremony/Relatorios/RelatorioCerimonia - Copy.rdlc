@@ -142,6 +142,66 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="cli_nome">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_nome.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_nome</rd:DefaultName>
+        <Top>1.4732cm</Top>
+        <Left>1.93238cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.80861cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_estado_civil">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_estado_civil.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_estado_civil</rd:DefaultName>
+        <Top>1.859cm</Top>
+        <Left>2.88276cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.39441cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
       <Textbox Name="Textbox11">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -159,11 +219,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.1765cm</Top>
+        <Top>1.859cm</Top>
         <Left>0.34925cm</Left>
         <Height>0.6cm</Height>
         <Width>2.79104cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -191,11 +251,41 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.1765cm</Top>
+        <Top>1.859cm</Top>
         <Left>9.03732cm</Left>
         <Height>0.6cm</Height>
         <Width>1.88849cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_profissao">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_profissao.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_profissao</rd:DefaultName>
+        <Top>1.859cm</Top>
+        <Left>10.9117cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.67651cm</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -223,11 +313,41 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.89352cm</Top>
+        <Top>2.29027cm</Top>
         <Left>0.36132cm</Left>
         <Height>0.6cm</Height>
         <Width>0.83312cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_rg">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_rg.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_rg</rd:DefaultName>
+        <Top>2.29027cm</Top>
+        <Left>1.24382cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.71585cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -255,11 +375,41 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.89352cm</Top>
+        <Top>2.29027cm</Top>
         <Left>9.05489cm</Left>
         <Height>0.6cm</Height>
         <Width>0.98453cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_cpf">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_cpf.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_cpf</rd:DefaultName>
+        <Top>2.29027cm</Top>
+        <Left>10.39431cm</Left>
+        <Height>0.6cm</Height>
+        <Width>8.28915cm</Width>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -287,11 +437,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.62377cm</Top>
+        <Top>2.73477cm</Top>
         <Left>0.34925cm</Left>
         <Height>0.6cm</Height>
         <Width>1.91438cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -319,11 +469,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.65552cm</Top>
+        <Top>2.76652cm</Top>
         <Left>9.05817cm</Left>
         <Height>0.6cm</Height>
         <Width>0.88868cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -351,11 +501,101 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.62377cm</Top>
-        <Left>12.57713cm</Left>
+        <Top>2.73477cm</Top>
+        <Left>11.30713cm</Left>
         <Height>0.6cm</Height>
         <Width>2.6852cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_endereco">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_endereco.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_endereco</rd:DefaultName>
+        <Top>2.73477cm</Top>
+        <Left>2.46824cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.46325cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_numero">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_numero.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_numero</rd:DefaultName>
+        <Top>2.76652cm</Top>
+        <Left>9.95743cm</Left>
+        <Height>0.6cm</Height>
+        <Width>0.87344cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_complemento">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_complemento.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_complemento</rd:DefaultName>
+        <Top>2.73477cm</Top>
+        <Left>13.86036cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.8231cm</Width>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -383,11 +623,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.24554cm</Top>
-        <Left>0.32692cm</Left>
+        <Top>3.29304cm</Top>
+        <Left>0.35867cm</Left>
         <Height>0.6cm</Height>
         <Width>1.33382cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -415,11 +655,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.24554cm</Top>
-        <Left>6.03763cm</Left>
+        <Top>3.29304cm</Top>
+        <Left>6.06938cm</Left>
         <Height>0.6cm</Height>
         <Width>1.51903cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -447,11 +687,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.27729cm</Top>
-        <Left>12.44584cm</Left>
+        <Top>3.32479cm</Top>
+        <Left>12.47759cm</Left>
         <Height>0.6cm</Height>
         <Width>1.12447cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -479,11 +719,131 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.27729cm</Top>
-        <Left>15.36684cm</Left>
+        <Top>3.32479cm</Top>
+        <Left>15.23984cm</Left>
         <Height>0.6cm</Height>
         <Width>1.12215cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_cep">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_cep.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_cep</rd:DefaultName>
+        <Top>3.32479cm</Top>
+        <Left>16.29497cm</Left>
+        <Height>0.47625cm</Height>
+        <Width>2.61074cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_uf">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_uf.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_uf</rd:DefaultName>
+        <Top>3.35654cm</Top>
+        <Left>13.67578cm</Left>
+        <Height>0.47625cm</Height>
+        <Width>1.48998cm</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_cidade">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_cidade.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_cidade</rd:DefaultName>
+        <Top>3.29304cm</Top>
+        <Left>7.55666cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.83979cm</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_bairro">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_bairro.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_bairro</rd:DefaultName>
+        <Top>3.29304cm</Top>
+        <Left>1.59307cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.47631cm</Width>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -511,11 +871,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.94404cm</Top>
-        <Left>0.34925cm</Left>
+        <Top>3.80104cm</Top>
+        <Left>0.381cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.16886cm</Width>
-        <ZIndex>15</ZIndex>
+        <Width>1.33382cm</Width>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -543,11 +903,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.94404cm</Top>
-        <Left>4.32313cm</Left>
+        <Top>3.80104cm</Top>
+        <Left>3.78338cm</Left>
         <Height>0.6cm</Height>
         <Width>1.70424cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -575,11 +935,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.94404cm</Top>
-        <Left>9.20998cm</Left>
+        <Top>3.80104cm</Top>
+        <Left>8.70198cm</Left>
         <Height>0.6cm</Height>
         <Width>1.67778cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -607,11 +967,137 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.94404cm</Top>
-        <Left>14.01834cm</Left>
+        <Top>3.80104cm</Top>
+        <Left>13.73259cm</Left>
         <Height>0.6cm</Height>
         <Width>1.80125cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_celular1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_celular1.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_celular1</rd:DefaultName>
+        <Top>3.80104cm</Top>
+        <Left>5.48585cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.13499cm</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_celular2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_celular2.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_celular2</rd:DefaultName>
+        <Top>3.80104cm</Top>
+        <Left>10.56068cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.01316cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_telefone_trabalho">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_telefone_trabalho.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_telefone_trabalho</rd:DefaultName>
+        <Top>3.80104cm</Top>
+        <Left>15.59735cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.30836cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_telefone_fixo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_telefone_fixo.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_telefone_fixo</rd:DefaultName>
+        <Top>3.80104cm</Top>
+        <Left>1.25624cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.52714cm</Width>
+        <ZIndex>34</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -637,11 +1123,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.95508cm</Top>
-        <Left>3.90525cm</Left>
-        <Height>0.51046cm</Height>
+        <Top>10.37329cm</Top>
+        <Left>4.09575cm</Left>
+        <Height>0.6cm</Height>
         <Width>1.33382cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -669,11 +1155,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_data_evento</rd:DefaultName>
-        <Top>11.92904cm</Top>
-        <Left>5.33957cm</Left>
+        <Top>10.37329cm</Top>
+        <Left>5.14907cm</Left>
         <Height>0.6cm</Height>
         <Width>5.43499cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>36</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -699,11 +1185,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>19.89829cm</Top>
+        <Top>18.21554cm</Top>
         <Left>0.57941cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.11509cm</Width>
-        <ZIndex>21</ZIndex>
+        <Width>1.33382cm</Width>
+        <ZIndex>37</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -731,11 +1217,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_valor_total</rd:DefaultName>
-        <Top>19.86654cm</Top>
+        <Top>18.18379cm</Top>
         <Left>1.6945cm</Left>
         <Height>0.6cm</Height>
         <Width>3.36506cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>38</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -761,11 +1247,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>19.89829cm</Top>
+        <Top>18.21554cm</Top>
         <Left>11.3002cm</Left>
         <Height>0.6cm</Height>
         <Width>1.33382cm</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>39</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -793,11 +1279,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_observacao</rd:DefaultName>
-        <Top>19.89829cm</Top>
+        <Top>18.21554cm</Top>
         <Left>12.73985cm</Left>
         <Height>0.6cm</Height>
         <Width>6.18653cm</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>40</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -825,11 +1311,41 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>5.59343cm</Top>
+        <Top>4.25993cm</Top>
         <Left>0.381cm</Left>
         <Height>0.6cm</Height>
         <Width>1.33382cm</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cli_email">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!cli_email.Value, "DataSetCliente")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cli_email</rd:DefaultName>
+        <Top>4.25993cm</Top>
+        <Left>1.58501cm</Left>
+        <Height>0.6cm</Height>
+        <Width>14.20959cm</Width>
+        <ZIndex>42</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -860,11 +1376,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>6.46507cm</Top>
+        <Top>4.87757cm</Top>
         <Left>0.381cm</Left>
         <Height>2.86978cm</Height>
         <Width>18.59746cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>43</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -892,11 +1408,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>10.0849cm</Top>
+        <Top>8.4974cm</Top>
         <Left>0.39042cm</Left>
         <Height>0.6cm</Height>
         <Width>14.11521cm</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>44</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -942,11 +1458,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>10.71245cm</Top>
+        <Top>9.12495cm</Top>
         <Left>0.47625cm</Left>
         <Height>0.62146cm</Height>
         <Width>18.20721cm</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>45</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -969,11 +1485,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox33</rd:DefaultName>
-        <Top>11.3833cm</Top>
+        <Top>9.7958cm</Top>
         <Left>0.47625cm</Left>
         <Height>0.6cm</Height>
         <Width>6.12479cm</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>46</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -999,11 +1515,43 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.46615cm</Top>
-        <Left>3.90319cm</Left>
+        <Top>10.87865cm</Top>
+        <Left>4.09369cm</Left>
         <Height>0.6cm</Height>
         <Width>1.49635cm</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>47</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="cerimonia_tipo_evento_id">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!cerimonia_tipo_evento_id.Value, "DataSetCerimonia")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>cerimonia_tipo_evento_id</rd:DefaultName>
+        <Top>10.86393cm</Top>
+        <Left>5.62532cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.43499cm</Width>
+        <ZIndex>48</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1029,11 +1577,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.10082cm</Top>
-        <Left>3.90525cm</Left>
+        <Top>11.41807cm</Top>
+        <Left>4.09575cm</Left>
         <Height>0.6cm</Height>
         <Width>2.34103cm</Width>
-        <ZIndex>31</ZIndex>
+        <ZIndex>49</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1059,11 +1607,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_cidade_local</rd:DefaultName>
-        <Top>13.10082cm</Top>
+        <Top>11.41807cm</Top>
         <Left>6.43678cm</Left>
         <Height>0.6cm</Height>
         <Width>5.65749cm</Width>
-        <ZIndex>32</ZIndex>
+        <ZIndex>50</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1089,11 +1637,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.78196cm</Top>
-        <Left>3.90525cm</Left>
+        <Top>12.09921cm</Top>
+        <Left>4.09575cm</Left>
         <Height>0.6cm</Height>
         <Width>3.65494cm</Width>
-        <ZIndex>33</ZIndex>
+        <ZIndex>51</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1121,11 +1669,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_total_convidados</rd:DefaultName>
-        <Top>13.78196cm</Top>
+        <Top>12.09921cm</Top>
         <Left>7.75069cm</Left>
         <Height>0.6cm</Height>
         <Width>4.66108cm</Width>
-        <ZIndex>34</ZIndex>
+        <ZIndex>52</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1151,11 +1699,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
-        <Top>14.4631cm</Top>
-        <Left>3.90525cm</Left>
+        <Top>12.78035cm</Top>
+        <Left>4.09575cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.52862cm</Width>
-        <ZIndex>35</ZIndex>
+        <Width>4.74049cm</Width>
+        <ZIndex>53</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1183,11 +1731,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_horario_cerimonia</rd:DefaultName>
-        <Top>14.49485cm</Top>
-        <Left>8.57498cm</Left>
+        <Top>12.8121cm</Top>
+        <Left>8.67023cm</Left>
         <Height>0.56825cm</Height>
         <Width>2.79565cm</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>54</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1213,11 +1761,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>14.49485cm</Top>
+        <Top>12.7486cm</Top>
         <Left>11.46588cm</Left>
         <Height>0.6cm</Height>
         <Width>7.51258cm</Width>
-        <ZIndex>37</ZIndex>
+        <ZIndex>55</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1243,11 +1791,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox43</rd:DefaultName>
-        <Top>15.08073cm</Top>
-        <Left>3.93494cm</Left>
+        <Top>13.36623cm</Top>
+        <Left>4.09369cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.3933cm</Width>
-        <ZIndex>38</ZIndex>
+        <Width>4.6473cm</Width>
+        <ZIndex>56</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1275,11 +1823,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_inicio_festa</rd:DefaultName>
-        <Top>15.11248cm</Top>
-        <Left>8.41623cm</Left>
+        <Top>13.42973cm</Top>
+        <Left>8.67023cm</Left>
         <Height>0.56825cm</Height>
         <Width>2.79565cm</Width>
-        <ZIndex>39</ZIndex>
+        <ZIndex>57</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1305,11 +1853,11 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>15.11248cm</Top>
+        <Top>13.36623cm</Top>
         <Left>11.46588cm</Left>
         <Height>0.6cm</Height>
         <Width>7.53275cm</Width>
-        <ZIndex>40</ZIndex>
+        <ZIndex>58</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1355,11 +1903,11 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>15.77658cm</Top>
+        <Top>14.09383cm</Top>
         <Left>0.35867cm</Left>
         <Height>2.52589cm</Height>
         <Width>18.89397cm</Width>
-        <ZIndex>41</ZIndex>
+        <ZIndex>59</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1372,11 +1920,11 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
       </Textbox>
       <Rectangle Name="Rectangle7">
         <KeepTogether>true</KeepTogether>
-        <Top>18.40124cm</Top>
+        <Top>16.71849cm</Top>
         <Left>0.54187cm</Left>
         <Height>0.52917cm</Height>
         <Width>18.57692cm</Width>
-        <ZIndex>42</ZIndex>
+        <ZIndex>60</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1401,11 +1949,11 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox47</rd:DefaultName>
-        <Top>18.4083cm</Top>
+        <Top>16.72555cm</Top>
         <Left>0.54187cm</Left>
         <Height>0.6cm</Height>
         <Width>18.57692cm</Width>
-        <ZIndex>43</ZIndex>
+        <ZIndex>61</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1437,11 +1985,11 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox48</rd:DefaultName>
-        <Top>19.17383cm</Top>
+        <Top>17.49108cm</Top>
         <Left>0.54187cm</Left>
         <Height>0.6cm</Height>
         <Width>13.31913cm</Width>
-        <ZIndex>44</ZIndex>
+        <ZIndex>62</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1454,11 +2002,11 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
       </Textbox>
       <Rectangle Name="Rectangle12">
         <KeepTogether>true</KeepTogether>
-        <Top>9.44245cm</Top>
+        <Top>7.85495cm</Top>
         <Left>0.44662cm</Left>
         <Height>0.50134cm</Height>
         <Width>18.0023cm</Width>
-        <ZIndex>45</ZIndex>
+        <ZIndex>63</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1483,550 +2031,10 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox52</rd:DefaultName>
-        <Top>9.41435cm</Top>
+        <Top>7.82685cm</Top>
         <Left>0.39042cm</Left>
         <Height>0.6cm</Height>
         <Width>5.85434cm</Width>
-        <ZIndex>46</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_nacionalidade">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_nacionalidade.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_nacionalidade</rd:DefaultName>
-        <Top>1.4732cm</Top>
-        <Left>12.00563cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.58258cm</Width>
-        <ZIndex>47</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_estado_civil">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_estado_civil.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_estado_civil</rd:DefaultName>
-        <Top>2.20825cm</Top>
-        <Left>2.55956cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.27668cm</Width>
-        <ZIndex>48</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_profissao">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_profissao.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_profissao</rd:DefaultName>
-        <Top>2.1765cm</Top>
-        <Left>11.03164cm</Left>
-        <Height>0.6cm</Height>
-        <Width>7.55657cm</Width>
-        <ZIndex>49</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_rg">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_rg.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_rg</rd:DefaultName>
-        <Top>2.89352cm</Top>
-        <Left>1.19444cm</Left>
-        <Height>0.6cm</Height>
-        <Width>7.54655cm</Width>
-        <ZIndex>50</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_cpf">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_cpf.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_cpf</rd:DefaultName>
-        <Top>2.91761cm</Top>
-        <Left>10.21581cm</Left>
-        <Height>0.6cm</Height>
-        <Width>8.3724cm</Width>
-        <ZIndex>51</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_endereco">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_endereco.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_endereco</rd:DefaultName>
-        <Top>3.60641cm</Top>
-        <Left>2.36594cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.50205cm</Width>
-        <ZIndex>52</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_numero">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_numero.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_numero</rd:DefaultName>
-        <Top>3.65552cm</Top>
-        <Left>10.01741cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>53</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_complemento">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_complemento.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_complemento</rd:DefaultName>
-        <Top>3.6305cm</Top>
-        <Left>15.34347cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.33999cm</Width>
-        <ZIndex>54</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_bairro">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_bairro.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_bairro</rd:DefaultName>
-        <Top>4.25905cm</Top>
-        <Left>1.6945cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.16674cm</Width>
-        <ZIndex>55</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_cidade">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_cidade.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_cidade</rd:DefaultName>
-        <Top>4.25905cm</Top>
-        <Left>7.62722cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.71279cm</Width>
-        <ZIndex>56</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_uf">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_uf.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_uf</rd:DefaultName>
-        <Top>4.27729cm</Top>
-        <Left>13.60206cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.69202cm</Width>
-        <ZIndex>57</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_cep">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_cep.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_cep</rd:DefaultName>
-        <Top>4.26578cm</Top>
-        <Left>16.58053cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.05889cm</Width>
-        <ZIndex>58</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cerimonia_data_evento1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cerimonia_data_evento.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cerimonia_data_evento1</rd:DefaultName>
-        <Top>11.3833cm</Top>
-        <Left>6.60104cm</Left>
-        <Height>0.54221cm</Height>
-        <Width>4.86484cm</Width>
-        <ZIndex>59</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_nome1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_nome.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_nome1</rd:DefaultName>
-        <Top>1.49889cm</Top>
-        <Left>1.77363cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.90386cm</Width>
-        <ZIndex>60</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_telefone_fixo">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_telefone_fixo.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_telefone_fixo</rd:DefaultName>
-        <Top>4.96136cm</Top>
-        <Left>1.59219cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.6251cm</Width>
-        <ZIndex>61</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_celular1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_celular1.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_celular1</rd:DefaultName>
-        <Top>4.95137cm</Top>
-        <Left>6.06265cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.02759cm</Width>
-        <ZIndex>62</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_celular2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_celular2.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_celular2</rd:DefaultName>
-        <Top>4.92961cm</Top>
-        <Left>10.88776cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.06355cm</Width>
-        <ZIndex>63</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="cli_telefone_trabalho">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_telefone_trabalho.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_telefone_trabalho</rd:DefaultName>
-        <Top>4.95137cm</Top>
-        <Left>15.85487cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.7528cm</Width>
         <ZIndex>64</ZIndex>
         <Style>
           <Border>
@@ -2038,128 +2046,8 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="cli_email">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cli_email.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>cli_email</rd:DefaultName>
-        <Top>5.60722cm</Top>
-        <Left>1.7501cm</Left>
-        <Height>0.6cm</Height>
-        <Width>16.69882cm</Width>
-        <ZIndex>65</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="tipo_evento_nome">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!tipo_evento_nome.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>tipo_evento_nome</rd:DefaultName>
-        <Top>12.46615cm</Top>
-        <Left>5.47896cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.9008cm</Width>
-        <ZIndex>66</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox36">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Pacote:</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.44234cm</Top>
-        <Left>10.62965cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.49635cm</Width>
-        <ZIndex>67</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="pacote_nome">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!pacote_nome.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>pacote_nome</rd:DefaultName>
-        <Top>12.44234cm</Top>
-        <Left>12.20009cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.98708cm</Width>
-        <ZIndex>68</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>8.16667in</Height>
+    <Height>7.57292in</Height>
     <Style />
   </Body>
   <Width>7.63392in</Width>
@@ -2311,7 +2199,7 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.81479cm</Height>
+      <Height>1.16374cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2330,7 +2218,7 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.07691cm</Top>
+          <Top>0.29916cm</Top>
           <Left>5.62532cm</Left>
           <Height>0.6cm</Height>
           <Width>5.79778cm</Width>
@@ -2361,7 +2249,7 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.10336cm</Top>
+          <Top>0.32561cm</Top>
           <Left>16.23128cm</Left>
           <Height>0.6cm</Height>
           <Width>2.6951cm</Width>
@@ -2391,7 +2279,7 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0.10336cm</Top>
+          <Top>0.32561cm</Top>
           <Left>14.82642cm</Left>
           <Height>0.6cm</Height>
           <Width>1.36958cm</Width>
@@ -2447,18 +2335,87 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
       </ConnectionProperties>
       <rd:DataSourceID>b84080d9-5ad4-46a4-94cc-9893acd51ca0</rd:DataSourceID>
     </DataSource>
-    <DataSource Name="CeremonyModel1">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>7f311beb-02c2-4da3-88c8-c4ad2bafd172</rd:DataSourceID>
-    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSetCerimonia">
       <Query>
         <DataSourceName>CeremonyDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="cerimonia_id">
+          <DataField>cerimonia_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_data_evento">
+          <DataField>cerimonia_data_evento</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_cidade_local">
+          <DataField>cerimonia_cidade_local</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_total_convidados">
+          <DataField>cerimonia_total_convidados</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_horario_cerimonia">
+          <DataField>cerimonia_horario_cerimonia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_inicio_festa">
+          <DataField>cerimonia_inicio_festa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_num_parcelas">
+          <DataField>cerimonia_num_parcelas</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_valor_parcelas">
+          <DataField>cerimonia_valor_parcelas</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_data_primeiro_vencimento">
+          <DataField>cerimonia_data_primeiro_vencimento</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_valor_total">
+          <DataField>cerimonia_valor_total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_observacao">
+          <DataField>cerimonia_observacao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_cliente_id">
+          <DataField>cerimonia_cliente_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_tipo_evento_id">
+          <DataField>cerimonia_tipo_evento_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_pacote_id">
+          <DataField>cerimonia_pacote_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cerimonia_desconto">
+          <DataField>cerimonia_desconto</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>CeremonyDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Usuario\source\repos\Ceremony\Ceremony\CeremonyDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Cerimonia</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CerimoniaTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetCliente">
+      <Query>
+        <DataSourceName>CeremonyDataSetCliente</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2538,90 +2495,14 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           <DataField>cli_email</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cerimonia_id">
-          <DataField>cerimonia_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_data_evento">
-          <DataField>cerimonia_data_evento</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_cidade_local">
-          <DataField>cerimonia_cidade_local</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_total_convidados">
-          <DataField>cerimonia_total_convidados</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_horario_cerimonia">
-          <DataField>cerimonia_horario_cerimonia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_inicio_festa">
-          <DataField>cerimonia_inicio_festa</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_num_parcelas">
-          <DataField>cerimonia_num_parcelas</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_valor_parcelas">
-          <DataField>cerimonia_valor_parcelas</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_data_primeiro_vencimento">
-          <DataField>cerimonia_data_primeiro_vencimento</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_valor_total">
-          <DataField>cerimonia_valor_total</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_observacao">
-          <DataField>cerimonia_observacao</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_cliente_id">
-          <DataField>cerimonia_cliente_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_tipo_evento_id">
-          <DataField>cerimonia_tipo_evento_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_pacote_id">
-          <DataField>cerimonia_pacote_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_desconto">
-          <DataField>cerimonia_desconto</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="tipo_evento_id">
-          <DataField>tipo_evento_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="tipo_evento_nome">
-          <DataField>tipo_evento_nome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="pacote_id">
-          <DataField>pacote_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="pacote_nome">
-          <DataField>pacote_nome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>CeremonyDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\source\repos\Ceremony\Ceremony\Relatorios\CeremonyDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>DT_Cerimonia</rd:TableName>
+        <rd:DataSetName>CeremonyDataSetCliente</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Usuario\source\repos\Ceremony\Ceremony\CeremonyDataSetCliente.xsd</rd:SchemaPath>
+        <rd:TableName>Cliente</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>DT_CerimoniaTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>ClienteTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -74,5 +74,23 @@ namespace Ceremony
             Tela_Tipo_Evento tela = new Tela_Tipo_Evento();
             tela.Show();
         }
+
+        private void Abre_Menu_Consultar_Pacotes(object sender, RoutedEventArgs e)
+        {
+            Tela_Consulta_Pacote tela = new Tela_Consulta_Pacote();
+            tela.Show();
+        }
+
+        private void Abre_Menu_Consultar_Servicos(object sender, RoutedEventArgs e)
+        {
+            Tela_Consulta_Pacote_Servicos tela = new Tela_Consulta_Pacote_Servicos();
+            tela.Show();
+        }
+
+        private void Abre_Menu_Consultar_Tipos_Eventos(object sender, RoutedEventArgs e)
+        {
+            Tela_Consulta_Tipo_Evento tela = new Tela_Consulta_Tipo_Evento();
+            tela.Show();
+        }
     }
 }

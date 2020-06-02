@@ -17,14 +17,13 @@ namespace Ceremony.Dal
         SqlCommand sqlcommand = new SqlCommand();
         SqlDataReader sqldataReader = null;
         public string Statusmessagem { get; set; }
-        public List<Pacote_Servicos> Listar_Pacote_Servicos()
+        public List<Pacote_Servicos> Listar_Pacote_Servicos(string nome)
         {
             try
             {
                 List<Pacote_Servicos> list = new List<Pacote_Servicos>();
-                sqlcommand.CommandText = "select * from Pacote_Servicos";
-                sqlcommand.Connection = con.conectar();
-                sqldataReader = sqlcommand.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(String.Format("select * from Pacote_Servicos where pacote_servico_nome like '%{0}%'", nome), con.conectar());
+                sqldataReader = cmd.ExecuteReader();
                 while (sqldataReader.Read())
                 {
                     Pacote_Servicos pacote_servicos = new Pacote_Servicos();

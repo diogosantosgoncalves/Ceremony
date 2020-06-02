@@ -73,6 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Relatorios\CeremonyDataSet.cs">
+      <DependentUpon>CeremonyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\CeremonyDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +127,15 @@
     </Compile>
     <Compile Include="View\Tela_Consulta_Cliente.xaml.cs">
       <DependentUpon>Tela_Consulta_Cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Pacote.xaml.cs">
+      <DependentUpon>Tela_Consulta_Pacote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Pacote_Servicos.xaml.cs">
+      <DependentUpon>Tela_Consulta_Pacote_Servicos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Tipo_Evento.xaml.cs">
+      <DependentUpon>Tela_Consulta_Tipo_Evento.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Tela_Pacotes.xaml.cs">
       <DependentUpon>Tela_Pacotes.xaml</DependentUpon>
@@ -182,6 +194,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Tela_Consulta_Pacote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Consulta_Pacote_Servicos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Tela_Consulta_Tipo_Evento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Tela_Pacotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +238,15 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\RelatorioCerimonia.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioCerimonia - Copy.rdlc" />
+    <None Include="Properties\DataSources\Ceremony.Dal.ServicesDBCerimonia.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Buffet.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Buffet_Servicos.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Cerimonia.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Cliente.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Pacote.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Pacote_Servicos.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Tipo_Evento.datasource" />
     <None Include="Relatorios\CeremonyDataSet.xsc">
       <DependentUpon>CeremonyDataSet.xsd</DependentUpon>
     </None>
@@ -257,6 +290,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\relatorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

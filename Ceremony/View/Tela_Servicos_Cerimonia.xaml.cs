@@ -26,7 +26,7 @@ namespace Ceremony.View
         public Tela_Servicos_Cerimonia()
         {
             InitializeComponent();
-            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote();
+            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
             txt_nome.Focus();
         }
 

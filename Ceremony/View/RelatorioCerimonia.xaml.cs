@@ -1,6 +1,10 @@
 ﻿using Ceremony.Dal;
+using Ceremony.Relatorios;
+using Ceremony.Relatorios.CeremonyDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,23 +24,40 @@ namespace Ceremony.View
     /// </summary>
     public partial class RelatorioCerimonia : Window
     {
+        int Codigo_Cerimonia = 0;
         ServicesDBCerimonia servicesDBCerimonia = new ServicesDBCerimonia();
         ServicesDBCliente servicesDBCliente = new ServicesDBCliente();
-        public RelatorioCerimonia()
+        public RelatorioCerimonia(int codigo)
         {
             InitializeComponent();
+            Codigo_Cerimonia = codigo;
         }
         public void ReportViewer_Load(object sender, EventArgs e)
         {
-            var dataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetCliente", servicesDBCliente.BuscarCliente("Diogo dos Santos")); // servicesDBCliente.Editar(1));
-            ReportViewer.LocalReport.DataSources.Add(dataSource);
-
-            var dataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetCerimonia", servicesDBCerimonia.Buscar_Cerimonia_Por_Nome("Diogo")); // servicesDBCerimonia.Editar(2));
+            var dataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetCerimonia", GetDataTable(Codigo_Cerimonia));
             ReportViewer.LocalReport.DataSources.Add(dataSource1);
-
             ReportViewer.LocalReport.ReportEmbeddedResource = "Ceremony.Relatorios.RelatorioCerimonia.rdlc";
-
             ReportViewer.RefreshReport();
         }
+
+        public DataTable GetDataTable(int codigo)
+        {
+            DataTable dt = new DataTable();
+            Conexao conexao = new Conexao();
+            string sql = "SELECT Cliente.*, Cerimonia.*, Tipo_Evento.*, Pacote.*FROM Cerimonia INNER JOIN" +
+                        " Cliente ON Cerimonia.cerimonia_cliente_id = Cliente.cli_id INNER JOIN" +
+                       "  Pacote ON Cerimonia.cerimonia_pacote_id = Pacote.pacote_id INNER JOIN" +
+                        " Tipo_Evento ON Cerimonia.cerimonia_tipo_evento_id = Tipo_Evento.tipo_evento_id " +
+                        "where Cerimonia.cerimonia_id = @codigo";
+            SqlConnection con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=StudentDetails;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand(sql, conexao.conectar());
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+            SqlDataReader sqldataReader = null;
+            sqldataReader = cmd.ExecuteReader();
+            if(sqldataReader.HasRows)
+                dt.Load(sqldataReader);
+            return dt;
+        }
+
     }
 }

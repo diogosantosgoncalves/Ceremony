@@ -2,6 +2,7 @@
 using Ceremony.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace Ceremony.View
 {
@@ -22,26 +24,36 @@ namespace Ceremony.View
     public partial class Tela_Cerimonial : Window
     {
         double total = 0;
+        int codigo_cliente;
+        int codigo_evento = 0;
+        int codigo_pacote = 0;
         ServicesDBCerimonia servicesDBCerimonia = new ServicesDBCerimonia();
+        ServicesDBCliente servicesDBCliente = new ServicesDBCliente();
         public Tela_Cerimonial()
         {
             InitializeComponent();
             ServicesDBTipo_Evento servicesDBTipo_Evento = new ServicesDBTipo_Evento();
-            cb_evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento();
+            cb_evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento("");
             ServicesDBPacote servicesDBPacote = new ServicesDBPacote();
-            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote();
+            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
         }
         public Tela_Cerimonial(Cerimonia cerimonia)
         {
             InitializeComponent();
             
             ServicesDBTipo_Evento servicesDBTipo_Evento = new ServicesDBTipo_Evento();
-            cb_evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento();
+            cb_evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento("");
             ServicesDBPacote servicesDBPacote = new ServicesDBPacote();
-            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote();
-            
+            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
 
-            txt_cliente.Text = cerimonia.cerimonia_cliente_id.ToString();
+            codigo_evento = cerimonia.cerimonia_tipo_evento_id;
+            codigo_pacote = cerimonia.cerimonia_pacote_id;
+            cb_evento.SelectionChanged += new SelectionChangedEventHandler(comboBox1SelectionChanged);
+            cb_pacote.SelectionChanged += new SelectionChangedEventHandler(cb_pacote_SelectionChanged);
+
+            //cb_evento.SelectedIndex = 1;
+            Cliente cli = servicesDBCliente.Editar(cerimonia.cerimonia_cliente_id);
+            txt_cliente.Text = cli.cli_nome;
             txt_data.Text = cerimonia.cerimonia_data_evento.ToString();
 
             txt_cidade_local.Text = cerimonia.cerimonia_cidade_local;
@@ -55,12 +67,30 @@ namespace Ceremony.View
             txt_data_primeiro_vencimento.Text = cerimonia.cerimonia_data_primeiro_vencimento.ToString();
             txt_horario_festa.Text = cerimonia.cerimonia_inicio_festa.ToString();
             txt_observacao.Text = cerimonia.cerimonia_observacao;
-            cb_evento.SelectedValue = cerimonia.cerimonia_tipo_evento_id;
+            //SelectInfo = InfoCombo[0];
+            //cb_evento.SelectedIndex = cb_evento.Items.IndexOf(cerimonia.cerimonia_tipo_evento_id);
+            Tipo_Evento obj = new Tipo_Evento();
+            obj.tipo_evento_id = 1;
+            //cb_evento.SelectedValue = obj.tipo_evento_id;
+            //cb_evento.SelectedIndex = obj.tipo_evento_id;
+            //cb_evento.SelectedValue = cerimonia.cerimonia_tipo_evento_id;
             //Convert.ToInt32(cerimonia.cerimonia_pacote_id);
-            CarregarComboValor(Convert.ToInt32(cerimonia.cerimonia_pacote_id));
+
+
+
+            //CarregarComboValor(Convert.ToInt32(cerimonia.cerimonia_pacote_id));
+
+            //cb_pacote.SelectedValue = codigo_pacote;
             //cb_pacote.SelectedValue = cerimonia.cerimonia_pacote_id;
             txt_Desconto.Text = cerimonia.cerimonia_desconto.ToString();
 
+        }
+        void comboBox1SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cb_evento.SelectedValue = codigo_evento;
+            var currentSelectedIndex = cb_evento.SelectedValue;
+
+            //cb_pacote.SelectedValue = codigo_pacote;
         }
 
         public void bt_salvar_Click(object sender, RoutedEventArgs e)
@@ -75,7 +105,7 @@ namespace Ceremony.View
                     return;
                 }
                 else
-                    cerimonia.cerimonia_cliente_id = int.Parse(txt_cliente.Text);
+                    cerimonia.cerimonia_cliente_id = codigo_cliente;
                 
                 if (string.IsNullOrEmpty(txt_data.Text))
                 {
@@ -160,8 +190,12 @@ namespace Ceremony.View
 
         public void cb_pacote_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            
             int codigo = Convert.ToInt32(cb_pacote.SelectedValue);
             CarregarComboValor(codigo);
+            cb_pacote.SelectedValue = codigo_pacote;
+            MessageBox.Show("entrei aqui!");
         }
         public void CarregarComboValor(int codigo)
         {
@@ -192,5 +226,33 @@ namespace Ceremony.View
                 lb_total.Content = total;
             }
         }
+
+        private void bt_pesquisar_cliente_Click(object sender, RoutedEventArgs e)
+        {
+            Tela_Consulta_Cliente tela = new Tela_Consulta_Cliente();
+            if(tela.ShowDialog() == true)
+            {
+                if (tela.dg_ConsultaCliente.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecione um cliente!");
+                    return;
+                }
+                //var a = (tela.dg_ConsultaCliente.SelectedCells[1].Column.GetCellContent(tela.dg_ConsultaCliente.SelectedCells[1].Item) as TextBlock).Text;
+                //MessageBox.Show(a);
+                var cellInfo = tela.dg_ConsultaCliente.SelectedCells[1];
+                var nome = (cellInfo.Column.GetCellContent(cellInfo.Item) as TextBlock).Text;
+                txt_cliente.Text = nome;
+
+                var cellInfo2 = tela.dg_ConsultaCliente.SelectedCells[0];
+                var codigo = (cellInfo2.Column.GetCellContent(cellInfo2.Item) as TextBlock).Text;
+                codigo_cliente = int.Parse(codigo);
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Cliente!");
+            }
+        }
+
     }
 }
