@@ -26,7 +26,7 @@ namespace Ceremony.View
         public Tela_Servicos_Cerimonia()
         {
             InitializeComponent();
-            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
+            //cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
             txt_nome.Focus();
         }
 
@@ -37,17 +37,11 @@ namespace Ceremony.View
                 MessageBox.Show("Preencha o Nome ou o Valor!");
                 return;
             }
-            if(cb_pacote.SelectedIndex < 0)
-            {
-                MessageBox.Show("Selecione um Pacote!");
-                return;
-            }
             else
             {
                 try
                 {
                     Pacote_Servicos pacote_servicos = new Pacote_Servicos();
-                    pacote_servicos.pacote_id = Convert.ToInt32(cb_pacote.SelectedValue);
                     pacote_servicos.pacote_servico_nome = txt_nome.Text;
                     pacote_servicos.pacote_servico_valor = Convert.ToDouble(txt_valor.Text);
                     servicesDBPacote_Servico.Salvar(pacote_servicos);

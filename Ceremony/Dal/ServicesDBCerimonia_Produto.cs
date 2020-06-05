@@ -10,38 +10,33 @@ using System.Threading.Tasks;
 
 namespace Ceremony.Dal
 {
-    public class ServicesDBCerimonia
+    public class ServicesDBCerimonia_Produto
     {
-        Cerimonia cerimonia = new Cerimonia();
+        Cerimonia_Produto cerimonia = new Cerimonia_Produto();
 
         Conexao con = new Conexao();
         SqlCommand sqlcommand = new SqlCommand();
         SqlDataReader sqldataReader = null;
         public string Statusmessagem { get; set; }
-        public List<Cerimonia> Listar_Cerimonia()
+
+        public List<Cerimonia_Produto> Listar_Cerimonia()
         {
             try
             {
-                List<Cerimonia> list = new List<Cerimonia>();
-                sqlcommand.CommandText = "select * from Cerimonia";
+                List<Cerimonia_Produto> list = new List<Cerimonia_Produto>();
+                sqlcommand.CommandText = "select * from Cerimonia_produto";
                 sqlcommand.Connection = con.conectar();
                 sqldataReader = sqlcommand.ExecuteReader();
                 while (sqldataReader.Read())
                 {
-                    Cerimonia cerimonia = new Cerimonia();
+                    Cerimonia_Produto cerimonia_produto = new Cerimonia_Produto();
 
-                    cerimonia.cerimonia_id = int.Parse(sqldataReader["buffet_id"].ToString());
-                    //buffet.buffet_data_evento = sqldataReader["buffet_data_evento"].ToString();
-                    cerimonia.cerimonia_cidade_local = sqldataReader["buffet_cidade_local"].ToString();
-                    cerimonia.cerimonia_total_convidados = int.Parse(sqldataReader["buffet_total_convidados"].ToString());
-                    //buffet.buffet_horario_cerimonia = sqldataReader["buffet_horario_cerimonia"].ToString();
-                    //buffet.buffet_inicio_festa = sqldataReader["buffet_inicio_festa"].ToString();
-                    cerimonia.cerimonia_num_parcelas = int.Parse(sqldataReader["buffet_num_parcelas"].ToString());
-                    //buffet.buffet_valor_parcelas = sqldataReader["buffet_valor_parcelas"].ToString();
-                    //buffet.buffet_data_primeiro_vencimento = int.Parse(sqldataReader["buffet_data_primeiro_vencimento"].ToString());
-                    //buffet.buffet_valor_total = sqldataReader["buffet_valor_total"].ToString();
+                    cerimonia_produto.cerimonia_produto_id = int.Parse(sqldataReader["cerimonia_produto_id"].ToString());
+                    cerimonia_produto.cerimonia_produto_servicos_id = int.Parse(sqldataReader["cerimonia_produto_servicos_id"].ToString());
+                    cerimonia_produto.cerimonia__id = int.Parse(sqldataReader["cerimonia__id"].ToString());
+                    cerimonia_produto.cerimonia_produto_valor = sqldataReader.GetDouble(3);
 
-                    list.Add(cerimonia);
+                    list.Add(cerimonia_produto);
                 }
                 sqlcommand.Parameters.Clear();
                 con.desconectar();
@@ -59,66 +54,22 @@ namespace Ceremony.Dal
             }
 
         }
-        public int Cerimonia_Ultimo_Registro()
+
+        public void Salvar(Cerimonia_Produto cerimonia_produto)
         {
             try
             {
-                int codigo = 0;
-                sqlcommand.CommandText = "select top 1 cerimonia_id from Cerimonia order by cerimonia_id desc";
+                sqlcommand.CommandText = "insert into Cerimonia_Produto(cerimonia__id,cerimonia_produto_pacote_servicos_id,cerimonia_produto_valor) " +
+                "values (@cerimonia__id,@cerimonia_produto_pacote_servicos_id,@cerimonia_produto_valor);"; 
+
+                sqlcommand.Parameters.AddWithValue("@cerimonia__id", cerimonia_produto.cerimonia__id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_produto_pacote_servicos_id", cerimonia_produto.cerimonia_produto_servicos_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_produto_valor", cerimonia_produto.cerimonia_produto_valor);
+                
                 sqlcommand.Connection = con.conectar();
-                sqldataReader = sqlcommand.ExecuteReader();
-                if (sqldataReader.Read())
-                {
-                    codigo = sqldataReader.GetInt32(0);
-                }
-                return codigo;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                sqlcommand.Parameters.Clear();
-                sqldataReader.Close();
-                con.desconectar();
-            }
+                sqlcommand.ExecuteNonQuery();
 
-        }
-        public void Salvar(Cerimonia cerimonia)
-        {
-            try
-            {
-                sqlcommand.CommandText = "insert into Cerimonia(cerimonia_data_evento,cerimonia_cidade_local,cerimonia_total_convidados," +
-                "cerimonia_horario_cerimonia,cerimonia_inicio_festa,cerimonia_num_parcelas," +
-                "cerimonia_valor_parcelas,cerimonia_data_primeiro_vencimento,cerimonia_valor_total,cerimonia_desconto,cerimonia_observacao," +
-                "cerimonia_cliente_id,cerimonia_tipo_evento_id,cerimonia_pacote_id) " +
-
-                "values (@cerimonia_data_evento,@cerimonia_cidade_local,@cerimonia_total_convidados," +
-                "@cerimonia_horario_cerimonia,@cerimonia_inicio_festa,@cerimonia_num_parcelas," +
-                "@cerimonia_valor_parcelas,@cerimonia_data_primeiro_vencimento,@cerimonia_valor_total,@cerimonia_desconto,@cerimonia_observacao," +
-                "@cerimonia_cliente_id,@cerimonia_tipo_evento_id,@cerimonia_pacote_id); ";
-
-            sqlcommand.Parameters.AddWithValue("@cerimonia_data_evento", cerimonia.cerimonia_data_evento);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_cidade_local", cerimonia.cerimonia_cidade_local);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_total_convidados", cerimonia.cerimonia_total_convidados);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_horario_cerimonia", cerimonia.cerimonia_horario_cerimonia);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_inicio_festa", cerimonia.cerimonia_inicio_festa);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_num_parcelas", cerimonia.cerimonia_num_parcelas);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_valor_parcelas", cerimonia.cerimonia_valor_parcelas);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_data_primeiro_vencimento", cerimonia.cerimonia_data_primeiro_vencimento);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_valor_total", cerimonia.cerimonia_valor_total);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_cliente_id", cerimonia.cerimonia_cliente_id);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_tipo_evento_id", cerimonia.cerimonia_tipo_evento_id);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_pacote_id", cerimonia.cerimonia_pacote_id);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_desconto", cerimonia.cerimonia_desconto);
-            sqlcommand.Parameters.AddWithValue("@cerimonia_observacao", cerimonia.cerimonia_observacao);
-
-
-            sqlcommand.Connection = con.conectar();
-            sqlcommand.ExecuteNonQuery();
-
-                Statusmessagem = "Cerimônia Cadastrada com Sucesso!";
+                Statusmessagem = "Cerimonia_Produto Cadastrada com Sucesso!";
 
             }
             catch (SqlException ex)
@@ -131,21 +82,20 @@ namespace Ceremony.Dal
                 con.desconectar();
             }
         }
-        public List<Cerimonia> Buscar_Cerimonia_Por_Nome(string nome)
+        public List<Cerimonia_Produto> Buscar_Cerimonia_Produto_Por_Nome(string nome)
         {
             CultureInfo enUS = new CultureInfo("pt-BR");
             try
             {
 
-                
-                List<Cerimonia> lista_cerimonias = new List<Cerimonia>();
-                sqlcommand.CommandText = "select * from Cerimonia ce inner join Cliente cl on " +
+                List<Cerimonia_Produto> lista_cerimonias = new List<Cerimonia_Produto>();
+                sqlcommand.CommandText = "select * from Cerimonia_Produto ce inner join Cliente cl on " +
                     "cl.cli_id = ce.cerimonia_cliente_id inner join Tipo_Evento te on " +
                     "te.tipo_evento_id = ce.cerimonia_tipo_evento_id inner join Pacote pc on " +
                     "pc.pacote_id = ce.cerimonia_pacote_id where cl.cli_nome like '%" + nome + "%'";
                 sqlcommand.Connection = con.conectar();
                 sqldataReader = sqlcommand.ExecuteReader();
-
+                /*
                 while (sqldataReader.Read() == true)
                 {
                     Cliente cli = new Cliente();
@@ -177,7 +127,8 @@ namespace Ceremony.Dal
                     cerimonia.cerimonia_valor_total = sqldataReader.GetDecimal(9);
                     lista_cerimonias.Add(cerimonia);
                 }
-                    return lista_cerimonias;
+                */
+                return lista_cerimonias;
             }
             catch (SqlException ex)
             {
@@ -192,9 +143,7 @@ namespace Ceremony.Dal
             }
         }
 
-
-
-        public void Alterar(Cerimonia buffet)
+        public void Alterar(Cerimonia_Produto cerimonia)
         {
             try
             {
@@ -205,7 +154,7 @@ namespace Ceremony.Dal
                 //",cli_uf = '" + cliente.cli_uf + "', cli_cep = '" + cliente.cli_cep + " cli_telefone_fixo = '" + cliente.cli_telefone_fixo +
                 //",cli_celular1 = '" + cliente.cli_celular1 + "', cli_celular2 = '" + cliente.cli_celular2 + " cli_telefone_trabalho = '" + cliente.cli_telefone_trabalho +
                 //",cli_email = '" + cliente.cli_email + "' WHERE cli_id = '" + cliente.cli_id;
-
+                /*
                 sqlcommand.Parameters.AddWithValue("@buffet_data_evento", cerimonia.cerimonia_data_evento);
                 sqlcommand.Parameters.AddWithValue("@buffet_cidade_local", cerimonia.cerimonia_cidade_local);
                 sqlcommand.Parameters.AddWithValue("@buffet_total_convidados", cerimonia.cerimonia_total_convidados);
@@ -215,7 +164,7 @@ namespace Ceremony.Dal
                 sqlcommand.Parameters.AddWithValue("@buffet_valor_parcelas", cerimonia.cerimonia_valor_parcelas);
                 sqlcommand.Parameters.AddWithValue("@buffet_data_primeiro_vencimento", cerimonia.cerimonia_data_primeiro_vencimento);
                 sqlcommand.Parameters.AddWithValue("@buffet_valor_total", cerimonia.cerimonia_valor_total);
-
+                */
                 sqlcommand.CommandType = CommandType.Text;
                 sqlcommand.Connection = con.conectar();
                 sqlcommand.ExecuteNonQuery();
@@ -233,15 +182,17 @@ namespace Ceremony.Dal
             }
 
         }
-        public Cerimonia Editar(int codigo)
+
+        public Cerimonia_Produto Editar(int codigo)
         {
             try
             {
-                Cerimonia cerimonia = new Cerimonia();
-                sqlcommand.CommandText = "select * from Cerimonia where cerimonia_id =  @codigo";
+                Cerimonia_Produto cerimonia = new Cerimonia_Produto();
+                sqlcommand.CommandText = "select * from Cerimonia_Produto where cerimonia_id =  @codigo";
                 sqlcommand.Parameters.AddWithValue("@codigo", codigo);
                 sqlcommand.Connection = con.conectar();
                 sqldataReader = sqlcommand.ExecuteReader();
+                /*
                 if (sqldataReader.Read())
                 {
                     cerimonia.cerimonia_id = int.Parse(sqldataReader["cerimonia_id"].ToString());
@@ -261,6 +212,7 @@ namespace Ceremony.Dal
                     cerimonia.cerimonia_data_primeiro_vencimento = DateTime.Parse(sqldataReader["cerimonia_data_primeiro_vencimento"].ToString());
                     cerimonia.cerimonia_observacao = sqldataReader["cerimonia_observacao"].ToString();
                 }
+                */
                 return cerimonia;
             }
             catch (Exception e)
@@ -274,5 +226,7 @@ namespace Ceremony.Dal
                 sqldataReader.Close();
             }
         }
+
+
     }
 }

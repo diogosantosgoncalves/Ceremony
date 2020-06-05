@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônial" Height="630" Width="730" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônial" Height="670" Width="730" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="HeaderStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="5 0 0 5"/>
@@ -52,7 +52,7 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
                 <Label Content="Pacote: " />
-                <ComboBox x:Name="cb_pacote"  Width="140"  SelectedValue="{Binding pacote_id}" SelectedValuePath="pacote_id" SelectionChanged="cb_pacote_SelectionChanged" >
+                <ComboBox x:Name="cb_pacote"  Width="140"  SelectedValue="{Binding pacote_id}" SelectedValuePath="pacote_id" >
                     <ComboBox.ItemTemplate >
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
@@ -103,18 +103,18 @@
                 <DatePicker Name="txt_data_primeiro_vencimento" Text="Selecione uma Data" />
                 <!--<TextBox x:Name="txt_data_primeiro_vencimento" Style="{StaticResource Textos}" Width="100"/>-->
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+            <StackPanel Orientation="Horizontal" >
                 <Label Content="Serviços: " />
-                <ListView Margin="10" Name="lv_pacote_servico" Width="360" Height="150">
+                <ListView  Name="lv_pacote_servico" Width="620" Height="165">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Id"  Width="50" DisplayMemberBinding="{Binding pacote_servico_id}" />
-                            <GridViewColumn Header="Nome" Width="150"  DisplayMemberBinding="{Binding pacote_servico_nome}" />
-                            <GridViewColumn Header="Valor" Width="150">
+                            <GridViewColumn Header="Nome" Width="480"  DisplayMemberBinding="{Binding pacote_servico_nome}" />
+                            <GridViewColumn Header="Valor" Width="80">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock  Text="          R$ " Foreground="Black"/>
+                                            <TextBlock  Text=" R$ " Foreground="Black"/>
                                             <TextBlock Text="{Binding pacote_servico_valor}" Foreground="Red" Cursor="Hand" />
                                             <TextBlock Text=",00" Foreground="red"/>
                                         </StackPanel>
@@ -124,13 +124,19 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <Label Content="Obs:" />
-                <TextBox x:Name="txt_observacao" Width="190" TextWrapping="Wrap" Margin="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
-                <Label Content="Valor Final: " FontSize="20" FontWeight="Heavy"/>
+                <Button x:Name="bt_Adicionar_Produto" Content="Adicionar Serviços"  Height="30" Width="200" Margin="5 2 0 5" Click="bt_Adicionar_Produto_Click"/>
+                <Label Content="Total Final: " FontSize="20" FontWeight="Heavy" Margin="190 0 0 0"/>
                 <Label x:Name="txt_valor_final" Content="R$" FontSize="20"/>
                 <Label Name="lb_total" Content="0,00" FontSize="20" Foreground="Red" FontWeight="Medium"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
+                <Label Content="Observação:" />
+                <TextBox x:Name="txt_observacao" Width="600" Height="50" TextWrapping="Wrap" Margin="0 0 32 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
+
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
                 <Button x:Name="bt_salvar" Content="Salvar" Width="100" Height="28" FontWeight="Bold" Click="bt_salvar_Click"/>

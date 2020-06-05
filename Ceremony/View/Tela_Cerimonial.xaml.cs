@@ -29,6 +29,7 @@ namespace Ceremony.View
         int codigo_pacote = 0;
         ServicesDBCerimonia servicesDBCerimonia = new ServicesDBCerimonia();
         ServicesDBCliente servicesDBCliente = new ServicesDBCliente();
+        ServicesDBCerimonia_Produto servicesDBCerimonia_Produto = new ServicesDBCerimonia_Produto();
         public Tela_Cerimonial()
         {
             InitializeComponent();
@@ -179,10 +180,24 @@ namespace Ceremony.View
                 }else
                     cerimonia.cerimonia_valor_total = Decimal.Parse(lb_total.Content.ToString());
 
-                servicesDBCerimonia.Salvar(cerimonia);
+                    servicesDBCerimonia.Salvar(cerimonia);
+
+                if(servicesDBCerimonia.Cerimonia_Ultimo_Registro() != 0)
+                {
+                    int codigo_cerimonia = servicesDBCerimonia.Cerimonia_Ultimo_Registro();
+                    foreach (var item in lv_pacote_servico.Items.OfType<Pacote_Servicos>())
+                    {
+                        Cerimonia_Produto cerimonia_Produto = new Cerimonia_Produto();
+                        cerimonia_Produto.cerimonia_produto_servicos_id = item.pacote_servico_id;
+                        cerimonia_Produto.cerimonia_produto_valor = item.pacote_servico_valor;
+                        cerimonia_Produto.cerimonia__id = codigo_cerimonia;
+                        servicesDBCerimonia_Produto.Salvar(cerimonia_Produto);
+                    }
+                }
+
                 MessageBox.Show(servicesDBCerimonia.Statusmessagem);
             }
-            catch(Exception ex)
+            catch(Exception exxx)
             {
                 MessageBox.Show(servicesDBCerimonia.Statusmessagem);
             }
@@ -194,8 +209,8 @@ namespace Ceremony.View
             
             int codigo = Convert.ToInt32(cb_pacote.SelectedValue);
             CarregarComboValor(codigo);
-            cb_pacote.SelectedValue = codigo_pacote;
-            MessageBox.Show("entrei aqui!");
+            //cb_pacote.SelectedValue = codigo_pacote;
+           
         }
         public void CarregarComboValor(int codigo)
         {
@@ -254,5 +269,50 @@ namespace Ceremony.View
             }
         }
 
+        private void bt_Adicionar_Produto_Click(object sender, RoutedEventArgs e)
+        {
+            Tela_Consulta_Pacote_Servicos tela = new Tela_Consulta_Pacote_Servicos();
+            if (tela.ShowDialog() == true)
+            {
+                if (tela.dg_ConsultaPacote_Servico.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecione um Serviço!");
+                    return;
+                }
+                //var a = (tela.dg_ConsultaCliente.SelectedCells[1].Column.GetCellContent(tela.dg_ConsultaCliente.SelectedCells[1].Item) as TextBlock).Text;
+                //MessageBox.Show(a);
+                Pacote_Servicos pacote_Servicos = new Pacote_Servicos();
+
+                var cellInfo = tela.dg_ConsultaPacote_Servico.SelectedCells[1];
+                var nome = (cellInfo.Column.GetCellContent(cellInfo.Item) as TextBlock).Text;
+                pacote_Servicos.pacote_servico_nome = nome;
+
+                var cellInfo2 = tela.dg_ConsultaPacote_Servico.SelectedCells[0];
+                var codigo = (cellInfo2.Column.GetCellContent(cellInfo2.Item) as TextBlock).Text;
+                pacote_Servicos.pacote_servico_id = int.Parse(codigo);
+
+                var cellInfo3 = tela.dg_ConsultaPacote_Servico.SelectedCells[2];
+                var valor = (cellInfo3.Column.GetCellContent(cellInfo3.Item) as TextBlock).Text;
+                pacote_Servicos.pacote_servico_valor = Double.Parse(valor);
+
+                lv_pacote_servico.Items.Add(pacote_Servicos);
+
+                total = 0;
+                foreach (Pacote_Servicos o in lv_pacote_servico.Items)
+                {
+                    total += o.pacote_servico_valor;
+                }
+                if (!string.IsNullOrEmpty(txt_Desconto.Text))
+                    total = total - Convert.ToDouble(txt_Desconto.Text);
+                lb_total.Content = total;
+                //txt_Desconto.Text = "";
+                txt_valor_prestacao_do_servico.Text = total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Cliente!");
+            }
+        }
     }
+    
 }

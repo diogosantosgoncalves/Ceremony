@@ -23,7 +23,7 @@
             <Label Content="Valor: " FontWeight="DemiBold"/>
             <TextBox x:Name="txt_valor" Width="70" Height="20"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Label Content="Pacote: " FontWeight="DemiBold"/>
             <ComboBox Name="cb_pacote" SelectedValuePath="pacote_id" Width="150">
                 <ComboBox.ItemTemplate >
@@ -36,7 +36,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-        </StackPanel>
+        </StackPanel>-->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
             <Button x:Name="bt_Salvar" Content="Salvar" Width="100" Height="30" Click="bt_Salvar_Servicos"/>
         </StackPanel>

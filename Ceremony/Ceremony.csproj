@@ -14,6 +14,22 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\APPCerimonia\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +49,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>86A20864FB9B6B5DE1A105B310D423DADCDC3786</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Ceremony_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -73,6 +101,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dal\ServicesDBCerimonia_Produto.cs" />
+    <Compile Include="Model\Cerimonia_Produto.cs" />
     <Compile Include="Relatorios\CeremonyDataSet.cs">
       <DependentUpon>CeremonyDataSet.xsd</DependentUpon>
     </Compile>
@@ -133,6 +163,9 @@
     </Compile>
     <Compile Include="View\Tela_Consulta_Pacote_Servicos.xaml.cs">
       <DependentUpon>Tela_Consulta_Pacote_Servicos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela_Consulta_Servico.xaml.cs">
+      <DependentUpon>Tela_Consulta_Servico.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Tela_Consulta_Tipo_Evento.xaml.cs">
       <DependentUpon>Tela_Consulta_Tipo_Evento.xaml</DependentUpon>
@@ -202,6 +235,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Tela_Consulta_Servico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Tela_Consulta_Tipo_Evento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -239,6 +276,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\RelatorioCerimonia.rdlc" />
     <EmbeddedResource Include="Relatorios\RelatorioCerimonia - Copy.rdlc" />
+    <None Include="Ceremony_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Ceremony.Dal.ServicesDBCerimonia.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Buffet.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Buffet_Servicos.datasource" />
@@ -293,6 +331,18 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

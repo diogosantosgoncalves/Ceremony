@@ -31,7 +31,6 @@ namespace Ceremony.Dal
                     pacote_servicos.pacote_servico_id = int.Parse(sqldataReader["pacote_servico_id"].ToString());
                     pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_nome"].ToString();
                     pacote_servicos.pacote_servico_valor = double.Parse(sqldataReader["pacote_servico_valor"].ToString()); // sqldataReader.GetDouble(2);
-                    pacote_servicos.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
 
                     list.Add(pacote_servicos);
                 }
@@ -68,7 +67,6 @@ namespace Ceremony.Dal
                     pacote_servicos.pacote_servico_id = int.Parse(sqldataReader["pacote_servico_id"].ToString());
                     pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_nome"].ToString();
                     pacote_servicos.pacote_servico_valor = double.Parse(sqldataReader["pacote_servico_valor"].ToString()); // sqldataReader.GetDouble(2);
-                    pacote_servicos.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
 
                     list.Add(pacote_servicos);
                 }
@@ -93,10 +91,9 @@ namespace Ceremony.Dal
         {
             try
             {
-                sqlcommand.CommandText = "insert into Pacote_Servicos(pacote_servico_nome,pacote_servico_valor,pacote_id) values (@nome,@valor,@pacote)";
+                sqlcommand.CommandText = "insert into Pacote_Servicos(pacote_servico_nome,pacote_servico_valor) values (@nome,@valor)";
                 sqlcommand.Parameters.AddWithValue("@nome", pacote_servicos.pacote_servico_nome);
                 sqlcommand.Parameters.AddWithValue("@valor", pacote_servicos.pacote_servico_valor);
-                sqlcommand.Parameters.AddWithValue("@pacote", pacote_servicos.pacote_id);
 
                 Statusmessagem = "Serviço Cadastro com Sucesso!";
 
@@ -122,7 +119,6 @@ namespace Ceremony.Dal
 
                 sqlcommand.Parameters.AddWithValue("@nome", pacote_servicos.pacote_servico_nome);
                 sqlcommand.Parameters.AddWithValue("@valor", pacote_servicos.pacote_servico_valor);
-                sqlcommand.Parameters.AddWithValue("@id", pacote_servicos.pacote_id);
                 sqlcommand.CommandType = CommandType.Text;
                 sqlcommand.Connection = con.conectar();
                 sqlcommand.ExecuteNonQuery();
