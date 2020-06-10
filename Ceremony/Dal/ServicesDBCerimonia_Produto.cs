@@ -82,52 +82,40 @@ namespace Ceremony.Dal
                 con.desconectar();
             }
         }
-        public List<Cerimonia_Produto> Buscar_Cerimonia_Produto_Por_Nome(string nome)
+        public List<Cerimonia_Produto> Buscar_Cerimonia_Produto_Por_Codigo(int codigo)
         {
             CultureInfo enUS = new CultureInfo("pt-BR");
             try
             {
 
                 List<Cerimonia_Produto> lista_cerimonias = new List<Cerimonia_Produto>();
-                sqlcommand.CommandText = "select * from Cerimonia_Produto ce inner join Cliente cl on " +
-                    "cl.cli_id = ce.cerimonia_cliente_id inner join Tipo_Evento te on " +
-                    "te.tipo_evento_id = ce.cerimonia_tipo_evento_id inner join Pacote pc on " +
-                    "pc.pacote_id = ce.cerimonia_pacote_id where cl.cli_nome like '%" + nome + "%'";
+                sqlcommand.CommandText = "select * from cerimonia_produto cp " +
+                    "inner join Cerimonia ce on cp.cerimonia_produto_id = ce.cerimonia_id " +
+                    "inner join Pacote_Servicos ps on cp.cerimonia_produto_pacote_servicos_id = ps.pacote_servico_id " +
+                    " where cp.cerimonia__id = " + codigo;
                 sqlcommand.Connection = con.conectar();
                 sqldataReader = sqlcommand.ExecuteReader();
-                /*
+        
                 while (sqldataReader.Read() == true)
                 {
-                    Cliente cli = new Cliente();
-                    cli.cli_nome = sqldataReader["cli_nome"].ToString();
-                    Tipo_Evento tipo_Evento = new Tipo_Evento();
-                    tipo_Evento.tipo_evento_nome = sqldataReader["tipo_evento_nome"].ToString();
-                    Pacote pac = new Pacote();
-                    pac.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
-                    pac.pacote_nome = sqldataReader["pacote_nome"].ToString();
+                    Cerimonia_Produto cerimonia_produto = new Cerimonia_Produto();
                     Cerimonia cerimonia = new Cerimonia();
-                    cerimonia.cliente = cli;
-                    cerimonia.pacot = pac;
-                    cerimonia.tipo_evento = tipo_Evento;
+
+                    cerimonia_produto.cerimonia_produto_servicos_id = int.Parse(sqldataReader["cerimonia_produto_pacote_servicos_id"].ToString());
+
                     cerimonia.cerimonia_id = int.Parse(sqldataReader["cerimonia_id"].ToString());
-                    cerimonia.cerimonia_cliente_id = cli.cli_id;
-                    cerimonia.cerimonia_pacote_id = pac.pacote_id;
-                    cerimonia.cerimonia_tipo_evento_id = tipo_Evento.tipo_evento_id;
-                    cerimonia.cliente.cli_nome = sqldataReader["cli_nome"].ToString();
-                    //sqldataReader["inv_dtfechamento"].ToString().Length > 0 ? DateTime.Parse(sqldataReader["inv_dtfechamento"].ToString()) : DateTime.MinValue;
-                    //cerimonia.cerimonia_data_evento = DateTime.Parse(sqldataReader["cerimonia_data_evento"].ToString());
-                    cerimonia.cerimonia_cidade_local = sqldataReader["cerimonia_cidade_local"].ToString();
-                    cerimonia.cerimonia_total_convidados = int.Parse(sqldataReader["cerimonia_total_convidados"].ToString());
-                    cerimonia.cerimonia_horario_cerimonia = sqldataReader["cerimonia_horario_cerimonia"].ToString();
-                    //buffet.buffet_inicio_festa = sqldataReader["buffet_inicio_festa"].ToString();
-                    cerimonia.cerimonia_num_parcelas = int.Parse(sqldataReader["cerimonia_num_parcelas"].ToString());
-                    //buffet.buffet_valor_parcelas = sqldataReader["buffet_valor_parcelas"].ToString();
-                    //buffet.buffet_data_primeiro_vencimento = int.Parse(sqldataReader["buffet_data_primeiro_vencimento"].ToString());
-                    //cerimonia.cerimonia_valor_total = sqldataReader["cerimonia_valor_total"].ToString();
-                    cerimonia.cerimonia_valor_total = sqldataReader.GetDecimal(9);
-                    lista_cerimonias.Add(cerimonia);
+                    cerimonia_produto.cerimonia = cerimonia;
+                    
+                    
+
+                    Pacote_Servicos pacote_servicos = new Pacote_Servicos();
+                    pacote_servicos.pacote_servico_id = int.Parse(sqldataReader["pacote_servico_id"].ToString());
+                    pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_nome"].ToString();
+                    pacote_servicos.pacote_servico_valor = double.Parse(sqldataReader["pacote_servico_valor"].ToString());
+                    cerimonia_produto.pacote_servicos = pacote_servicos;
+                    lista_cerimonias.Add(cerimonia_produto);
                 }
-                */
+
                 return lista_cerimonias;
             }
             catch (SqlException ex)
@@ -142,7 +130,7 @@ namespace Ceremony.Dal
                 sqldataReader.Close();
             }
         }
-
+  
         public void Alterar(Cerimonia_Produto cerimonia)
         {
             try

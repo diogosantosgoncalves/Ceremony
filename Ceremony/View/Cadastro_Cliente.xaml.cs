@@ -88,6 +88,7 @@ namespace Ceremony.View
                 {
                     cliente.cli_id =  int.Parse(txt_id.Text);
                     servicesDBCliente.AlterarCliente(cliente);
+                    this.DialogResult = true;
                 }
 
                 MessageBox.Show(servicesDBCliente.Statusmessagem);

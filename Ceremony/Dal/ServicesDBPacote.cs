@@ -17,7 +17,7 @@ namespace Ceremony.Dal
         SqlCommand sqlcommand = new SqlCommand();
         SqlDataReader sqldataReader = null;
         public string Statusmessagem { get; set; }
-        public List<Pacote> Listar_Pacote(string nome)
+        public List<Pacote> Listar_Pacote(string nome = "")
         {
             try
             {
@@ -76,7 +76,7 @@ namespace Ceremony.Dal
             try
             {
                 sqlcommand.CommandText = "UPDATE Pacote SET pacote_nome = '" + pacote.pacote_nome +
-               "' WHERE pacote_id = '" + pacote.pacote_id;
+               "' WHERE pacote_id = '" + pacote.pacote_id + "'";
                 sqlcommand.Parameters.AddWithValue("@nome", pacote.pacote_nome);
                 sqlcommand.CommandType = CommandType.Text;
                 sqlcommand.Connection = con.conectar();
@@ -94,6 +94,33 @@ namespace Ceremony.Dal
                 con.desconectar();
             }
 
+        }
+        public Pacote Editar(int codigo)
+        {
+            try
+            {
+                Pacote pacote = new Pacote();
+                sqlcommand.CommandText = "select * from Pacote where Pacote_id =  @codigo";
+                sqlcommand.Parameters.AddWithValue("@codigo", codigo);
+                sqlcommand.Connection = con.conectar();
+                sqldataReader = sqlcommand.ExecuteReader();
+                if (sqldataReader.Read())
+                {
+                    pacote.pacote_id = int.Parse(sqldataReader["pacote_id"].ToString());
+                    pacote.pacote_nome = sqldataReader["pacote_nome"].ToString();
+                }
+                return pacote;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+                sqldataReader.Close();
+            }
         }
     }
 }

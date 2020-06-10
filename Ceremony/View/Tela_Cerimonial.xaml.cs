@@ -2,8 +2,10 @@
 using Ceremony.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,6 +32,8 @@ namespace Ceremony.View
         ServicesDBCerimonia servicesDBCerimonia = new ServicesDBCerimonia();
         ServicesDBCliente servicesDBCliente = new ServicesDBCliente();
         ServicesDBCerimonia_Produto servicesDBCerimonia_Produto = new ServicesDBCerimonia_Produto();
+        List<Cerimonia_Produto> lista_original_cerimonia_produtos = new List<Cerimonia_Produto>();
+        List<Cerimonia_Produto> cerimonia_Produtos = new List<Cerimonia_Produto>();
         public Tela_Cerimonial()
         {
             InitializeComponent();
@@ -41,18 +45,17 @@ namespace Ceremony.View
         public Tela_Cerimonial(Cerimonia cerimonia)
         {
             InitializeComponent();
-            
+            //]lv_pacote_servico = null;
             ServicesDBTipo_Evento servicesDBTipo_Evento = new ServicesDBTipo_Evento();
             cb_evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento("");
             ServicesDBPacote servicesDBPacote = new ServicesDBPacote();
-            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
+            cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote();
 
             codigo_evento = cerimonia.cerimonia_tipo_evento_id;
             codigo_pacote = cerimonia.cerimonia_pacote_id;
             cb_evento.SelectionChanged += new SelectionChangedEventHandler(comboBox1SelectionChanged);
             cb_pacote.SelectionChanged += new SelectionChangedEventHandler(cb_pacote_SelectionChanged);
 
-            //cb_evento.SelectedIndex = 1;
             Cliente cli = servicesDBCliente.Editar(cerimonia.cerimonia_cliente_id);
             txt_cliente.Text = cli.cli_nome;
             txt_data.Text = cerimonia.cerimonia_data_evento.ToString();
@@ -68,36 +71,38 @@ namespace Ceremony.View
             txt_data_primeiro_vencimento.Text = cerimonia.cerimonia_data_primeiro_vencimento.ToString();
             txt_horario_festa.Text = cerimonia.cerimonia_inicio_festa.ToString();
             txt_observacao.Text = cerimonia.cerimonia_observacao;
-            //SelectInfo = InfoCombo[0];
-            //cb_evento.SelectedIndex = cb_evento.Items.IndexOf(cerimonia.cerimonia_tipo_evento_id);
-            Tipo_Evento obj = new Tipo_Evento();
-            obj.tipo_evento_id = 1;
-            //cb_evento.SelectedValue = obj.tipo_evento_id;
-            //cb_evento.SelectedIndex = obj.tipo_evento_id;
-            //cb_evento.SelectedValue = cerimonia.cerimonia_tipo_evento_id;
-            //Convert.ToInt32(cerimonia.cerimonia_pacote_id);
 
+            cb_evento.SelectedValue = cerimonia.cerimonia_tipo_evento_id;
+            cb_pacote.SelectedValue = cerimonia.cerimonia_pacote_id;
 
-
-            //CarregarComboValor(Convert.ToInt32(cerimonia.cerimonia_pacote_id));
-
-            //cb_pacote.SelectedValue = codigo_pacote;
-            //cb_pacote.SelectedValue = cerimonia.cerimonia_pacote_id;
             txt_Desconto.Text = cerimonia.cerimonia_desconto.ToString();
-
+            lb_total.Content = double.Parse(cerimonia.cerimonia_valor_total.ToString());
+            //lv_pacote_servico.Items.Clear();
+            //var lista_ceri = new ObservableCollection<Cerimonia_Produto>(servicesDBCerimonia_Produto.Buscar_Cerimonia_Produto_Por_Codigo(cerimonia.cerimonia_id));
+            //lv_pacote_servico.ItemsSource = servicesDBCerimonia_Produto.Buscar_Cerimonia_Produto_Por_Codigo(cerimonia.cerimonia_id);
+            //lv_pacote_servico.ItemsSource = lista_ceri;
+            lv_pacote_servico.ItemsSource = servicesDBCerimonia_Produto.Buscar_Cerimonia_Produto_Por_Codigo(cerimonia.cerimonia_id);
+            lista_original_cerimonia_produtos = servicesDBCerimonia_Produto.Buscar_Cerimonia_Produto_Por_Codigo(cerimonia.cerimonia_id);
+            cerimonia_Produtos = servicesDBCerimonia_Produto.Buscar_Cerimonia_Produto_Por_Codigo(cerimonia.cerimonia_id);
+            bt_salvar.Content = "Alterar";
+            
         }
         void comboBox1SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cb_evento.SelectedValue = codigo_evento;
             var currentSelectedIndex = cb_evento.SelectedValue;
-
-            //cb_pacote.SelectedValue = codigo_pacote;
         }
-
+        void cb_pacote_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cb_pacote.SelectedValue = codigo_pacote;
+            var currentSelectedIndex2 = cb_pacote.SelectedValue;
+        }
         public void bt_salvar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                
+
                 Cerimonia cerimonia = new Cerimonia();
 
                 if (string.IsNullOrEmpty(txt_cliente.Text))
@@ -107,36 +112,36 @@ namespace Ceremony.View
                 }
                 else
                     cerimonia.cerimonia_cliente_id = codigo_cliente;
-                
+
                 if (string.IsNullOrEmpty(txt_data.Text))
                 {
                     MessageBox.Show("Selecione a Data do Evento!");
                     return;
                 }
-                else 
+                else
                     cerimonia.cerimonia_data_evento = DateTime.Parse(txt_data.Text);
-                
+
                 if (string.IsNullOrEmpty(cb_evento.SelectedValue.ToString()))
                 {
                     MessageBox.Show("Selecione um tipo de Evento!");
                     return;
                 }
-                else 
+                else
                     cerimonia.cerimonia_tipo_evento_id = Convert.ToInt32(cb_evento.SelectedValue);
-                
+
                 if (string.IsNullOrEmpty(cb_pacote.SelectedValue.ToString()))
                 {
                     MessageBox.Show("Selecione um Pacote!");
                     return;
                 }
-                else 
+                else
                     cerimonia.cerimonia_pacote_id = Convert.ToInt32(cb_pacote.SelectedValue);
-                
+
                 cerimonia.cerimonia_cidade_local = txt_cidade_local.Text;
 
-                if(!string.IsNullOrEmpty(txt_convidados.Text))
+                if (!string.IsNullOrEmpty(txt_convidados.Text))
                     cerimonia.cerimonia_total_convidados = int.Parse(txt_convidados.Text);
-                
+
                 cerimonia.cerimonia_horario_cerimonia = txt_horario_cerimonia.Text;
                 cerimonia.cerimonia_inicio_festa = txt_horario_festa.Text;
 
@@ -145,7 +150,7 @@ namespace Ceremony.View
                     MessageBox.Show("Informe um valor da Parcela!");
                     return;
                 }
-                else 
+                else
                     cerimonia.cerimonia_valor_parcelas = Decimal.Parse(txt_valor_das_parcelas.Text);
 
                 if (string.IsNullOrEmpty(txt_Desconto.Text))
@@ -162,7 +167,7 @@ namespace Ceremony.View
                 }
                 else
                     cerimonia.cerimonia_num_parcelas = int.Parse(txt_parcelas.Text);
-                
+
                 if (string.IsNullOrEmpty(txt_data_primeiro_vencimento.Text))
                 {
                     MessageBox.Show("Selecione a data do primeiro vencimento!");
@@ -177,45 +182,63 @@ namespace Ceremony.View
                 {
                     MessageBox.Show("Valor Total zerado!");
                     return;
-                }else
+                }
+                else
                     cerimonia.cerimonia_valor_total = Decimal.Parse(lb_total.Content.ToString());
 
+                if(bt_salvar.Content.ToString() == "Salvar")
+                {
                     servicesDBCerimonia.Salvar(cerimonia);
 
-                if(servicesDBCerimonia.Cerimonia_Ultimo_Registro() != 0)
-                {
-                    int codigo_cerimonia = servicesDBCerimonia.Cerimonia_Ultimo_Registro();
-                    foreach (var item in lv_pacote_servico.Items.OfType<Pacote_Servicos>())
+                    if (servicesDBCerimonia.Cerimonia_Ultimo_Registro() != 0)
                     {
-                        Cerimonia_Produto cerimonia_Produto = new Cerimonia_Produto();
-                        cerimonia_Produto.cerimonia_produto_servicos_id = item.pacote_servico_id;
-                        cerimonia_Produto.cerimonia_produto_valor = item.pacote_servico_valor;
-                        cerimonia_Produto.cerimonia__id = codigo_cerimonia;
-                        servicesDBCerimonia_Produto.Salvar(cerimonia_Produto);
+                        int codigo_cerimonia = servicesDBCerimonia.Cerimonia_Ultimo_Registro();
+                        foreach (var item in lv_pacote_servico.Items.OfType<Cerimonia_Produto>())
+                        {
+                            Cerimonia_Produto cerimonia_Produto = new Cerimonia_Produto();
+                            cerimonia_Produto.cerimonia_produto_servicos_id = item.pacote_servicos.pacote_servico_id;
+                            cerimonia_Produto.cerimonia_produto_valor = item.pacote_servicos.pacote_servico_valor;
+                            cerimonia_Produto.cerimonia__id = codigo_cerimonia;
+                            servicesDBCerimonia_Produto.Salvar(cerimonia_Produto);
+                        }
                     }
                 }
+                else
+                {
+                    servicesDBCerimonia.Alterar(cerimonia);
 
+                    var difList = cerimonia_Produtos.Where(a => !lista_original_cerimonia_produtos.Any(a1 => a1.pacote_servicos.pacote_servico_id == a.pacote_servicos.pacote_servico_id)).Union(lista_original_cerimonia_produtos.Where(a => !cerimonia_Produtos.Any(a1 => a1.pacote_servicos.pacote_servico_id == a.pacote_servicos.pacote_servico_id)));
+
+                    if (servicesDBCerimonia.Cerimonia_Ultimo_Registro() != 0)
+                    {
+                        int codigo_cerimonia = servicesDBCerimonia.Cerimonia_Ultimo_Registro();
+                        foreach (var item in difList)
+                        {
+                            Cerimonia_Produto cerimonia_Produto = new Cerimonia_Produto();
+                            cerimonia_Produto.cerimonia_produto_servicos_id = item.pacote_servicos.pacote_servico_id;
+                            cerimonia_Produto.cerimonia_produto_valor = item.pacote_servicos.pacote_servico_valor;
+                            cerimonia_Produto.cerimonia__id = codigo_cerimonia;
+                            servicesDBCerimonia_Produto.Salvar(cerimonia_Produto);
+                        }
+                    }
+                }
                 MessageBox.Show(servicesDBCerimonia.Statusmessagem);
             }
-            catch(Exception exxx)
+            catch (Exception exxx)
             {
                 MessageBox.Show(servicesDBCerimonia.Statusmessagem);
             }
         }
 
-        public void cb_pacote_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            
-            int codigo = Convert.ToInt32(cb_pacote.SelectedValue);
-            CarregarComboValor(codigo);
-            //cb_pacote.SelectedValue = codigo_pacote;
-           
-        }
+        //public void cb_pacote_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    int codigo = Convert.ToInt32(cb_pacote.SelectedValue);
+        //    CarregarComboValor(codigo);
+        //    //cb_pacote.SelectedValue = codigo_pacote;
+        //}
         public void CarregarComboValor(int codigo)
         {
             total = 0;
-            //codigo = Convert.ToInt32(cb_pacote.SelectedValue);
 
             ServicesDBPacote_Servico servicesDBPacote_Servico = new ServicesDBPacote_Servico();
             lv_pacote_servico.ItemsSource = servicesDBPacote_Servico.Listar_Pacote_Servicos_Por_Id(codigo);
@@ -228,24 +251,32 @@ namespace Ceremony.View
             txt_Desconto.Text = "";
             txt_valor_prestacao_do_servico.Text = total.ToString();
         }
-        
+
         private void txt_Desconto_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
-            if ((!string.IsNullOrEmpty(txt_Desconto.Text)) && (!string.IsNullOrEmpty(total.ToString())) )
+            if ((!string.IsNullOrEmpty(txt_Desconto.Text)) && (!string.IsNullOrEmpty(total.ToString())))
             {
-                lb_total.Content = Convert.ToDouble(total)  - (Convert.ToDouble(txt_Desconto.Text));
+                if (Convert.ToDouble(txt_Desconto.Text) == 0)
+                {
+                    Calcula_Total();
+                }
+                else
+                {
+                    //lb_total.Content = Convert.ToDouble(total) - (Convert.ToDouble(txt_Desconto.Text));
+                    Calcula_Total();
+                }
             }
             else
             {
-                lb_total.Content = total;
+                //lb_total.Content = total;
+                Calcula_Total();
             }
         }
 
         private void bt_pesquisar_cliente_Click(object sender, RoutedEventArgs e)
         {
             Tela_Consulta_Cliente tela = new Tela_Consulta_Cliente();
-            if(tela.ShowDialog() == true)
+            if (tela.ShowDialog() == true)
             {
                 if (tela.dg_ConsultaCliente.SelectedItem == null)
                 {
@@ -271,6 +302,7 @@ namespace Ceremony.View
 
         private void bt_Adicionar_Produto_Click(object sender, RoutedEventArgs e)
         {
+
             Tela_Consulta_Pacote_Servicos tela = new Tela_Consulta_Pacote_Servicos();
             if (tela.ShowDialog() == true)
             {
@@ -279,9 +311,11 @@ namespace Ceremony.View
                     MessageBox.Show("Selecione um Serviço!");
                     return;
                 }
-                //var a = (tela.dg_ConsultaCliente.SelectedCells[1].Column.GetCellContent(tela.dg_ConsultaCliente.SelectedCells[1].Item) as TextBlock).Text;
-                //MessageBox.Show(a);
                 Pacote_Servicos pacote_Servicos = new Pacote_Servicos();
+
+                ///Tentar Usar Este
+                Pacote_Servicos pacote_Servicos1 = tela.dg_ConsultaPacote_Servico.SelectedItem as Pacote_Servicos;
+                /// Tentar Usar Este
 
                 var cellInfo = tela.dg_ConsultaPacote_Servico.SelectedCells[1];
                 var nome = (cellInfo.Column.GetCellContent(cellInfo.Item) as TextBlock).Text;
@@ -295,24 +329,61 @@ namespace Ceremony.View
                 var valor = (cellInfo3.Column.GetCellContent(cellInfo3.Item) as TextBlock).Text;
                 pacote_Servicos.pacote_servico_valor = Double.Parse(valor);
 
-                lv_pacote_servico.Items.Add(pacote_Servicos);
 
-                total = 0;
-                foreach (Pacote_Servicos o in lv_pacote_servico.Items)
+
+                Cerimonia_Produto cerimonia_Produto = new Cerimonia_Produto();
+                cerimonia_Produto.pacote_servicos = pacote_Servicos;
+                if (cerimonia_Produtos.Exists(a => a.pacote_servicos.pacote_servico_id == cerimonia_Produto.pacote_servicos.pacote_servico_id))
                 {
-                    total += o.pacote_servico_valor;
+                    MessageBox.Show("Esse serviço já foi adicionado!");
+                    return;
                 }
-                if (!string.IsNullOrEmpty(txt_Desconto.Text))
-                    total = total - Convert.ToDouble(txt_Desconto.Text);
-                lb_total.Content = total;
-                //txt_Desconto.Text = "";
-                txt_valor_prestacao_do_servico.Text = total.ToString();
+                cerimonia_Produtos.Add(cerimonia_Produto);
+                lv_pacote_servico.ItemsSource = cerimonia_Produtos;
+                lv_pacote_servico.Items.Refresh();
+
+                Calcula_Total();
+
             }
             else
             {
-                MessageBox.Show("Selecione um Cliente!");
+                MessageBox.Show("Selecione um Serviço!");
             }
         }
+        private void bt_Remover_Produto_Click(object sender, RoutedEventArgs e)
+        {
+            Cerimonia_Produto obj = lv_pacote_servico.SelectedItem as Cerimonia_Produto;
+            if (obj == null)
+            {
+                MessageBox.Show("Selecione um Serviço!");
+            }
+            else
+            {
+                string selectID = obj.pacote_servicos.pacote_servico_id.ToString();
+                MessageBox.Show("The ID is: " + selectID);
+                cerimonia_Produtos.RemoveAt(lv_pacote_servico.SelectedIndex);
+                lv_pacote_servico.ItemsSource = cerimonia_Produtos;
+                lv_pacote_servico.Items.Refresh();
+
+                Calcula_Total();
+            }
+
+
+
+        }
+        public void Calcula_Total()
+        {
+            total = 0;
+            foreach (Cerimonia_Produto o in lv_pacote_servico.Items)
+            {
+                total += o.pacote_servicos.pacote_servico_valor;
+            }
+            if (!string.IsNullOrEmpty(txt_Desconto.Text))
+                total = total - Convert.ToDouble(txt_Desconto.Text);
+
+            lb_total.Content = total;
+            txt_valor_prestacao_do_servico.Text = total.ToString();
+        }
+
     }
-    
 }

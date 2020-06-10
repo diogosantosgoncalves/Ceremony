@@ -27,6 +27,13 @@ namespace Ceremony.View
         {
             InitializeComponent();
         }
+        public Tela_Pacotes(Pacote pacote)
+        {
+            InitializeComponent();
+            txt_id.Text = pacote.pacote_id.ToString();
+            txt_nome.Text = pacote.pacote_nome;
+            bt_Salvar.Content = "Alterar";
+        }
 
         private void bt_Salvar_Click(object sender, RoutedEventArgs e)
         {
@@ -34,7 +41,17 @@ namespace Ceremony.View
             {
                 Pacote pacote = new Pacote();
                 pacote.pacote_nome = txt_nome.Text;
-                servicesDBPacote.Salvar(pacote);
+                if (bt_Salvar.Content.ToString() == "Salvar")
+                {
+                    
+                    servicesDBPacote.Salvar(pacote);
+                }
+                else
+                {
+                    pacote.pacote_id = int.Parse(txt_id.Text);
+                    servicesDBPacote.Alterar(pacote);
+                    this.DialogResult = true;
+                }
                 MessageBox.Show(servicesDBPacote.Statusmessagem);
                 txt_nome.Text = "";
                 txt_nome.Focus();

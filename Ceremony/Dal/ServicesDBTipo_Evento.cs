@@ -1,6 +1,7 @@
 ﻿using Ceremony.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -67,6 +68,57 @@ namespace Ceremony.Dal
                 sqlcommand.Parameters.Clear();
                 con.desconectar();
             }
+        }
+        public Tipo_Evento Editar(int codigo)
+        {
+            try
+            {
+                Tipo_Evento tipo_Evento = new Tipo_Evento();
+                sqlcommand.CommandText = "select * from Tipo_Evento where tipo_evento_id =  @codigo";
+                sqlcommand.Parameters.AddWithValue("@codigo", codigo);
+                sqlcommand.Connection = con.conectar();
+                sqldataReader = sqlcommand.ExecuteReader();
+                if (sqldataReader.Read())
+                {
+                    tipo_Evento.tipo_evento_id = int.Parse(sqldataReader["tipo_evento_id"].ToString());
+                    tipo_Evento.tipo_evento_nome = sqldataReader["tipo_Evento_nome"].ToString();
+                }
+                return tipo_Evento;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+                sqldataReader.Close();
+            }
+        }
+        public void Alterar(Tipo_Evento tipo_Evento)
+        {
+            try
+            {
+                sqlcommand.CommandText = "UPDATE Tipo_Evento SET tipo_evento_nome = '" + tipo_Evento.tipo_evento_nome +
+               "' WHERE tipo_evento_id = " + tipo_Evento.tipo_evento_id;
+                sqlcommand.Parameters.AddWithValue("@nome", tipo_Evento.tipo_evento_nome);
+                sqlcommand.CommandType = CommandType.Text;
+                sqlcommand.Connection = con.conectar();
+                sqlcommand.ExecuteNonQuery();
+
+                Statusmessagem = "Tipo de Evento alterado com sucesso!";
+            }
+            catch (SqlException ex)
+            {
+                Statusmessagem = ex.Message;
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+            }
+
         }
     }
 }

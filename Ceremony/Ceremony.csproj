@@ -101,6 +101,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CeremonyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CeremonyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CeremonyDataSetCerimonia_Produto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CeremonyDataSetCerimonia_Produto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dal\ServicesDBCerimonia_Produto.cs" />
     <Compile Include="Model\Cerimonia_Produto.cs" />
     <Compile Include="Relatorios\CeremonyDataSet.cs">
@@ -274,13 +284,37 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioCerimonia - Copy %282%29.rdlc" />
     <EmbeddedResource Include="Relatorios\RelatorioCerimonia.rdlc" />
     <EmbeddedResource Include="Relatorios\RelatorioCerimonia - Copy.rdlc" />
+    <None Include="CeremonyDataSet.xsc">
+      <DependentUpon>CeremonyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CeremonyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CeremonyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CeremonyDataSet.xss">
+      <DependentUpon>CeremonyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CeremonyDataSetCerimonia_Produto.xsc">
+      <DependentUpon>CeremonyDataSetCerimonia_Produto.xsd</DependentUpon>
+    </None>
+    <None Include="CeremonyDataSetCerimonia_Produto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CeremonyDataSetCerimonia_Produto.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CeremonyDataSetCerimonia_Produto.xss">
+      <DependentUpon>CeremonyDataSetCerimonia_Produto.xsd</DependentUpon>
+    </None>
     <None Include="Ceremony_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Ceremony.Dal.ServicesDBCerimonia.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Buffet.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Buffet_Servicos.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Cerimonia.datasource" />
+    <None Include="Properties\DataSources\Ceremony.Model.Cerimonia_Produto.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Cliente.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Pacote.datasource" />
     <None Include="Properties\DataSources\Ceremony.Model.Pacote_Servicos.datasource" />

@@ -26,11 +26,13 @@ namespace Ceremony.Model
         public Cliente cliente { get; set; }
         public Tipo_Evento tipo_evento { get; set; }
         public Pacote pacot { get; set; }
+        public List<Cerimonia_Produto> lista_produto { get; set; }
 
         public Cerimonia(){
             cliente = new Cliente();
             tipo_evento = new Tipo_Evento();
             pacot = new Pacote();
+            lista_produto = new List<Cerimonia_Produto>();
         }
 
     }

@@ -36,7 +36,7 @@
                 
             </MenuItem>
             <Separator Width="800" Background="AliceBlue"/>
-            <MenuItem Header="Sair" HorizontalAlignment="Right" HorizontalContentAlignment="Right" FontSize="18" FontWeight="Bold"/>
+            <!--<MenuItem Header="Sair" HorizontalAlignment="Right" HorizontalContentAlignment="Right" FontSize="18" FontWeight="Bold"/>-->
         </Menu>
         <!--<TextBox Name="MyText" AcceptsReturn="True" AcceptsTab="True" TextWrapping="NoWrap" />-->
         <Image Source="logo_albertazzi.jpg" Width="1380" Height="790" />

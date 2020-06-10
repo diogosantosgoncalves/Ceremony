@@ -630,9 +630,7 @@
             <TextRuns>
               <TextRun>
                 <Value>Data:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -694,17 +692,15 @@
             <TextRuns>
               <TextRun>
                 <Value>R$:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>21.89854cm</Top>
-        <Left>0.64291cm</Left>
+        <Top>19.89829cm</Top>
+        <Left>0.57941cm</Left>
         <Height>0.6cm</Height>
         <Width>1.11509cm</Width>
         <ZIndex>21</ZIndex>
@@ -735,8 +731,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_valor_total</rd:DefaultName>
-        <Top>21.89854cm</Top>
-        <Left>1.85325cm</Left>
+        <Top>19.86654cm</Top>
+        <Left>1.6945cm</Left>
         <Height>0.6cm</Height>
         <Width>3.36506cm</Width>
         <ZIndex>22</ZIndex>
@@ -757,20 +753,18 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Observações:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Value>Obs:</Value>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>24.34329cm</Top>
-        <Left>0.5052cm</Left>
+        <Top>19.89829cm</Top>
+        <Left>11.3002cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.63509cm</Width>
+        <Width>1.33382cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -799,10 +793,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>cerimonia_observacao</rd:DefaultName>
-        <Top>24.37504cm</Top>
-        <Left>3.31668cm</Left>
-        <Height>1.26146cm</Height>
-        <Width>15.13224cm</Width>
+        <Top>19.89829cm</Top>
+        <Left>12.73985cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.18653cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -968,9 +962,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
             <TextRuns>
               <TextRun>
                 <Value>Cláusula 3ª.        Dados do Evento:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -1000,9 +992,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
             <TextRuns>
               <TextRun>
                 <Value>Evento:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -1032,9 +1022,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
             <TextRuns>
               <TextRun>
                 <Value>Cidade/Local:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -1044,7 +1032,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
         <Top>13.10082cm</Top>
         <Left>3.90525cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.67264cm</Width>
+        <Width>2.34103cm</Width>
         <ZIndex>31</ZIndex>
         <Style>
           <Border>
@@ -1072,7 +1060,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
         </Paragraphs>
         <rd:DefaultName>cerimonia_cidade_local</rd:DefaultName>
         <Top>13.10082cm</Top>
-        <Left>6.69078cm</Left>
+        <Left>6.43678cm</Left>
         <Height>0.6cm</Height>
         <Width>5.65749cm</Width>
         <ZIndex>32</ZIndex>
@@ -1094,9 +1082,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
             <TextRuns>
               <TextRun>
                 <Value>Total de Convidados:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -1158,9 +1144,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
             <TextRuns>
               <TextRun>
                 <Value>Horário de Início Cerimônia:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -1252,9 +1236,7 @@ Conforme as partes identificadas, ficam firmadas neste documento as condições 
             <TextRuns>
               <TextRun>
                 <Value>Horário de Início Festa:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -1391,7 +1373,7 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
       <Rectangle Name="Rectangle7">
         <KeepTogether>true</KeepTogether>
         <Top>18.40124cm</Top>
-        <Left>0.35137cm</Left>
+        <Left>0.54187cm</Left>
         <Height>0.52917cm</Height>
         <Width>18.57692cm</Width>
         <ZIndex>42</ZIndex>
@@ -1420,7 +1402,7 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
         </Paragraphs>
         <rd:DefaultName>Textbox47</rd:DefaultName>
         <Top>18.4083cm</Top>
-        <Left>0.35137cm</Left>
+        <Left>0.54187cm</Left>
         <Height>0.6cm</Height>
         <Width>18.57692cm</Width>
         <ZIndex>43</ZIndex>
@@ -1455,8 +1437,8 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox48</rd:DefaultName>
-        <Top>21.14233cm</Top>
-        <Left>0.57362cm</Left>
+        <Top>19.17383cm</Top>
+        <Left>0.54187cm</Left>
         <Height>0.6cm</Height>
         <Width>13.31913cm</Width>
         <ZIndex>44</ZIndex>
@@ -2176,1219 +2158,8 @@ descontado das 06 (seis) horas do tempo da prestação de serviços de cerimonia
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox6">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 6.1ª:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value> Forma de pagamento:</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>22.78346cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0.6cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>69</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox38">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Número de parcelas:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox38</rd:DefaultName>
-        <Top>23.60515cm</Top>
-        <Left>0.54187cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.67542cm</Width>
-        <ZIndex>70</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox39">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Valor das Parcelas:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox39</rd:DefaultName>
-        <Top>23.61425cm</Top>
-        <Left>5.94995cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.54888cm</Width>
-        <ZIndex>71</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox41">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Data Primeiro Vencimento:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox41</rd:DefaultName>
-        <Top>23.62483cm</Top>
-        <Left>11.17283cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.72885cm</Width>
-        <ZIndex>72</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox45">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 6.2 ª: Em caso de inadimplemento por parte do CONTRATANTE quanto ao pagamento dos serviços contratados, o CONTRATADO desobriga-se a prestar os serviços até que o pagamento seja efetuado em sua totalidade. Sendo que sobre o valor do presente instrumento, incidirão multa pecuniária de 2%, juros de mora de 1% ao mês e correção monetária.
-Cláusula 6.3 ª: Em caso de cobrança judicial, acréscimo de 30% de honorários advocatícios.
-Cláusula 6.4 ª: Dados para Depósito em Conta: Banco Bradesco; Favorecido: Eduardo Augusto Albertazzi de Barros; Agência: 0539-8; Conta: 0088290-9; CPF: 132.155.607-12.
-Cláusula 6.5 ª: Fica estabelecido que a parte infratora a quaisquer cláusulas do presente contrato, pagará à parte prejudicada multa equivalente a 50% (cinquenta por cento) sobre o valor do contrato.
-Cláusula 6.6 ª: A última parcela deverá ser quitada em até 30 (trinta) dias antes da data do evento.
-Cláusula 6.7 ª: Fica estabelecido que, quando em pagamento na forma de cheques, o mesmo não será frustrado ou os cheques não serão sustados. É de inteira responsabilidade do CONTRATANTE os recursos para provisão de fundos e o compromisso de arcar com o(s) valor(es) do(s) cheque(s) e ao titular da conta as responsabilidades legais, caso não se efetue a compensação;</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox45</rd:DefaultName>
-        <Top>26.20187cm</Top>
-        <Left>0.5052cm</Left>
-        <Height>6.18271cm</Height>
-        <Width>17.94372cm</Width>
-        <ZIndex>73</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Rectangle Name="Rectangle2">
-        <ReportItems>
-          <Textbox Name="Textbox51">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>05 - RESCISÃO CONTRATUAL</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox51</rd:DefaultName>
-            <Height>0.6cm</Height>
-            <Width>6.97725cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>32.65771cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0.6cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>74</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Silver</BackgroundColor>
-        </Style>
-      </Rectangle>
-      <Textbox Name="Textbox53">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 7ª: Este contrato poderá ser rescindido desde que haja uma comunicação formal por escrito justificando o motivo em até 07 (sete) dias após a data de assinatura do mesmo, sem ônus para ambas as partes.
-Cláusula 7.1 ª: Em caso de desistência, a parte desistente se obriga a comunicar a outra sobre tal situação.
-Cláusula 7.2 ª: No caso de desistência por parte do CONTRATADO, todo valor pago será devolvido em até 120 (cento e vinte) dias, acrescido de multa de 20% (vinte por cento) do valor pago.
-Cláusula 7.3 ª: No caso de desistência, por parte do CONTRATANTE, o CONTRATADO não terá nenhuma responsabilidade sobre a entrega dos serviços. O CONTRATANTE pagará uma multa proporcional sob o valor total deste contrato de acordo com o tempo que faltar para a data do evento conforme as seguintes situações:
-7.3.1. Desistência faltando mais de 361 (trezentos e sessenta e um) dias para a data do evento: Multa de 100% (cem por cento) do valor da entrada ou o CONTRATANTE remarcar outra data para realização do evento;
-7.3.2. Desistência faltando de 241 (duzentos e quarenta e um) a 360 (trezentos e sessenta) dias para a data do evento: Multa de 10% (dez por cento) do valor total deste contrato a ser paga pelo CONTRATANTE para o CONTRATADO;
-7.3.3. Desistência faltando de 121 (cento e vinte e um) a 240 (duzentos e quarenta) dias para a data do evento: Multa de 20% (vinte por cento) do valor total deste contrato a ser paga pelo CONTRATANTE para o CONTRATADO;
-7.3.4. Desistência faltando de 61 (sessenta e um) a 120 (cento e vinte) dias para a data do evento: Multa de 30% (trinta por cento) do valor total deste contrato a ser paga pelo CONTRATANTE para o CONTRATADO;</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>7.3.5. Desistência faltando 31 (trinta e um) a 60 (sessenta) dias para a data do evento: Multa de 40% (quarenta por cento) do valor total deste contrato a ser paga pelo CONTRATANTE para o CONTRATADO;
-7.3.6. Desistência faltando de 30 (trinta) dias para a data do evento: Multa de 50% (cinquenta por cento) do valor total deste contrato a ser paga pelo CONTRATANTE para o CONTRATADO.</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox53</rd:DefaultName>
-        <Top>33.61021cm</Top>
-        <Left>0.47625cm</Left>
-        <Height>9.09312cm</Height>
-        <Width>17.97267cm</Width>
-        <ZIndex>75</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Rectangle Name="Rectangle3">
-        <ReportItems>
-          <Textbox Name="Textbox54">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>06 – SOBRE AS RESPONSABILIDADES DO CONTRATADO</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox54</rd:DefaultName>
-            <Top>0.18521cm</Top>
-            <Height>0.6cm</Height>
-            <Width>11.938cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>43.14579cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0.78521cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>76</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Silver</BackgroundColor>
-        </Style>
-      </Rectangle>
-      <Textbox Name="Textbox55">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 8ª: Todos os serviços a serem prestados estão descritos na Cláusula 03 deste contrato.
-Cláusula 8.1 ª: O CONTRATADO se exime de responsabilidade de quaisquer deficiências ou falhas decorrentes de fatores imprevisíveis que ocorrerem no dia de realização do evento, que impeça a prestação de serviços, tais como: incidentes da natureza, chuva, vento, furto, intervenção de terceiros, fatos decorrentes de calamidade pública, acidentes ou incidentes de trânsito, luto oficial, greve geral ou outros impedimentos decretados por medidas de órgãos governamentais, municipais, estaduais ou federais, manifestações e/ou movimentos públicos que atrapalhem o fornecimento de serviços básicos que influenciam o desenvolvimento dos trabalhos e a movimentação de pessoas.
-Cláusula 8.2 ª: O CONTRATADO sempre se reserva a manter seus atendimentos ao CONTRATANTE em horário comercial, para tratar o planejamento do cronograma do evento, sempre em consenso entre as partes.
-Cláusula 8.3 ª: O CONTRATADO se isenta de responsabilidade por perda, roubo ou danos causados em pertences e objetos pessoais dos convidados e/ou familiares, bem como equipamentos e materiais dos prestadores de serviços atuantes no dia do evento.
-Cláusula 8.4 ª: O CONTRATADO declara não ter responsabilidade sobre qualquer contratação ou indicação realizadas diretamente pelo CONTRATANTE.
-Cláusula 8.5 ª: O CONTRATANTE, deverá aprovisionar a alimentação para a equipe do CONTRATADO durante a prestação dos serviços no dia da execução do evento.</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox55</rd:DefaultName>
-        <Top>44.43166cm</Top>
-        <Left>0.44662cm</Left>
-        <Height>7.53208cm</Height>
-        <Width>18.0023cm</Width>
-        <ZIndex>77</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Rectangle Name="Rectangle4">
-        <ReportItems>
-          <Textbox Name="Textbox57">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>07 – SOBRE AS RESPONSABILIDADES DO CONTRATANTE</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox57</rd:DefaultName>
-            <Top>0.13229cm</Top>
-            <Left>0.18899cm</Left>
-            <Height>0.6cm</Height>
-            <Width>11.23716cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>52.31625cm</Top>
-        <Left>0.39042cm</Left>
-        <Height>0.73229cm</Height>
-        <Width>18.0585cm</Width>
-        <ZIndex>78</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Silver</BackgroundColor>
-        </Style>
-      </Rectangle>
-      <Textbox Name="Textbox58">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 9ª: Realizar o pagamento em dia como condição máxima para o perfeito cumprimento deste contrato.
-Cláusula 9.1 ª: Todas as informações necessárias para que o serviço seja realizado, compete ao CONTRATANTE fornecer, devendo especificar os detalhes necessários para perfeita execução do mesmo.
-Cláusula 9.2 ª: É de responsabilidade do CONTRATANTE, as contratações dos serviços terceirizados e demais profissionais necessários para a realização do evento, informando ao CONTRATADO sobre tais contratações. Ao CONTRATADO compete somente o acompanhamento das execuções dos serviços contratados.
-Cláusula 9.3 ª: O CONTRATANTE deverá fornecer ao CONTRATADO, em até 07 (dias) antes do evento, as listas necessárias de Convidados e Participantes da cerimônia, para montagem do Cronograma do Evento.
-Cláusula 9.4 ª: O CONTRATANTE poderá realizar 01 (uma) remarcação de data do evento sem ônus, desde que haja prévia comunicação ao CONTRATADO e conforme a disponibilidade de agenda do mesmo.
-Cláusula 9.5 ª: Em caso de impossibilidade física por motivos de doença, falecimento familiar ou acidente pessoal, o CONTRATADO enviará sua equipe para representá-lo, conforme consenso com o CONTRATANTE.
-Cláusula 9.6 ª: Reservar o direito ao CONTRATADO de fiscalizar o cumprimento deste Contrato.</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox58</rd:DefaultName>
-        <Top>53.45396cm</Top>
-        <Left>0.44662cm</Left>
-        <Height>5.70646cm</Height>
-        <Width>18.0023cm</Width>
-        <ZIndex>79</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Rectangle Name="Rectangle6">
-        <ReportItems>
-          <Textbox Name="Textbox59">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>08 – SOBRE AS CONDIÇÕES ADICIONAIS PARA PRESTAÇÃO DE SERVIÇOS</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox59</rd:DefaultName>
-            <Top>0.07938cm</Top>
-            <Height>0.6cm</Height>
-            <Width>16.23137cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>59.83041cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0.67938cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>80</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Silver</BackgroundColor>
-        </Style>
-      </Rectangle>
-      <Textbox Name="Textbox60">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 10ª: O CONTRATANTE fica ciente sobre as seguintes considerações abaixo:
-Cláusula 10.1 ª: Todas as alterações neste contrato somente poderão ser feitas por meio de Termo Aditivo consensado entre as partes.
-Cláusula 10.2 ª: O CONTRATANTE declara ciência que autoriza o uso de suas imagens bem como de seus convidados, para serem utilizadas em campanhas promocionais e institucionais pelo CONTRATADO, para serem essas destinadas à divulgação ao público em geral. A presente autorização é concedida no ato da assinatura deste contrato. Por esta ser a expressão da vontade do CONTRATANTE, o mesmo declara que autoriza o uso acima descrito para utilização do CONTRATADO sem que nada haja a ser reclamado a título de direitos conexos à sua imagem ou a qualquer outro. O CONTRATANTE se responsabiliza a informar a seus convidados que suas imagens podem ser utilizadas com as finalidades acima descritas.
-Cláusula 10.3 ª: É possível, mediante o consenso das partes, em caso de impedimento, a remarcação de uma nova data para realização do evento de acordo com a agenda do CONTRATADO. Dependendo do tempo a ser remarcada a nova data, os valores deste contrato sofrerão acréscimos de acordo com os ajustes da tabela de preços do CONTRATADO atualizada, sendo que o CONTRATANTE pagará o valor acrescido em espécie até 10 dias antes da data da entrega dos serviços.
-Cláusula 10.4 ª: O CONTRATANTE será responsável pelo som e não poderá utilizar equipamentos de som, rádios ou qualquer outro aparelho e instrumento acima dos decibéis aceitos pela norma de respeito à vizinhança do local do evento.
-Cláusula 10.5 ª: A duração do evento está mencionada na seção 03 - Informações sobre a Prestação de Serviços. O CONTRATANTE deverá respeitar o horário estipulado para a duração do mesmo.</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>60.75646cm</Top>
-        <Left>0.47625cm</Left>
-        <Height>8.64333cm</Height>
-        <Width>17.97267cm</Width>
-        <ZIndex>81</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Rectangle Name="Rectangle9">
-        <ReportItems>
-          <Textbox Name="Textbox61">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>09 - DO FORO</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox61</rd:DefaultName>
-            <Height>0.6cm</Height>
-            <Width>6.97096cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>69.62cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0.62646cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>82</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Silver</BackgroundColor>
-        </Style>
-      </Rectangle>
-      <Textbox Name="Textbox62">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Cláusula 11ª: As partes contratantes elegem o Foro da comarca de Volta Redonda - RJ, com renúncia a qualquer outro, por mais privilegiado que seja para dirimir quaisquer dúvidas do presente contrato e de sua execução.
-As partes, por estarem assim, justas e acordadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e para um só efeito.</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox62</rd:DefaultName>
-        <Top>70.5725cm</Top>
-        <Left>0.5052cm</Left>
-        <Height>2.16104cm</Height>
-        <Width>17.94372cm</Width>
-        <ZIndex>83</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox63">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>VOLTA REDONDA, ____ DE ______________ DE ______.</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox63</rd:DefaultName>
-        <Top>72.95375cm</Top>
-        <Left>9.14104cm</Left>
-        <Height>0.6cm</Height>
-        <Width>9.59496cm</Width>
-        <ZIndex>84</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line1">
-        <Top>74.63854cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>85</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Textbox Name="Textbox64">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>CONTRATANTE</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox64</rd:DefaultName>
-        <Top>74.81113cm</Top>
-        <Left>7.96078cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.81378cm</Width>
-        <ZIndex>86</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line3">
-        <Top>76.27896cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>87</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Textbox Name="Textbox65">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>CONTRATADO – Albertazzi Cerimonial &amp; Eventos</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox65</rd:DefaultName>
-        <Top>76.605cm</Top>
-        <Left>5.54185cm</Left>
-        <Height>0.6cm</Height>
-        <Width>8.13298cm</Width>
-        <ZIndex>88</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line4">
-        <Top>78.34271cm</Top>
-        <Left>0.57941cm</Left>
-        <Height>0cm</Height>
-        <Width>17.86951cm</Width>
-        <ZIndex>89</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Textbox Name="Textbox66">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Testemunha 01</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox66</rd:DefaultName>
-        <Top>78.55234cm</Top>
-        <Left>7.62722cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.05052cm</Width>
-        <ZIndex>90</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line5">
-        <Top>80.22125cm</Top>
-        <Left>0.54187cm</Left>
-        <Height>0cm</Height>
-        <Width>17.90705cm</Width>
-        <ZIndex>91</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Textbox Name="Textbox67">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Testemunha 02</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox67</rd:DefaultName>
-        <Top>80.44146cm</Top>
-        <Left>7.75069cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.88472cm</Width>
-        <ZIndex>92</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Tablix Name="Tablix1">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>1.46404cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>13.51477cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.92824cm</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox37">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Código</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox37</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>Silver</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox68">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Serviço</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox68</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>Silver</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox70">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Valor</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox70</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>Silver</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="cerimonia_produto_id">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!cerimonia_produto_id.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>cerimonia_produto_id</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="pacote_servico_nome">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!pacote_servico_nome.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>pacote_servico_nome</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="pacote_servico_valor">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!pacote_servico_valor.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>pacote_servico_valor</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <Group Name="Details" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>19.08987cm</Top>
-        <Left>0.54187cm</Left>
-        <Height>1.2cm</Height>
-        <Width>17.90705cm</Width>
-        <ZIndex>93</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Textbox Name="Textbox5">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Sum(Fields!cerimonia_num_parcelas.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>23.64071cm</Top>
-        <Left>4.36193cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.46756cm</Width>
-        <ZIndex>94</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox56">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Sum(Fields!cerimonia_valor_parcelas.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox56</rd:DefaultName>
-        <Top>23.60515cm</Top>
-        <Left>9.60466cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.39215cm</Width>
-        <ZIndex>95</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox69">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!cerimonia_data_primeiro_vencimento.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox69</rd:DefaultName>
-        <Top>23.64071cm</Top>
-        <Left>16.00751cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.82241cm</Width>
-        <ZIndex>96</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox71">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Desconto:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox71</rd:DefaultName>
-        <Top>21.91182cm</Top>
-        <Left>6.60104cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.07645cm</Width>
-        <ZIndex>97</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox72">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Sum(Fields!cerimonia_desconto.Value, "DataSetCerimonia")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox72</rd:DefaultName>
-        <Top>21.89854cm</Top>
-        <Left>8.88937cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.46796cm</Width>
-        <ZIndex>98</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>32.67709in</Height>
+    <Height>8.16667in</Height>
     <Style />
   </Body>
   <Width>7.63392in</Width>
@@ -3646,7 +2417,7 @@ As partes, por estarem assim, justas e acordadas, as partes assinam o presente i
     <PageWidth>21cm</PageWidth>
     <InteractiveHeight>29.7cm</InteractiveHeight>
     <InteractiveWidth>21cm</InteractiveWidth>
-    <LeftMargin>1cm</LeftMargin>
+    <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
@@ -3682,13 +2453,6 @@ As partes, por estarem assim, justas e acordadas, as partes assinam o presente i
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>7f311beb-02c2-4da3-88c8-c4ad2bafd172</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="CeremonyModel2">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>ee40248e-c8d5-4fe1-aaa1-c681ba031892</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -3858,50 +2622,6 @@ As partes, por estarem assim, justas e acordadas, as partes assinam o presente i
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>DT_CerimoniaTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>CeremonyModel2</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="pacote_servico_id">
-          <DataField>pacote_servico_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="pacote_servico_nome">
-          <DataField>pacote_servico_nome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="pacote_servico_valor">
-          <DataField>pacote_servico_valor</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_produto_id">
-          <DataField>cerimonia_produto_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia__id">
-          <DataField>cerimonia__id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_produto_pacote_servicos_id">
-          <DataField>cerimonia_produto_pacote_servicos_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cerimonia_produto_valor">
-          <DataField>cerimonia_produto_valor</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>CeremonyDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\source\repos\Ceremony\Ceremony\Relatorios\CeremonyDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Pacote_Servicos</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Pacote_ServicosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

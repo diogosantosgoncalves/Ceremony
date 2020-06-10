@@ -31,15 +31,13 @@ namespace Ceremony.View
         {
             dg_ConsultaCliente.ItemsSource = servicesDBCliente.BuscarCliente(txt_nome.Text.ToString());
         }
-        public void bt_EditarUsuario(object sender, RoutedEventArgs e)
+        public void bt_Editar(object sender, RoutedEventArgs e)
         {
             Cliente cliente = servicesDBCliente.Editar(int.Parse(PegarLinhaGrid(0)));
             Cadastro_Cliente tela = new Cadastro_Cliente(cliente);
             tela.ShowDialog();
             dg_ConsultaCliente.ItemsSource = servicesDBCliente.BuscarCliente(txt_nome.Text.ToString());
 
-            //TelaCadastrarUsuario tela1 = new TelaCadastrarUsuario(usu.usu_nome, usu.usu_senha, usu.usu_id, usu.usu_inativo);
-            //tela1.ShowDialog();
         }
         public void bt_TelaPermissaoUsuario(object sender, RoutedEventArgs e)
         {

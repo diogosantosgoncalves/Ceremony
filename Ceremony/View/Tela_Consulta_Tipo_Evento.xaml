@@ -25,7 +25,7 @@
                             <DataTemplate >
                                 <DockPanel HorizontalAlignment="Left">
                                     <TextBlock >
-                                        <Hyperlink  Click="bt_EditarUsuario" Command="{Binding DataContext.DeleteOrganisationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                                        <Hyperlink  Click="bt_Editar" Command="{Binding DataContext.DeleteOrganisationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
                                             <Image   Height="22" Source="editar.jpg" />
                                         </Hyperlink>
                                     </TextBlock>

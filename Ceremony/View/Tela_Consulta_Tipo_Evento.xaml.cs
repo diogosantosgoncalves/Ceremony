@@ -1,4 +1,5 @@
 ﻿using Ceremony.Dal;
+using Ceremony.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,13 @@ namespace Ceremony.View
         {
             dg_ConsultaTipo_Evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento(txt_nome.Text.ToString());
         }
-        public void bt_EditarUsuario(object sender, RoutedEventArgs e)
+        public void bt_Editar(object sender, RoutedEventArgs e)
         {
-            //Cliente cliente = servicesDBTipo_Evento.Editar(int.Parse(PegarLinhaGrid(0)));
-            // Cadastro_Cliente tela = new Cadastro_Cliente(cliente);
-            //tela.ShowDialog();
-            //dg_ConsultaTipo_Evento.ItemsSource = servicesDBPacote_Servico.BuscarCliente(txt_nome.Text.ToString());
+            Tipo_Evento tipo_Evento = servicesDBTipo_Evento.Editar(int.Parse(PegarLinhaGrid(0)));
+            Tela_Tipo_Evento tela = new Tela_Tipo_Evento(tipo_Evento);
+            tela.ShowDialog();
+            dg_ConsultaTipo_Evento.ItemsSource = servicesDBTipo_Evento.Listar_Tipo_Evento(txt_nome.Text.ToString());
 
-            //TelaCadastrarUsuario tela1 = new TelaCadastrarUsuario(usu.usu_nome, usu.usu_senha, usu.usu_id, usu.usu_inativo);
-            //tela1.ShowDialog();
         }
         public void bt_TelaPermissaoUsuario(object sender, RoutedEventArgs e)
         {

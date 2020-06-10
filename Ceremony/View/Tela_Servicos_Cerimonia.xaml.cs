@@ -29,9 +29,18 @@ namespace Ceremony.View
             //cb_pacote.ItemsSource = servicesDBPacote.Listar_Pacote("");
             txt_nome.Focus();
         }
-
-        private void bt_Salvar_Servicos(object sender, RoutedEventArgs e)
+        public Tela_Servicos_Cerimonia(Pacote_Servicos pacote_Servicos)
         {
+            InitializeComponent();
+            txt_id.Text = pacote_Servicos.pacote_servico_id.ToString();
+            txt_nome.Text = pacote_Servicos.pacote_servico_nome;
+            txt_valor.Text = pacote_Servicos.pacote_servico_valor.ToString();
+            txt_nome.Focus();
+            bt_Salvar.Content = "Alterar";
+        }
+
+            private void bt_Salvar_Servicos(object sender, RoutedEventArgs e)
+            {
 
             if (string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_valor.Text)){
                 MessageBox.Show("Preencha o Nome ou o Valor!");
@@ -44,12 +53,21 @@ namespace Ceremony.View
                     Pacote_Servicos pacote_servicos = new Pacote_Servicos();
                     pacote_servicos.pacote_servico_nome = txt_nome.Text;
                     pacote_servicos.pacote_servico_valor = Convert.ToDouble(txt_valor.Text);
-                    servicesDBPacote_Servico.Salvar(pacote_servicos);
-                    MessageBox.Show(servicesDBPacote_Servico.Statusmessagem);
 
+                    if(bt_Salvar.Content.ToString() == "Salvar")
+                    {
+                        servicesDBPacote_Servico.Salvar(pacote_servicos);
+                    }
+                    else
+                    {
+                        pacote_servicos.pacote_servico_id = int.Parse(txt_id.Text);
+                        servicesDBPacote_Servico.Alterar(pacote_servicos);
+                        this.DialogResult = true;
+                    }
+                    MessageBox.Show(servicesDBPacote_Servico.Statusmessagem);
+                    txt_id.Text = "";
                     txt_nome.Text = "";
                     txt_valor.Text = "";
-                   
 
                     txt_nome.Focus();
                 }

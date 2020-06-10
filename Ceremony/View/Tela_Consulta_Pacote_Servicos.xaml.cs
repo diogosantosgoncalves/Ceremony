@@ -1,4 +1,5 @@
 ﻿using Ceremony.Dal;
+using Ceremony.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,12 @@ namespace Ceremony.View
         {
             dg_ConsultaPacote_Servico.ItemsSource = servicesDBPacote_Servico.Listar_Pacote_Servicos(txt_nome.Text.ToString());
         }
-        public void bt_EditarUsuario(object sender, RoutedEventArgs e)
+        public void bt_Editar(object sender, RoutedEventArgs e)
         {
-            //Cliente cliente = servicesDBPacote_Servico.Editar(int.Parse(PegarLinhaGrid(0)));
-            // Cadastro_Cliente tela = new Cadastro_Cliente(cliente);
-            //tela.ShowDialog();
-            //dg_ConsultaPacote_Servico.ItemsSource = servicesDBPacote_Servico.BuscarCliente(txt_nome.Text.ToString());
-
-            //TelaCadastrarUsuario tela1 = new TelaCadastrarUsuario(usu.usu_nome, usu.usu_senha, usu.usu_id, usu.usu_inativo);
-            //tela1.ShowDialog();
+            Pacote_Servicos pacote_servicos = servicesDBPacote_Servico.Editar(int.Parse(PegarLinhaGrid(0)));
+            Tela_Servicos_Cerimonia tela = new Tela_Servicos_Cerimonia(pacote_servicos);
+            tela.ShowDialog();
+            dg_ConsultaPacote_Servico.ItemsSource = servicesDBPacote_Servico.Listar_Pacote_Servicos(txt_nome.Text.ToString());
         }
         public void bt_TelaPermissaoUsuario(object sender, RoutedEventArgs e)
         {

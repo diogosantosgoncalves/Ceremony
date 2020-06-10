@@ -18,10 +18,12 @@
         <StackPanel Orientation="Horizontal" >
             <Label Content="Serviços: " FontWeight="DemiBold"/>
             <TextBox x:Name="txt_nome" Width="220" Height="20"/>
+            <TextBox x:Name="txt_id" Visibility="Hidden" Width="220"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Style="{StaticResource Stack}" Margin="0 10 0 0" HorizontalAlignment="Center">
             <Label Content="Valor: " FontWeight="DemiBold"/>
             <TextBox x:Name="txt_valor" Width="70" Height="20"/>
+            
         </StackPanel>
         <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Label Content="Pacote: " FontWeight="DemiBold"/>

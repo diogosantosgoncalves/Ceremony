@@ -13,13 +13,13 @@ namespace Ceremony.Model
         public double cerimonia_produto_valor { get; set; }
         public int cerimonia__id { get; set; }
 
-        //public Cerimonia cerimonia_id { get; set; }
-        //public Pacote_Servicos pacote_servicos { get; set; }
+        public Cerimonia cerimonia { get; set; }
+        public Pacote_Servicos pacote_servicos { get; set; }
 
         public Cerimonia_Produto()
         {
-            //cerimonia_id = new Cerimonia();
-            //pacote_servicos = new Pacote_Servicos();
+            cerimonia = new Cerimonia();
+            pacote_servicos = new Pacote_Servicos();
         }
     }
 }

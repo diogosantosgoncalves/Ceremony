@@ -31,7 +31,7 @@ namespace Ceremony.View
         {
             dg_ConsultaCliente.ItemsSource = servicesDBCliente.BuscarCliente(txt_nome.Text.ToString());
         }
-        public void bt_EditarUsuario(object sender, RoutedEventArgs e)
+        public void bt_Editar(object sender, RoutedEventArgs e)
         {
             Cliente cliente = servicesDBCliente.Editar(int.Parse(PegarLinhaGrid(0)));
             Cadastro_Cliente tela = new Cadastro_Cliente(cliente);

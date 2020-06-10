@@ -79,6 +79,7 @@
                 <!--<xctk:MaskedTextBox x:Name="txt_horario_cerimonia"
                              Mask="00:00" Style="{StaticResource Textos}" Width="35" />-->
                 <xctk:TimePicker Name="txt_horario_cerimonia" Width="70" Height="20" Value="00:00" />
+                
             </StackPanel>
         </StackPanel>
         <StackPanel >
@@ -88,11 +89,12 @@
 
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Horário de Início Festa: " />
-                <TextBox x:Name="txt_horario_festa" Style="{StaticResource Textos}" Width="50"/>
+                <xctk:TimePicker Name="txt_horario_festa" Width="70" Height="20" Value="00:00"/>
                 <Label Content="Valor da Prestação do Serviço: " />
                 <TextBox x:Name="txt_valor_prestacao_do_servico" Style="{StaticResource Textos}" Width="100"/>
                 <Label Content="Desconto: " />
                 <TextBox x:Name="txt_Desconto" Style="{StaticResource Textos}" Width="50" TextChanged="txt_Desconto_TextChanged"/>
+                <!--<xctk:DoubleUpDown FormatString="C" x:Name="txt_Desconto" Width="100" ValueChanged="txt_Desconto_TextChanged" />-->
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Número de Parcelas: " />
@@ -105,17 +107,17 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Serviços: " />
-                <ListView  Name="lv_pacote_servico" Width="620" Height="165">
+                <ListView  Name="lv_pacote_servico" Width="620" Height="165" ItemsSource="{Binding Path=Cerimonia_Produto}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Id"  Width="50" DisplayMemberBinding="{Binding pacote_servico_id}" />
-                            <GridViewColumn Header="Nome" Width="480"  DisplayMemberBinding="{Binding pacote_servico_nome}" />
+                            <GridViewColumn Header="Id"  Width="50" DisplayMemberBinding="{Binding pacote_servicos.pacote_servico_id}" />
+                            <GridViewColumn Header="Nome" Width="480"  DisplayMemberBinding="{Binding pacote_servicos.pacote_servico_nome}" />
                             <GridViewColumn Header="Valor" Width="80">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock  Text=" R$ " Foreground="Black"/>
-                                            <TextBlock Text="{Binding pacote_servico_valor}" Foreground="Red" Cursor="Hand" />
+                                            <TextBlock Text="{Binding pacote_servicos.pacote_servico_valor}" Foreground="Red" Cursor="Hand" />
                                             <TextBlock Text=",00" Foreground="red"/>
                                         </StackPanel>
                                     </DataTemplate>
@@ -126,9 +128,10 @@
                 </ListView>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">
-                <Button x:Name="bt_Adicionar_Produto" Content="Adicionar Serviços"  Height="30" Width="200" Margin="5 2 0 5" Click="bt_Adicionar_Produto_Click"/>
-                <Label Content="Total Final: " FontSize="20" FontWeight="Heavy" Margin="190 0 0 0"/>
-                <Label x:Name="txt_valor_final" Content="R$" FontSize="20"/>
+                <Button x:Name="bt_Adicionar_Produto" Content="Adicionar Serviços"  Height="30" Width="200" Margin="15 2 0 5" Click="bt_Adicionar_Produto_Click"/>
+                <Button x:Name="bt_Remover_Produto" Content="Remover Serviços"  Height="30" Width="200" Margin="5 2 0 5"  Click="bt_Remover_Produto_Click"/>
+                <Label Content="Total Final: " FontSize="20" FontWeight="Heavy" Margin="0 0 0 0"/>
+                <Label x:Name="txt_valor_final" Content="R$" FontSize="20" Margin="0 0 0 0"/>
                 <Label Name="lb_total" Content="0,00" FontSize="20" Foreground="Red" FontWeight="Medium"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center">

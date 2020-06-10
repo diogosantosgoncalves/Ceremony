@@ -115,7 +115,7 @@ namespace Ceremony.Dal
             try
             {
                 sqlcommand.CommandText = "UPDATE Pacote_Servicos SET pacote_servico_nome = '" + pacote_servicos.pacote_servico_nome +
-                    "' pacote_servico_valor = " + pacote_servicos.pacote_servico_valor + " WHERE pacote_servico_id = '" + pacote_servicos.pacote_servico_id;
+                    "' , pacote_servico_valor = " + pacote_servicos.pacote_servico_valor + " WHERE pacote_servico_id = '" + pacote_servicos.pacote_servico_id + "'";
 
                 sqlcommand.Parameters.AddWithValue("@nome", pacote_servicos.pacote_servico_nome);
                 sqlcommand.Parameters.AddWithValue("@valor", pacote_servicos.pacote_servico_valor);
@@ -135,6 +135,34 @@ namespace Ceremony.Dal
                 con.desconectar();
             }
 
+        }
+        public Pacote_Servicos Editar(int codigo)
+        {
+            try
+            {
+                Pacote_Servicos pacote_servicos = new Pacote_Servicos();
+                sqlcommand.CommandText = "select * from Pacote_Servicos where Pacote_servico_id =  @codigo";
+                sqlcommand.Parameters.AddWithValue("@codigo", codigo);
+                sqlcommand.Connection = con.conectar();
+                sqldataReader = sqlcommand.ExecuteReader();
+                if (sqldataReader.Read())
+                {
+                    pacote_servicos.pacote_servico_id = int.Parse(sqldataReader["pacote_servico_id"].ToString());
+                    pacote_servicos.pacote_servico_nome = sqldataReader["pacote_servico_nome"].ToString();
+                    pacote_servicos.pacote_servico_valor = double.Parse(sqldataReader["pacote_servico_valor"].ToString());
+                }
+                return pacote_servicos;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+                sqldataReader.Close();
+            }
         }
     }
 }

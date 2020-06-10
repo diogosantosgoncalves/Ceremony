@@ -2,14 +2,15 @@
 <xs:schema id="CeremonyDataSet" targetNamespace="http://tempuri.org/CeremonyDataSet.xsd" xmlns:mstns="http://tempuri.org/CeremonyDataSet.xsd" xmlns="http://tempuri.org/CeremonyDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=Localhost\SQL2014;Initial Catalog=Ceremony;Persist Security Info=True;User ID=sa;Password=senha" IsAppSettingsProperty="false" Modifier="Assembly" Name="diogao\sql2014.Ceremony.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CeremonyConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CeremonyConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Ceremony.Properties.Settings.GlobalReference.Default.CeremonyConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CeremonyConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CeremonyConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Ceremony.Properties.Settings.GlobalReference.Default.CeremonyConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CerimoniaTableAdapter" GeneratorDataComponentClassName="CerimoniaTableAdapter" Name="Cerimonia" UserDataComponentName="CerimoniaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="diogao\sql2014.Ceremony.dbo" DbObjectName="Ceremony.dbo.Cerimonia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CeremonyConnectionString1 (Settings)" DbObjectName="Ceremony.dbo.Cerimonia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Cerimonia] WHERE (([cerimonia_id] = @Original_cerimonia_id) AND ((@IsNull_cerimonia_data_evento = 1 AND [cerimonia_data_evento] IS NULL) OR ([cerimonia_data_evento] = @Original_cerimonia_data_evento)) AND ((@IsNull_cerimonia_cidade_local = 1 AND [cerimonia_cidade_local] IS NULL) OR ([cerimonia_cidade_local] = @Original_cerimonia_cidade_local)) AND ((@IsNull_cerimonia_total_convidados = 1 AND [cerimonia_total_convidados] IS NULL) OR ([cerimonia_total_convidados] = @Original_cerimonia_total_convidados)) AND ((@IsNull_cerimonia_horario_cerimonia = 1 AND [cerimonia_horario_cerimonia] IS NULL) OR ([cerimonia_horario_cerimonia] = @Original_cerimonia_horario_cerimonia)) AND ((@IsNull_cerimonia_inicio_festa = 1 AND [cerimonia_inicio_festa] IS NULL) OR ([cerimonia_inicio_festa] = @Original_cerimonia_inicio_festa)) AND ((@IsNull_cerimonia_num_parcelas = 1 AND [cerimonia_num_parcelas] IS NULL) OR ([cerimonia_num_parcelas] = @Original_cerimonia_num_parcelas)) AND ((@IsNull_cerimonia_valor_parcelas = 1 AND [cerimonia_valor_parcelas] IS NULL) OR ([cerimonia_valor_parcelas] = @Original_cerimonia_valor_parcelas)) AND ((@IsNull_cerimonia_data_primeiro_vencimento = 1 AND [cerimonia_data_primeiro_vencimento] IS NULL) OR ([cerimonia_data_primeiro_vencimento] = @Original_cerimonia_data_primeiro_vencimento)) AND ((@IsNull_cerimonia_valor_total = 1 AND [cerimonia_valor_total] IS NULL) OR ([cerimonia_valor_total] = @Original_cerimonia_valor_total)) AND ((@IsNull_cerimonia_observacao = 1 AND [cerimonia_observacao] IS NULL) OR ([cerimonia_observacao] = @Original_cerimonia_observacao)) AND ((@IsNull_cerimonia_cliente_id = 1 AND [cerimonia_cliente_id] IS NULL) OR ([cerimonia_cliente_id] = @Original_cerimonia_cliente_id)) AND ((@IsNull_cerimonia_tipo_evento_id = 1 AND [cerimonia_tipo_evento_id] IS NULL) OR ([cerimonia_tipo_evento_id] = @Original_cerimonia_tipo_evento_id)) AND ((@IsNull_cerimonia_pacote_id = 1 AND [cerimonia_pacote_id] IS NULL) OR ([cerimonia_pacote_id] = @Original_cerimonia_pacote_id)) AND ((@IsNull_cerimonia_desconto = 1 AND [cerimonia_desconto] IS NULL) OR ([cerimonia_desconto] = @Original_cerimonia_desconto)))</CommandText>
@@ -149,7 +150,7 @@ SELECT cerimonia_id, cerimonia_data_evento, cerimonia_cidade_local, cerimonia_to
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DT_CerimoniaTableAdapter" GeneratorDataComponentClassName="DT_CerimoniaTableAdapter" Name="DT_Cerimonia" UserDataComponentName="DT_CerimoniaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="diogao\sql2014.Ceremony.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CeremonyConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Cliente.*, Cerimonia.*, Tipo_Evento.*, Pacote.*
@@ -204,6 +205,47 @@ FROM            Cerimonia INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Pacote_ServicosTableAdapter" GeneratorDataComponentClassName="Pacote_ServicosTableAdapter" Name="Pacote_Servicos" UserDataComponentName="Pacote_ServicosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CeremonyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Cerimonia_Produto.cerimonia_produto_id, Cerimonia_Produto.cerimonia__id, Cerimonia_Produto.cerimonia_produto_pacote_servicos_id, Cerimonia_Produto.cerimonia_produto_valor, Pacote_Servicos.pacote_servico_id, 
+                         Pacote_Servicos.pacote_servico_nome, Pacote_Servicos.pacote_servico_valor, Cerimonia.*
+FROM            Cerimonia_Produto INNER JOIN
+                         Pacote_Servicos ON Cerimonia_Produto.cerimonia_produto_pacote_servicos_id = Pacote_Servicos.pacote_servico_id INNER JOIN
+                         Cerimonia ON Cerimonia_Produto.cerimonia__id = Cerimonia.cerimonia_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pacote_servico_id" DataSetColumn="pacote_servico_id" />
+              <Mapping SourceColumn="pacote_servico_nome" DataSetColumn="pacote_servico_nome" />
+              <Mapping SourceColumn="pacote_servico_valor" DataSetColumn="pacote_servico_valor" />
+              <Mapping SourceColumn="cerimonia_produto_id" DataSetColumn="cerimonia_produto_id" />
+              <Mapping SourceColumn="cerimonia__id" DataSetColumn="cerimonia__id" />
+              <Mapping SourceColumn="cerimonia_produto_pacote_servicos_id" DataSetColumn="cerimonia_produto_pacote_servicos_id" />
+              <Mapping SourceColumn="cerimonia_produto_valor" DataSetColumn="cerimonia_produto_valor" />
+              <Mapping SourceColumn="cerimonia_id" DataSetColumn="cerimonia_id" />
+              <Mapping SourceColumn="cerimonia_data_evento" DataSetColumn="cerimonia_data_evento" />
+              <Mapping SourceColumn="cerimonia_cidade_local" DataSetColumn="cerimonia_cidade_local" />
+              <Mapping SourceColumn="cerimonia_total_convidados" DataSetColumn="cerimonia_total_convidados" />
+              <Mapping SourceColumn="cerimonia_horario_cerimonia" DataSetColumn="cerimonia_horario_cerimonia" />
+              <Mapping SourceColumn="cerimonia_inicio_festa" DataSetColumn="cerimonia_inicio_festa" />
+              <Mapping SourceColumn="cerimonia_num_parcelas" DataSetColumn="cerimonia_num_parcelas" />
+              <Mapping SourceColumn="cerimonia_valor_parcelas" DataSetColumn="cerimonia_valor_parcelas" />
+              <Mapping SourceColumn="cerimonia_data_primeiro_vencimento" DataSetColumn="cerimonia_data_primeiro_vencimento" />
+              <Mapping SourceColumn="cerimonia_valor_total" DataSetColumn="cerimonia_valor_total" />
+              <Mapping SourceColumn="cerimonia_observacao" DataSetColumn="cerimonia_observacao" />
+              <Mapping SourceColumn="cerimonia_cliente_id" DataSetColumn="cerimonia_cliente_id" />
+              <Mapping SourceColumn="cerimonia_tipo_evento_id" DataSetColumn="cerimonia_tipo_evento_id" />
+              <Mapping SourceColumn="cerimonia_pacote_id" DataSetColumn="cerimonia_pacote_id" />
+              <Mapping SourceColumn="cerimonia_desconto" DataSetColumn="cerimonia_desconto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -212,7 +254,7 @@ FROM            Cerimonia INNER JOIN
   <xs:element name="CeremonyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CeremonyDataSet" msprop:Generator_UserDSName="CeremonyDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Cerimonia" msprop:Generator_TableClassName="CerimoniaDataTable" msprop:Generator_TableVarName="tableCerimonia" msprop:Generator_TablePropName="Cerimonia" msprop:Generator_RowDeletingName="CerimoniaRowDeleting" msprop:Generator_RowChangingName="CerimoniaRowChanging" msprop:Generator_RowEvHandlerName="CerimoniaRowChangeEventHandler" msprop:Generator_RowDeletedName="CerimoniaRowDeleted" msprop:Generator_UserTableName="Cerimonia" msprop:Generator_RowChangedName="CerimoniaRowChanged" msprop:Generator_RowEvArgName="CerimoniaRowChangeEvent" msprop:Generator_RowClassName="CerimoniaRow">
+        <xs:element name="Cerimonia" msprop:Generator_TableClassName="CerimoniaDataTable" msprop:Generator_TableVarName="tableCerimonia" msprop:Generator_RowChangedName="CerimoniaRowChanged" msprop:Generator_TablePropName="Cerimonia" msprop:Generator_RowDeletingName="CerimoniaRowDeleting" msprop:Generator_RowChangingName="CerimoniaRowChanging" msprop:Generator_RowEvHandlerName="CerimoniaRowChangeEventHandler" msprop:Generator_RowDeletedName="CerimoniaRowDeleted" msprop:Generator_RowClassName="CerimoniaRow" msprop:Generator_UserTableName="Cerimonia" msprop:Generator_RowEvArgName="CerimoniaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cerimonia_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncerimonia_id" msprop:Generator_ColumnPropNameInRow="cerimonia_id" msprop:Generator_ColumnPropNameInTable="cerimonia_idColumn" msprop:Generator_UserColumnName="cerimonia_id" type="xs:int" />
@@ -257,7 +299,7 @@ FROM            Cerimonia INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DT_Cerimonia" msprop:Generator_TableClassName="DT_CerimoniaDataTable" msprop:Generator_TableVarName="tableDT_Cerimonia" msprop:Generator_TablePropName="DT_Cerimonia" msprop:Generator_RowDeletingName="DT_CerimoniaRowDeleting" msprop:Generator_RowChangingName="DT_CerimoniaRowChanging" msprop:Generator_RowEvHandlerName="DT_CerimoniaRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_CerimoniaRowDeleted" msprop:Generator_UserTableName="DT_Cerimonia" msprop:Generator_RowChangedName="DT_CerimoniaRowChanged" msprop:Generator_RowEvArgName="DT_CerimoniaRowChangeEvent" msprop:Generator_RowClassName="DT_CerimoniaRow">
+        <xs:element name="DT_Cerimonia" msprop:Generator_TableClassName="DT_CerimoniaDataTable" msprop:Generator_TableVarName="tableDT_Cerimonia" msprop:Generator_RowChangedName="DT_CerimoniaRowChanged" msprop:Generator_TablePropName="DT_Cerimonia" msprop:Generator_RowDeletingName="DT_CerimoniaRowDeleting" msprop:Generator_RowChangingName="DT_CerimoniaRowChanging" msprop:Generator_RowEvHandlerName="DT_CerimoniaRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_CerimoniaRowDeleted" msprop:Generator_RowClassName="DT_CerimoniaRow" msprop:Generator_UserTableName="DT_Cerimonia" msprop:Generator_RowEvArgName="DT_CerimoniaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cli_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncli_id" msprop:Generator_ColumnPropNameInRow="cli_id" msprop:Generator_ColumnPropNameInTable="cli_idColumn" msprop:Generator_UserColumnName="cli_id" type="xs:int" />
@@ -445,6 +487,64 @@ FROM            Cerimonia INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Pacote_Servicos" msprop:Generator_TableClassName="Pacote_ServicosDataTable" msprop:Generator_TableVarName="tablePacote_Servicos" msprop:Generator_TablePropName="Pacote_Servicos" msprop:Generator_RowDeletingName="Pacote_ServicosRowDeleting" msprop:Generator_RowChangingName="Pacote_ServicosRowChanging" msprop:Generator_RowEvHandlerName="Pacote_ServicosRowChangeEventHandler" msprop:Generator_RowDeletedName="Pacote_ServicosRowDeleted" msprop:Generator_UserTableName="Pacote_Servicos" msprop:Generator_RowChangedName="Pacote_ServicosRowChanged" msprop:Generator_RowEvArgName="Pacote_ServicosRowChangeEvent" msprop:Generator_RowClassName="Pacote_ServicosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pacote_servico_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnpacote_servico_id" msprop:Generator_ColumnPropNameInRow="pacote_servico_id" msprop:Generator_ColumnPropNameInTable="pacote_servico_idColumn" msprop:Generator_UserColumnName="pacote_servico_id" type="xs:int" />
+              <xs:element name="pacote_servico_nome" msprop:Generator_ColumnVarNameInTable="columnpacote_servico_nome" msprop:Generator_ColumnPropNameInRow="pacote_servico_nome" msprop:Generator_ColumnPropNameInTable="pacote_servico_nomeColumn" msprop:Generator_UserColumnName="pacote_servico_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pacote_servico_valor" msprop:Generator_ColumnVarNameInTable="columnpacote_servico_valor" msprop:Generator_ColumnPropNameInRow="pacote_servico_valor" msprop:Generator_ColumnPropNameInTable="pacote_servico_valorColumn" msprop:Generator_UserColumnName="pacote_servico_valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cerimonia_produto_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncerimonia_produto_id" msprop:Generator_ColumnPropNameInRow="cerimonia_produto_id" msprop:Generator_ColumnPropNameInTable="cerimonia_produto_idColumn" msprop:Generator_UserColumnName="cerimonia_produto_id" type="xs:int" />
+              <xs:element name="cerimonia__id" msprop:Generator_ColumnVarNameInTable="columncerimonia__id" msprop:Generator_ColumnPropNameInRow="cerimonia__id" msprop:Generator_ColumnPropNameInTable="cerimonia__idColumn" msprop:Generator_UserColumnName="cerimonia__id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_produto_pacote_servicos_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_produto_pacote_servicos_id" msprop:Generator_ColumnPropNameInRow="cerimonia_produto_pacote_servicos_id" msprop:Generator_ColumnPropNameInTable="cerimonia_produto_pacote_servicos_idColumn" msprop:Generator_UserColumnName="cerimonia_produto_pacote_servicos_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_produto_valor" msprop:Generator_ColumnVarNameInTable="columncerimonia_produto_valor" msprop:Generator_ColumnPropNameInRow="cerimonia_produto_valor" msprop:Generator_ColumnPropNameInTable="cerimonia_produto_valorColumn" msprop:Generator_UserColumnName="cerimonia_produto_valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cerimonia_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncerimonia_id" msprop:Generator_ColumnPropNameInRow="cerimonia_id" msprop:Generator_ColumnPropNameInTable="cerimonia_idColumn" msprop:Generator_UserColumnName="cerimonia_id" type="xs:int" />
+              <xs:element name="cerimonia_data_evento" msprop:Generator_ColumnVarNameInTable="columncerimonia_data_evento" msprop:Generator_ColumnPropNameInRow="cerimonia_data_evento" msprop:Generator_ColumnPropNameInTable="cerimonia_data_eventoColumn" msprop:Generator_UserColumnName="cerimonia_data_evento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cerimonia_cidade_local" msprop:Generator_ColumnVarNameInTable="columncerimonia_cidade_local" msprop:Generator_ColumnPropNameInRow="cerimonia_cidade_local" msprop:Generator_ColumnPropNameInTable="cerimonia_cidade_localColumn" msprop:Generator_UserColumnName="cerimonia_cidade_local" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_total_convidados" msprop:Generator_ColumnVarNameInTable="columncerimonia_total_convidados" msprop:Generator_ColumnPropNameInRow="cerimonia_total_convidados" msprop:Generator_ColumnPropNameInTable="cerimonia_total_convidadosColumn" msprop:Generator_UserColumnName="cerimonia_total_convidados" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_horario_cerimonia" msprop:Generator_ColumnVarNameInTable="columncerimonia_horario_cerimonia" msprop:Generator_ColumnPropNameInRow="cerimonia_horario_cerimonia" msprop:Generator_ColumnPropNameInTable="cerimonia_horario_cerimoniaColumn" msprop:Generator_UserColumnName="cerimonia_horario_cerimonia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_inicio_festa" msprop:Generator_ColumnVarNameInTable="columncerimonia_inicio_festa" msprop:Generator_ColumnPropNameInRow="cerimonia_inicio_festa" msprop:Generator_ColumnPropNameInTable="cerimonia_inicio_festaColumn" msprop:Generator_UserColumnName="cerimonia_inicio_festa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_num_parcelas" msprop:Generator_ColumnVarNameInTable="columncerimonia_num_parcelas" msprop:Generator_ColumnPropNameInRow="cerimonia_num_parcelas" msprop:Generator_ColumnPropNameInTable="cerimonia_num_parcelasColumn" msprop:Generator_UserColumnName="cerimonia_num_parcelas" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_valor_parcelas" msprop:Generator_ColumnVarNameInTable="columncerimonia_valor_parcelas" msprop:Generator_ColumnPropNameInRow="cerimonia_valor_parcelas" msprop:Generator_ColumnPropNameInTable="cerimonia_valor_parcelasColumn" msprop:Generator_UserColumnName="cerimonia_valor_parcelas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cerimonia_data_primeiro_vencimento" msprop:Generator_ColumnVarNameInTable="columncerimonia_data_primeiro_vencimento" msprop:Generator_ColumnPropNameInRow="cerimonia_data_primeiro_vencimento" msprop:Generator_ColumnPropNameInTable="cerimonia_data_primeiro_vencimentoColumn" msprop:Generator_UserColumnName="cerimonia_data_primeiro_vencimento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cerimonia_valor_total" msprop:Generator_ColumnVarNameInTable="columncerimonia_valor_total" msprop:Generator_ColumnPropNameInRow="cerimonia_valor_total" msprop:Generator_ColumnPropNameInTable="cerimonia_valor_totalColumn" msprop:Generator_UserColumnName="cerimonia_valor_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cerimonia_observacao" msprop:Generator_ColumnVarNameInTable="columncerimonia_observacao" msprop:Generator_ColumnPropNameInRow="cerimonia_observacao" msprop:Generator_ColumnPropNameInTable="cerimonia_observacaoColumn" msprop:Generator_UserColumnName="cerimonia_observacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerimonia_cliente_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_cliente_id" msprop:Generator_ColumnPropNameInRow="cerimonia_cliente_id" msprop:Generator_ColumnPropNameInTable="cerimonia_cliente_idColumn" msprop:Generator_UserColumnName="cerimonia_cliente_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_tipo_evento_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_tipo_evento_id" msprop:Generator_ColumnPropNameInRow="cerimonia_tipo_evento_id" msprop:Generator_ColumnPropNameInTable="cerimonia_tipo_evento_idColumn" msprop:Generator_UserColumnName="cerimonia_tipo_evento_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_pacote_id" msprop:Generator_ColumnVarNameInTable="columncerimonia_pacote_id" msprop:Generator_ColumnPropNameInRow="cerimonia_pacote_id" msprop:Generator_ColumnPropNameInTable="cerimonia_pacote_idColumn" msprop:Generator_UserColumnName="cerimonia_pacote_id" type="xs:int" minOccurs="0" />
+              <xs:element name="cerimonia_desconto" msprop:Generator_ColumnVarNameInTable="columncerimonia_desconto" msprop:Generator_ColumnPropNameInRow="cerimonia_desconto" msprop:Generator_ColumnPropNameInTable="cerimonia_descontoColumn" msprop:Generator_UserColumnName="cerimonia_desconto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -458,5 +558,14 @@ FROM            Cerimonia INNER JOIN
       <xs:field xpath="mstns:tipo_evento_id" />
       <xs:field xpath="mstns:pacote_id" />
     </xs:unique>
+    <xs:unique name="Pacote_Servicos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pacote_Servicos" />
+      <xs:field xpath="mstns:pacote_servico_id" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Cerimonia__id" msdata:parent="Cerimonia" msdata:child="Pacote_Servicos" msdata:parentkey="cerimonia_id" msdata:childkey="cerimonia__id" msprop:Generator_UserChildTable="Pacote_Servicos" msprop:Generator_ChildPropName="GetPacote_ServicosRows" msprop:Generator_UserRelationName="FK_Cerimonia__id" msprop:Generator_RelationVarName="relationFK_Cerimonia__id" msprop:Generator_UserParentTable="Cerimonia" msprop:Generator_ParentPropName="CerimoniaRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>
