@@ -26,9 +26,12 @@
                 <Label Content="Lançamento da Prestação de Serviço - Cerimônia" FontSize="20" FontWeight="ExtraBold" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+              
                 <Label Content="Cliente: " />
                 <TextBox x:Name="txt_cliente" Width="500" Style="{StaticResource Textos}"/>
                 <Button x:Name="bt_pesquisar_cliente" Content="Pesquisar" Width="100" Margin="15 0 0 0" Click="bt_pesquisar_cliente_Click"/>
+                <TextBox x:Name="txt_cerimonia_id" Visibility="Collapsed" Width="220"/>
+                <TextBox x:Name="txt_cliente_id" Visibility="Collapsed" Width="220"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
                 <Label Content="Data: " />

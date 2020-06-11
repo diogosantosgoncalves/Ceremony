@@ -194,27 +194,32 @@ namespace Ceremony.Dal
 
 
 
-        public void Alterar(Cerimonia buffet)
+        public void Alterar(Cerimonia cerimonia)
         {
             try
             {
-                //sqlcommand.CommandText = "UPDATE Usuario SET cli_nome = '" + cliente.cli_nome + "', cli_nacionalidade = '" + cliente.cli_nacionalidade +
-                //",cli_estavo_civil = '" + cliente.cli_estado_civil + "', cli_profissao = '" + cliente.cli_profissao + " cli_rg = '" + cliente.cli_rg +
-                //",cli_cpf = '" + cliente.cli_cpf + "', cli_endereco = '" + cliente.cli_endereco + " cli_numero = '" + cliente.cli_numero +
-                //",cli_complemento = '" + cliente.cli_complemento + "', cli_bairro = '" + cliente.cli_bairro + " cli_cidade = '" + cliente.cli_cidade +
-                //",cli_uf = '" + cliente.cli_uf + "', cli_cep = '" + cliente.cli_cep + " cli_telefone_fixo = '" + cliente.cli_telefone_fixo +
-                //",cli_celular1 = '" + cliente.cli_celular1 + "', cli_celular2 = '" + cliente.cli_celular2 + " cli_telefone_trabalho = '" + cliente.cli_telefone_trabalho +
-                //",cli_email = '" + cliente.cli_email + "' WHERE cli_id = '" + cliente.cli_id;
+                sqlcommand.CommandText = "UPDATE Cerimonia SET cerimonia_data_evento = @cerimonia_data_evento , cerimonia_cidade_local = @cerimonia_cidade_local " +
+                ",cerimonia_total_convidados = @cerimonia_total_convidados , cerimonia_horario_cerimonia = @cerimonia_horario_cerimonia ,cerimonia_inicio_festa = @cerimonia_inicio_festa " +
+                ",cerimonia_num_parcelas = @cerimonia_num_parcelas , cerimonia_valor_parcelas = @cerimonia_valor_parcelas, cerimonia_data_primeiro_vencimento = @cerimonia_data_primeiro_vencimento " +
+                ",cerimonia_valor_total = @cerimonia_valor_total , cerimonia_observacao = @cerimonia_observacao  " +
+                ",cerimonia_tipo_evento_id = @cerimonia_tipo_evento_id , cerimonia_pacote_id = @cerimonia_pacote_id ,cerimonia_desconto = @cerimonia_desconto " +
+                " WHERE cerimonia_id = @cerimonia_id;";
 
-                sqlcommand.Parameters.AddWithValue("@buffet_data_evento", cerimonia.cerimonia_data_evento);
-                sqlcommand.Parameters.AddWithValue("@buffet_cidade_local", cerimonia.cerimonia_cidade_local);
-                sqlcommand.Parameters.AddWithValue("@buffet_total_convidados", cerimonia.cerimonia_total_convidados);
-                sqlcommand.Parameters.AddWithValue("@buffet_horario_cerimonia", cerimonia.cerimonia_horario_cerimonia);
-                sqlcommand.Parameters.AddWithValue("@buffet_inicio_festa", cerimonia.cerimonia_inicio_festa);
-                sqlcommand.Parameters.AddWithValue("@buffet_num_parcelas", cerimonia.cerimonia_num_parcelas);
-                sqlcommand.Parameters.AddWithValue("@buffet_valor_parcelas", cerimonia.cerimonia_valor_parcelas);
-                sqlcommand.Parameters.AddWithValue("@buffet_data_primeiro_vencimento", cerimonia.cerimonia_data_primeiro_vencimento);
-                sqlcommand.Parameters.AddWithValue("@buffet_valor_total", cerimonia.cerimonia_valor_total);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_data_evento", cerimonia.cerimonia_data_evento);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_cidade_local", cerimonia.cerimonia_cidade_local);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_total_convidados", cerimonia.cerimonia_total_convidados);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_horario_cerimonia", cerimonia.cerimonia_horario_cerimonia);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_inicio_festa", cerimonia.cerimonia_inicio_festa);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_num_parcelas", cerimonia.cerimonia_num_parcelas);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_valor_parcelas", cerimonia.cerimonia_valor_parcelas);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_data_primeiro_vencimento", cerimonia.cerimonia_data_primeiro_vencimento);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_valor_total", cerimonia.cerimonia_valor_total);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_observacao", cerimonia.cerimonia_observacao);
+                //sqlcommand.Parameters.AddWithValue("@cerimonia_cliente_id", cerimonia.cerimonia_cliente_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_tipo_evento_id", cerimonia.cerimonia_tipo_evento_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_pacote_id", cerimonia.cerimonia_pacote_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_desconto", cerimonia.cerimonia_desconto);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_id", cerimonia.cerimonia_id);
 
                 sqlcommand.CommandType = CommandType.Text;
                 sqlcommand.Connection = con.conectar();
@@ -231,7 +236,49 @@ namespace Ceremony.Dal
                 sqlcommand.Parameters.Clear();
                 con.desconectar();
             }
+        }
+        public void Alterar2(Cerimonia cerimonia)
+        {
+            try
+            {
+                sqlcommand.CommandText = "UPDATE Cerimonia SET cerimonia_data_evento = '" + cerimonia.cerimonia_data_evento + "', cerimonia_cidade_local = '" + cerimonia.cerimonia_cidade_local +
+                "',cerimonia_total_convidados = " + cerimonia.cerimonia_total_convidados + ", cerimonia_horario_cerimonia = '" + cerimonia.cerimonia_horario_cerimonia + " ',cerimonia_inicio_festa = '" + cerimonia.cerimonia_inicio_festa +
+                "',cerimonia_num_parcelas = " + cerimonia.cerimonia_num_parcelas + ", cerimonia_valor_parcelas = @cerimonia_valor_parcelas , cerimonia_data_primeiro_vencimento = '" + cerimonia.cerimonia_data_primeiro_vencimento +
+                "',cerimonia_valor_total = @cerimonia_valor_total ,cerimonia_observacao = '" + cerimonia.cerimonia_observacao + " ',cerimonia_cliente_id = " + cerimonia.cerimonia_cliente_id +
+                ",cerimonia_tipo_evento_id = " + cerimonia.cerimonia_tipo_evento_id + ", cerimonia_pacote_id = " + cerimonia.cerimonia_pacote_id + " ,cerimonia_desconto = @cerimonia_desconto " +
+                " WHERE cerimonia_id = " + cerimonia.cerimonia_id;
 
+                sqlcommand.Parameters.AddWithValue("@cerimonia_data_evento", cerimonia.cerimonia_data_evento);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_cidade_local", cerimonia.cerimonia_cidade_local);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_total_convidados", cerimonia.cerimonia_total_convidados);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_horario_cerimonia", cerimonia.cerimonia_horario_cerimonia);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_inicio_festa", cerimonia.cerimonia_inicio_festa);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_num_parcelas", cerimonia.cerimonia_num_parcelas);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_valor_parcelas", cerimonia.cerimonia_valor_parcelas);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_data_primeiro_vencimento", cerimonia.cerimonia_data_primeiro_vencimento);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_valor_total", cerimonia.cerimonia_valor_total);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_observacao", cerimonia.cerimonia_observacao);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_cliente_id", cerimonia.cerimonia_cliente_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_tipo_evento_id", cerimonia.cerimonia_tipo_evento_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_pacote_id", cerimonia.cerimonia_pacote_id);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_desconto", cerimonia.cerimonia_desconto);
+                sqlcommand.Parameters.AddWithValue("@cerimonia_id", cerimonia.cerimonia_id);
+
+                sqlcommand.CommandType = CommandType.Text;
+                sqlcommand.Connection = con.conectar();
+                sqlcommand.ExecuteNonQuery();
+
+                Statusmessagem = "Cerimonia alterado com sucesso!";
+            }
+            catch (SqlException ex)
+            {
+                Statusmessagem = ex.Message;
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+            }
         }
         public Cerimonia Editar(int codigo)
         {

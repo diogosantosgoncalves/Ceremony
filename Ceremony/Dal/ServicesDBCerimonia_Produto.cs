@@ -90,7 +90,7 @@ namespace Ceremony.Dal
 
                 List<Cerimonia_Produto> lista_cerimonias = new List<Cerimonia_Produto>();
                 sqlcommand.CommandText = "select * from cerimonia_produto cp " +
-                    "inner join Cerimonia ce on cp.cerimonia_produto_id = ce.cerimonia_id " +
+                    "inner join Cerimonia ce on cp.cerimonia__id = ce.cerimonia_id " +
                     "inner join Pacote_Servicos ps on cp.cerimonia_produto_pacote_servicos_id = ps.pacote_servico_id " +
                     " where cp.cerimonia__id = " + codigo;
                 sqlcommand.Connection = con.conectar();
@@ -215,6 +215,30 @@ namespace Ceremony.Dal
             }
         }
 
+        public void Excluir(int codigo_servico,int codigo_cerimonia)
+        {
+            try
+            {
+                sqlcommand.CommandText = "delete Cerimonia_Produto where cerimonia_produto_pacote_servicos_id = @codigo_serivo and cerimonia__id = @codigo_cerimonia";
+                sqlcommand.Parameters.AddWithValue("@codigo_serivo", codigo_servico);
+                sqlcommand.Parameters.AddWithValue("@codigo_cerimonia", codigo_cerimonia);
+                sqlcommand.Connection = con.conectar();
+                sqldataReader = sqlcommand.ExecuteReader();
 
+                Statusmessagem = "Cerimonia Produto Deletado!";
+            }
+            catch (SqlException ex)
+            {
+                Statusmessagem = ex.Message;
+                throw new Exception(string.Format("Erro: {0} ", ex.Message));
+            }
+            finally
+            {
+                sqlcommand.Parameters.Clear();
+                con.desconectar();
+                sqldataReader.Close();
+            }
+
+        }
     }
 }
