@@ -142,7 +142,7 @@ namespace Ceremony.Dal
                 sqlcommand.CommandText = "select * from Cerimonia ce inner join Cliente cl on " +
                     "cl.cli_id = ce.cerimonia_cliente_id inner join Tipo_Evento te on " +
                     "te.tipo_evento_id = ce.cerimonia_tipo_evento_id inner join Pacote pc on " +
-                    "pc.pacote_id = ce.cerimonia_pacote_id where cl.cli_nome like '%" + nome + "%'";
+                    "pc.pacote_id = ce.cerimonia_pacote_id where cl.cli_nome like '%" + nome + "%' order by ce.cerimonia_data_evento desc";
                 sqlcommand.Connection = con.conectar();
                 sqldataReader = sqlcommand.ExecuteReader();
 
@@ -165,7 +165,7 @@ namespace Ceremony.Dal
                     cerimonia.cerimonia_tipo_evento_id = tipo_Evento.tipo_evento_id;
                     cerimonia.cliente.cli_nome = sqldataReader["cli_nome"].ToString();
                     //sqldataReader["inv_dtfechamento"].ToString().Length > 0 ? DateTime.Parse(sqldataReader["inv_dtfechamento"].ToString()) : DateTime.MinValue;
-                    //cerimonia.cerimonia_data_evento = DateTime.Parse(sqldataReader["cerimonia_data_evento"].ToString());
+                    cerimonia.cerimonia_data_evento = DateTime.Parse(sqldataReader["cerimonia_data_evento"].ToString());
                     cerimonia.cerimonia_cidade_local = sqldataReader["cerimonia_cidade_local"].ToString();
                     cerimonia.cerimonia_total_convidados = int.Parse(sqldataReader["cerimonia_total_convidados"].ToString());
                     cerimonia.cerimonia_horario_cerimonia = sqldataReader["cerimonia_horario_cerimonia"].ToString();

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Consulta de Cliente" Height="550" Width="745" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Consulta de Cliente" WindowStyle="ToolWindow" Height="550" Width="745" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <StackPanel Margin="10" HorizontalAlignment="Center">
             <Label Content="Consulta de Clientes" FontSize="20" FontWeight="Black"/>
@@ -16,7 +16,7 @@
             <Button x:Name="bt_pesquisar"  Content="Pesquisar" Height="25" Click="ConsultarCliente"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center">
-            <DataGrid MaxWidth="750" MaxHeight="750" IsReadOnly="True" Name="dg_ConsultaCliente" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
+            <DataGrid MaxColumnWidth="290" MaxWidth="750" MaxHeight="750" IsReadOnly="True" Name="dg_ConsultaCliente" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn  Foreground="Red" Width="90" Header="Código" Binding="{Binding cli_id}"/>
                     <DataGridTextColumn  Width="310" Header="Nome" Binding="{Binding cli_nome}"/>

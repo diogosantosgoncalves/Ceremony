@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônial" Height="670" Width="730" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônial" Height="700" Width="730" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="HeaderStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="5 0 0 5"/>
@@ -108,10 +108,26 @@
                 <DatePicker Name="txt_data_primeiro_vencimento" Text="Selecione uma Data" />
                 <!--<TextBox x:Name="txt_data_primeiro_vencimento" Style="{StaticResource Textos}" Width="100"/>-->
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource HeaderStyle}">
+                <Label Content="Código:" />
+                <TextBox x:Name="txt_codigo_servico" IsEnabled="False" Style="{StaticResource Textos}" Width="100" Text="{Binding ElementName= lv_pacote_servico, Path=SelectedItem.pacote_servicos.pacote_servico_id}"/>
+                <Label Content="Nome:" />
+                <TextBox x:Name="txt_servico" IsEnabled="False" Style="{StaticResource Textos}" Width="280" Text="{Binding ElementName= lv_pacote_servico, Path=SelectedItem.pacote_servicos.pacote_servico_nome}"/>
+                <Label Content="Valor:" />
+                <TextBox x:Name="txt_valor" Style="{StaticResource Textos}" Width="70" Text="{Binding ElementName= lv_pacote_servico, Path=SelectedItem.pacote_servicos.pacote_servico_valor}"/>
+                <Button x:Name="bt_editar" Content="Alterar" Width="78" Height="22" FontWeight="Bold" Click="bt_Editar_Servico" Margin="10 0 0 0"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Serviços: " />
                 <ListView  Name="lv_pacote_servico" Width="620" Height="165" ItemsSource="{Binding Path=Cerimonia_Produto}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="IsEnabled" Value="True"/>
+                            <Setter Property="Focusable" Value="true"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
                     <ListView.View>
+                        
                         <GridView>
                             <GridViewColumn Header="Id"  Width="50" DisplayMemberBinding="{Binding pacote_servicos.pacote_servico_id}" />
                             <GridViewColumn Header="Nome" Width="480"  DisplayMemberBinding="{Binding pacote_servicos.pacote_servico_nome}" />

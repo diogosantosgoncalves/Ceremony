@@ -6,39 +6,106 @@
         xmlns:local="clr-namespace:Ceremony"
         mc:Ignorable="d"
         Title="Albertazzi Cerimônia"  Height="550" Width="800" WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" WindowState="Maximized">
+    <Window.Resources>
+        <Style x:Key="TextMenuHeader" TargetType="MenuItem">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="TextMenuSubHeader" TargetType="MenuItem">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
+        <Style x:Key="SeparatorCSS" TargetType="Separator">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Background" Value="AliceBlue" />
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="AliceBlue">
-            <MenuItem Header="Clientes" FontSize="18" FontWeight="Bold">
-                <MenuItem Header="Cadastrar" Click="Abre_Menu_Clientes" FontSize="14" FontWeight="DemiBold">
+            <MenuItem Header="Clientes" Style="{StaticResource TextMenuHeader}" >
+                <MenuItem Header="Cadastrar" Click="Abre_Menu_Clientes" Style="{StaticResource TextMenuSubHeader}" >
+                    <MenuItem.Icon >
+                        <Image Source="user.png" Width="200" />
+                    </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Consultar" Click="Abre_Menu_Consulta_Cliente" FontSize="14" FontWeight="DemiBold"/>
+                <MenuItem Header="Consultar" Click="Abre_Menu_Consulta_Cliente" Style="{StaticResource TextMenuSubHeader}">
+                    <MenuItem.Icon>
+                        <Image Source="Img/search.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="Buffet" FontSize="18" FontWeight="Bold">
-                <MenuItem Header="Lançar Buffet" Click="Abre_Menu_Buffet" FontSize="14" FontWeight="DemiBold"/>
-                <MenuItem Header="Consultar" Click="Abre_Menu_Consulta_Buffet" FontSize="14" FontWeight="DemiBold"/>
-                <MenuItem Header="Cadastrar Produtos" FontSize="14" FontWeight="DemiBold"/>
+            <Separator Style="{StaticResource SeparatorCSS}"/>
+            <MenuItem Header="Buffet" Style="{StaticResource TextMenuHeader}">
+                <MenuItem Header="Lançar Buffet" Click="Abre_Menu_Buffet" Style="{StaticResource TextMenuSubHeader}">
+                    <MenuItem.Icon>
+                        <Image Source="Img/buffet.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Consultar" Click="Abre_Menu_Consulta_Buffet" Style="{StaticResource TextMenuSubHeader}">
+                    <MenuItem.Icon>
+                        <Image Source="Img/search.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Cadastrar Produtos" Style="{StaticResource TextMenuSubHeader}">
+                    <MenuItem.Icon>
+                        <Image Source="Img/servicebuffet.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="Cerimônia" FontSize="18" FontWeight="Bold">
-                <MenuItem Header="Lançar Cerimônia" FontSize="15" FontWeight="DemiBold" Click="Abre_Menu_Cerimonial"/>
-                <MenuItem Header="Consultar" FontSize="15" FontWeight="DemiBold" Click="Abre_Menu_Consulta_Cerimonial"/>
-                <MenuItem Header="Pacote" FontSize="16" >
-                    <MenuItem Header="Cadastrar Pacotes" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Pacotes"/>
-                    <MenuItem Header="Consultar Pacotes" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consultar_Pacotes"/>
+            <Separator Style="{StaticResource SeparatorCSS}"/>
+            <MenuItem Header="Cerimônia" Style="{StaticResource TextMenuHeader}">
+                <MenuItem Header="Lançar Cerimônia" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Cerimonial">
+                    <MenuItem.Icon>
+                        <Image Source="Img/cerimony.png" />
+                    </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Serviços">
-                    <MenuItem Header="Cadastrar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Servicos_Cerimonia"/>
-                    <MenuItem Header="Consultar Serviços" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consultar_Servicos"/>
+                <MenuItem Header="Consultar" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Consulta_Cerimonial">
+                    <MenuItem.Icon>
+                        <Image Source="Img/search.png" />
+                    </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Tipos de Eventos" >
-                    <MenuItem Header="Cadastrar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Tipos_Eventos"/>
-                    <MenuItem Header="Consultar Tipos de Eventos" FontSize="14" FontWeight="DemiBold" Click="Abre_Menu_Consultar_Tipos_Eventos"/>
-                </MenuItem>
-                
             </MenuItem>
-            <Separator Width="800" Background="AliceBlue"/>
-            <!--<MenuItem Header="Sair" HorizontalAlignment="Right" HorizontalContentAlignment="Right" FontSize="18" FontWeight="Bold"/>-->
+            <Separator Style="{StaticResource SeparatorCSS}"/>
+            <MenuItem Header="Pacotes" Style="{StaticResource TextMenuHeader}">
+                <MenuItem Header="Cadastrar Pacotes" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Pacotes">
+                    <MenuItem.Icon>
+                        <Image Source="Img/pacote.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Consultar Pacotes" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Consultar_Pacotes">
+                    <MenuItem.Icon>
+                        <Image Source="Img/search.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <Separator Style="{StaticResource SeparatorCSS}"/>
+            <MenuItem Header="Serviços" Style="{StaticResource TextMenuHeader}">
+                <MenuItem Header="Cadastrar Serviços" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Servicos_Cerimonia">
+                    <MenuItem.Icon>
+                        <Image Source="Img/servicecerimony.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Consultar Serviços" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Consultar_Servicos">
+                    <MenuItem.Icon>
+                        <Image Source="Img/search.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <Separator Style="{StaticResource SeparatorCSS}"/>
+            <MenuItem Header="Tipos de Eventos" Style="{StaticResource TextMenuHeader}">
+                <MenuItem Header="Cadastrar Tipos de Eventos" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Tipos_Eventos">
+                    <MenuItem.Icon>
+                        <Image Source="Img/birthday.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Consultar Tipos de Eventos" Style="{StaticResource TextMenuSubHeader}" Click="Abre_Menu_Consultar_Tipos_Eventos">
+                    <MenuItem.Icon>
+                        <Image Source="Img/search.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <Separator Style="{StaticResource SeparatorCSS}" Width="800"/>
         </Menu>
-        <!--<TextBox Name="MyText" AcceptsReturn="True" AcceptsTab="True" TextWrapping="NoWrap" />-->
         <Image Source="logo_albertazzi.jpg" Width="1380" Height="790" />
     </DockPanel>
 </Window>

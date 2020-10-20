@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Tela_Consulta_Tipo_Evento" Height="550" Width="745" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Tela_Consulta_Tipo_Evento" WindowStyle="ToolWindow" Height="550" Width="745" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <StackPanel Margin="10" HorizontalAlignment="Center">
             <Label Content="Consulta Tipo de Evento" FontSize="20" FontWeight="Black"/>
@@ -15,12 +15,12 @@
             <TextBox x:Name="txt_nome" Width="400" Height="25" Margin="0 0 5 0"/>
             <Button x:Name="bt_pesquisar"  Content="Pesquisar" Height="25" Click="ConsultarCliente"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center">
-            <DataGrid MaxWidth="750" MaxHeight="750" IsReadOnly="True" Name="dg_ConsultaTipo_Evento" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
+        <StackPanel HorizontalAlignment="Center" Margin="0 0 71 0">
+            <DataGrid MaxColumnWidth="750" MaxWidth="750" MaxHeight="750" IsReadOnly="True" Name="dg_ConsultaTipo_Evento" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn  Foreground="Red" Width="90" Header="Código" Binding="{Binding tipo_evento_id}"/>
                     <DataGridTextColumn  Width="310" Header="Nome" Binding="{Binding tipo_evento_nome}"/>
-                    <DataGridTemplateColumn Width="100" Header="Editar" IsReadOnly="True">
+                    <DataGridTemplateColumn Width="50" Header="Editar" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
                                 <DockPanel HorizontalAlignment="Left">
@@ -33,7 +33,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Width="100" Header="Deletar" IsReadOnly="True">
+                    <DataGridTemplateColumn Width="50" Header="Deletar" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
                                 <DockPanel HorizontalAlignment="Left">

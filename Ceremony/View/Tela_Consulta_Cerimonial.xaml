@@ -5,7 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Cerimônia" Height="590" Width="875" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Cerimônia" Height="590"  WindowStyle="ToolWindow" Width="875" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- DataGrid style -->
+        <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle1}"/>
+        </Style>
+        <!-- DataGridColumnHeader style -->
+        <Style x:Key="ColumnHeaderStyle1" TargetType="DataGridColumnHeader">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="ToolTip" Value="Click to sort."/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <StackPanel>
         <StackPanel Margin="10" HorizontalAlignment="Center">
             <Label Content="Consulta de Cerimônia" FontSize="20" FontWeight="Black"/>
@@ -16,16 +36,26 @@
             <Button x:Name="bt_pesquisar"  Content="Pesquisar" Height="25" Click="ConsultarCerimonia"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left">
-            <DataGrid MaxWidth="890" MaxHeight="890" IsReadOnly="True" Name="dg_ConsultaCerimonia" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
+            <DataGrid MaxColumnWidth="190" MaxHeight="400"  CanUserResizeColumns="True" CanUserResizeRows="True"  IsReadOnly="True" Name="dg_ConsultaCerimonia" AlternationCount="2" AlternatingRowBackground="LightBlue" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn  Foreground="Red" Width="60" Header="Código" Binding="{Binding cerimonia_id}"/>
-                    <DataGridTextColumn  Width="200" Header="Cliente" Binding="{Binding cliente.cli_nome}"/>
-                    <DataGridTextColumn  Width="70" Header="Data" Binding="{Binding cerimonia_data_evento, StringFormat=dd/MM/yyyy}"/>
-                    <DataGridTextColumn  Width="50"  Header="Horário" Binding="{Binding cerimonia_horario_cerimonia}"/>
-                    <DataGridTextColumn  Width="120" Header="Evento" Binding="{Binding tipo_evento.tipo_evento_nome}"/>
-                    <DataGridTextColumn  Width="120" Header="Pacote" Binding="{Binding pacot.pacote_nome}"/>
-                    <DataGridTextColumn  Width="60" Header="Valor" Binding="{Binding cerimonia_valor_total}"/>
-                    <DataGridTemplateColumn Width="50" Header="Editar" IsReadOnly="True">
+                    <DataGridTextColumn Foreground="Red" Width="50" Header="Código" Binding="{Binding cerimonia_id}">
+                        <DataGridColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                        </DataGridColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn FontWeight="DemiBold" TextBlock.Foreground="Black" HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="200" Header="Cliente" Binding="{Binding cliente.cli_nome}"/>
+                    <DataGridTextColumn  HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="70" Header="Data" Binding="{Binding cerimonia_data_evento, StringFormat=dd/MM/yyyy}"/>
+                    <DataGridTextColumn  HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="60"  Header="Horário" Binding="{Binding cerimonia_horario_cerimonia}"/>
+                    <DataGridTextColumn  HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="110" Header="Evento" Binding="{Binding tipo_evento.tipo_evento_nome}"/>
+                    <DataGridTextColumn  HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="120" Header="Pacote" Binding="{Binding pacot.pacote_nome}"/>
+                    <DataGridTextColumn  TextBlock.Foreground="DarkRed" HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="70" Header="Valor" Binding="{Binding cerimonia_valor_total}"/>
+                    <!--StringFormat=N2} StringFormat={}{0:#\,#}\,00}"-->
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="50" Header="Editar" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
                                 <DockPanel HorizontalAlignment="Center">
@@ -38,7 +68,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Width="50" Header="Deletar" IsReadOnly="True">
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="50" Header="Deletar" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
                                 <DockPanel HorizontalAlignment="Center">
@@ -51,7 +81,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Width="60" Header="Imprimir" IsReadOnly="True">
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource ColumnHeaderStyle1}" Width="60" Header="Imprimir" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >
                                 <DockPanel HorizontalAlignment="Center">
@@ -66,9 +96,6 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="bt_Confirmar" Content="Confirmar" Width="100" Height="30" />
         </StackPanel>
     </StackPanel>
 </Window>

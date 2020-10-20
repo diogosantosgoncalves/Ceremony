@@ -378,5 +378,35 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\buffet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\cerimony.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\servicebuffet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\servicecerimony.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\pacote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\birthday.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

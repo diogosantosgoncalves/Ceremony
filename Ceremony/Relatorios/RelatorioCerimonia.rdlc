@@ -3166,21 +3166,21 @@ As partes, por estarem assim, justas e acordadas, as partes assinam o presente i
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="pacote_servico_valor">
+                    <Textbox Name="cerimonia_produto_valor">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!pacote_servico_valor.Value</Value>
+                              <Value>=Fields!cerimonia_produto_valor.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>pacote_servico_valor</rd:DefaultName>
+                      <rd:DefaultName>cerimonia_produto_valor</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3192,6 +3192,7 @@ As partes, por estarem assim, justas e acordadas, as partes assinam o presente i
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

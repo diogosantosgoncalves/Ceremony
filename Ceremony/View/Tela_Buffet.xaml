@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="Buffet" Height="580" Width="700" Background="AliceBlue" WindowStartupLocation="CenterScreen">
+        Title="Buffet" Height="580" WindowStyle="ToolWindow" Width="700" Background="AliceBlue" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="HeaderStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="5 0 0 5"/>

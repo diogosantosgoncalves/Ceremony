@@ -39,8 +39,8 @@ namespace Ceremony.View
             bt_Salvar.Content = "Alterar";
         }
 
-            private void bt_Salvar_Servicos(object sender, RoutedEventArgs e)
-            {
+        private void bt_Salvar_Servicos(object sender, RoutedEventArgs e)
+        {
 
             if (string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_valor.Text)){
                 MessageBox.Show("Preencha o Nome ou o Valor!");
@@ -65,9 +65,8 @@ namespace Ceremony.View
                         this.DialogResult = true;
                     }
                     MessageBox.Show(servicesDBPacote_Servico.Statusmessagem);
-                    txt_id.Text = "";
-                    txt_nome.Text = "";
-                    txt_valor.Text = "";
+
+                    LimparCampos();
 
                     txt_nome.Focus();
                 }
@@ -76,6 +75,13 @@ namespace Ceremony.View
                     MessageBox.Show(ex.Message);
                 }
             }
+
+        }
+        private void LimparCampos()
+        {
+            txt_id.Text = "";
+            txt_nome.Text = "";
+            txt_valor.Text = "";
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ceremony.View"
         mc:Ignorable="d"
-        Title="RelatorioCerimonia" Height="450" Width="770">
+        Title="RelatorioCerimonia" WindowStyle="ToolWindow" Height="450" Width="770" WindowStartupLocation="CenterScreen">
     <Grid>
         <WindowsFormsHost  HorizontalAlignment="Stretch"  Margin="10,10,0,0" VerticalAlignment="Stretch" >
             <rv:ReportViewer x:Name="ReportViewer" Load="ReportViewer_Load" />

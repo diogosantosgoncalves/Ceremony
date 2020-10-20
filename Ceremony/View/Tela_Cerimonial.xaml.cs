@@ -25,6 +25,8 @@ namespace Ceremony.View
     /// </summary>
     public partial class Tela_Cerimonial : Window
     {
+        private ObservableCollection<Cerimonia_Produto> pessoa;
+        public List<Cerimonia_Produto> lista_cerimonia_produtos_editados = new List<Cerimonia_Produto>();
         double total = 0;
         int codigo_cliente;
         int codigo_evento = 0;
@@ -219,6 +221,8 @@ namespace Ceremony.View
 
                     var difList = cerimonia_Produtos.Where(a => !lista_original_cerimonia_produtos.Any(a1 => a1.pacote_servicos.pacote_servico_id == a.pacote_servicos.pacote_servico_id)).Union(lista_original_cerimonia_produtos.Where(a => !cerimonia_Produtos.Any(a1 => a1.pacote_servicos.pacote_servico_id == a.pacote_servicos.pacote_servico_id)));
 
+                    //var difList2 = cerimonia_Produtos.Where(a => lista_original_cerimonia_produtos.Any(a1 => a1.pacote_servicos.pacote_servico_id != a.pacote_servicos.pacote_servico_id)).Union(lista_original_cerimonia_produtos.Where(a => !cerimonia_Produtos.Any(a1 => a1.pacote_servicos.pacote_servico_id == a.pacote_servicos.pacote_servico_id)));
+
                     if (servicesDBCerimonia.Cerimonia_Ultimo_Registro() != 0)
                     {
                         //int codigo_cerimonia = servicesDBCerimonia.Cerimonia_Ultimo_Registro();
@@ -230,14 +234,25 @@ namespace Ceremony.View
                             cerimonia_Produto.cerimonia__id = cerimonia.cerimonia_id;
                             servicesDBCerimonia_Produto.Salvar(cerimonia_Produto);
                         }
+                        foreach (var item in lista_cerimonia_produtos_editados)
+                        {
+                            Cerimonia_Produto cerimonia_Produto = new Cerimonia_Produto();
+                            cerimonia_Produto.cerimonia_produto_servicos_id = item.pacote_servicos.pacote_servico_id;
+                            cerimonia_Produto.cerimonia_produto_valor = item.pacote_servicos.pacote_servico_valor;
+                            cerimonia_Produto.cerimonia__id = cerimonia.cerimonia_id;
+                            servicesDBCerimonia_Produto.Alterar_Valor(cerimonia_Produto);
+                        }
+
                     }
+                this.DialogResult = true;
                 }
                 MessageBox.Show(servicesDBCerimonia.Statusmessagem);
-                this.DialogResult = true;
+                this.Close();
+                
             }
             catch (Exception exxx)
             {
-                MessageBox.Show(servicesDBCerimonia.Statusmessagem);
+                MessageBox.Show(exxx.Message);
             }
         }
 
@@ -361,6 +376,28 @@ namespace Ceremony.View
                 MessageBox.Show("Selecione um Serviço!");
             }
         }
+        private void bt_Editar_Servico(object sender, RoutedEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txt_valor.Text))
+            {
+                MessageBox.Show("Informe um valor");
+                return;
+            }
+            int codigo_servico = int.Parse(txt_codigo_servico.Text);
+            double valor = double.Parse(txt_valor.Text);
+            pessoa = new ObservableCollection<Cerimonia_Produto>(cerimonia_Produtos);
+
+            lv_pacote_servico.ItemsSource = pessoa;
+
+            var item = pessoa.FirstOrDefault(i => i.pacote_servicos.pacote_servico_id == codigo_servico);
+            if (item != null)
+                item.pacote_servicos.pacote_servico_valor = valor;
+
+            lista_cerimonia_produtos_editados.Add(item);
+            //pessoa.Add(cerimonia_Produto);
+            Calcula_Total();
+        }
         private void bt_Remover_Produto_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -373,7 +410,7 @@ namespace Ceremony.View
                 else
                 {
                     string selectID = obj.pacote_servicos.pacote_servico_id.ToString();
-                    MessageBox.Show("The ID is: " + selectID);
+                    //MessageBox.Show("The ID is: " + selectID);
                     if (lista_original_cerimonia_produtos.Exists(a => a.pacote_servicos.pacote_servico_id == obj.pacote_servicos.pacote_servico_id))
                     {
                         servicesDBCerimonia_Produto.Excluir(obj.pacote_servicos.pacote_servico_id, int.Parse(txt_cerimonia_id.Text));
